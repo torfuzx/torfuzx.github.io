@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Leslie&#39;s Blog</title>
+  <title>Go反射的法则 | Leslie&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Leslie's Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="反射的法则注：本文是The Laws of Reflection的中文翻译，转载自我的好兄弟 Kurt Zhong。
+简介反射在计算机领域指的是程序检查自身结构的能力，这通常是通过类型来完成的。这是一种元编程的形式。这同时也是困惑的源头之一。
+在这边文章中，我们试着通过解释让你理解在go中反射是如何工作的。每一种语言的反射模型都是不同的（并且很多语言压根不支持反射），但是这篇文章是关于Go的，因此">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go反射的法则">
+<meta property="og:url" content="http://yoursite.com/2015/08/20/Go反射的法则/index.html">
 <meta property="og:site_name" content="Leslie's Blog">
-<meta property="og:description">
+<meta property="og:description" content="反射的法则注：本文是The Laws of Reflection的中文翻译，转载自我的好兄弟 Kurt Zhong。
+简介反射在计算机领域指的是程序检查自身结构的能力，这通常是通过类型来完成的。这是一种元编程的形式。这同时也是困惑的源头之一。
+在这边文章中，我们试着通过解释让你理解在go中反射是如何工作的。每一种语言的反射模型都是不同的（并且很多语言压根不支持反射），但是这篇文章是关于Go的，因此">
+<meta property="og:updated_time" content="2015-08-20T03:19:22.874Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leslie's Blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Go反射的法则">
+<meta name="twitter:description" content="反射的法则注：本文是The Laws of Reflection的中文翻译，转载自我的好兄弟 Kurt Zhong。
+简介反射在计算机领域指的是程序检查自身结构的能力，这通常是通过类型来完成的。这是一种元编程的形式。这同时也是困惑的源头之一。
+在这边文章中，我们试着通过解释让你理解在go中反射是如何工作的。每一种语言的反射模型都是不同的（并且很多语言压根不支持反射），但是这篇文章是关于Go的，因此">
   
     <link rel="alternative" href="/atom.xml" title="Leslie&#39;s Blog" type="application/atom+xml">
   
@@ -180,9 +187,7 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-Go反射的法则" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Go反射的法则" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2015/08/20/Go反射的法则/" class="article-date">
@@ -198,12 +203,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/20/Go反射的法则/">Go反射的法则</a>
+    <h1 class="article-title" itemprop="name">
+      Go反射的法则
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/">golang</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -332,86 +348,62 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/">golang</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/08/19/开启我的博客生涯/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开启我的博客生涯</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
-
-
-
-
-
-  
-    <article id="post-开启我的博客生涯" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/19/开启我的博客生涯/" class="article-date">
-  	<time datetime="2015-08-19T11:55:18.000Z" itemprop="datePublished">2015-08-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/19/开启我的博客生涯/">开启我的博客生涯</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>不知道说些什么，今天是公元2015年8月19日，感觉有些迷惘。。。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/胡扯/">胡扯</a></li></ul>
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Go反射的法则" data-title="Go反射的法则" data-url="http://yoursite.com/2015/08/20/Go反射的法则/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"noask"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -435,8 +427,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
