@@ -112,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Fedora/" style="font-size: 20px;">Fedora</a> <a href="/tags/NodeJS/" style="font-size: 10px;">NodeJS</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/胡扯/" style="font-size: 10px;">胡扯</a>
+						<a href="/tags/Atom/" style="font-size: 20px;">Atom</a> <a href="/tags/Chromium/" style="font-size: 10px;">Chromium</a> <a href="/tags/Fedora/" style="font-size: 20px;">Fedora</a> <a href="/tags/Go/" style="font-size: 20px;">Go</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/NodeJS/" style="font-size: 20px;">NodeJS</a> <a href="/tags/Sublime/" style="font-size: 20px;">Sublime</a> <a href="/tags/Virtualbox/" style="font-size: 10px;">Virtualbox</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/胡扯/" style="font-size: 10px;">胡扯</a>
 					</div>
 				</section>
 				
@@ -182,11 +182,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-Fedora常用软件" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Golang-Seelog-入门" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/08/22/Fedora常用软件/" class="article-date">
-  	<time datetime="2015-08-22T14:19:52.000Z" itemprop="datePublished">2015-08-22</time>
+      <a href="/2015/09/17/Golang-Seelog-入门/" class="article-date">
+  	<time datetime="2015-09-17T06:37:10.000Z" itemprop="datePublished">2015-09-17</time>
 </a>
     </div>
   
@@ -199,7 +199,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/22/Fedora常用软件/">Fedora常用软件</a>
+      <a class="article-title" href="/2015/09/17/Golang-Seelog-入门/">Golang Seelog 入门</a>
     </h1>
   
 
@@ -208,355 +208,86 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="鼠标右键打开终端">鼠标右键打开终端</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum -y install nautilus-open-terminal</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fedora/">Fedora</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-Linux下NodeJS的安装配置" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/22/Linux下NodeJS的安装配置/" class="article-date">
-  	<time datetime="2015-08-22T13:48:33.000Z" itemprop="datePublished">2015-08-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/22/Linux下NodeJS的安装配置/">Linux下NodeJS的安装配置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="检查是否已经安装">检查是否已经安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep python</span><br></pre></td></tr></table></figure>
-<h3 id="查版本">查版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python</span><br></pre></td></tr></table></figure>
-<h3 id="最好是重新安装_Python推荐版本（_&gt;=_v2-5-0_&amp;_&lt;_3-0-0_），否则影响nodejs运行">最好是重新安装 Python推荐版本（ &gt;= v2.5.0 &amp; &lt; 3.0.0 ），否则影响nodejs运行</h3><h3 id="进入安装目录">进入安装目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/</span><br></pre></td></tr></table></figure>
-<h3 id="删除原有安装">删除原有安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf node</span><br><span class="line">rm -rf node-v0.<span class="number">12.7</span>-linux-x64</span><br></pre></td></tr></table></figure>
-<h3 id="解压压缩包">解压压缩包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxv <span class="operator">-f</span> node-v0.<span class="number">12.7</span>-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
-<h3 id="修改目录">修改目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv node-v0.<span class="number">12.7</span>-linux-x64 node</span><br></pre></td></tr></table></figure>
-<h3 id="添加环境变量并使之生效，内容如下：">添加环境变量并使之生效，内容如下：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=/usr/<span class="built_in">local</span>/python/bin:/usr/<span class="built_in">local</span>/node/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
-<h3 id="测试命令">测试命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NodeJS/">NodeJS</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-Fedora下安装Chromium" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/22/Fedora下安装Chromium/" class="article-date">
-  	<time datetime="2015-08-22T13:24:24.000Z" itemprop="datePublished">2015-08-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/22/Fedora下安装Chromium/">Fedora下安装Chromium</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Fedora官方源中没有包含Chromium，需要先添加安装源。">Fedora官方源中没有包含Chromium，需要先添加安装源。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Stable repo(稳定版本):</span><br><span class="line">http://repos.fedorapeople.org/repos/spot/chromium-stable/</span><br><span class="line">http://repos.fedorapeople.org/repos/spot/chromium-stable/fedora-chromium-stable.repo</span><br><span class="line"></span><br><span class="line">Unstable repo(非稳定版本,开发测试中的构建版本,是最新版本):</span><br><span class="line">http://repos.fedorapeople.org/repos/spot/chromium-unstable/</span><br><span class="line">http://repos.fedorapeople.org/repos/spot/chromium-unstable/fedora-chromium.repo</span><br></pre></td></tr></table></figure>
-<h3 id="选择添加上面其中一个源,使用wget命令下载源库文件到_/etc/yum-repos-d/_目录下">选择添加上面其中一个源,使用wget命令下载源库文件到 /etc/yum.repos.d/ 目录下</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/yum.repos.d</span><br><span class="line"></span><br><span class="line">获取非稳定库</span><br><span class="line">wget http://repos.fedorapeople.org/repos/spot/chromium-stable/fedora-chromium.repo</span><br><span class="line"> </span><br><span class="line">安装Chromium</span><br><span class="line">yum install chromium</span><br></pre></td></tr></table></figure>
-<h3 id="如果安装中出现错误：“Couldn’t_open_file_/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-i386”">如果安装中出现错误：“Couldn’t open file /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-i386”</h3><h3 id="检查仓库配置是否正确">检查仓库配置是否正确</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/yum.repos.d/*.repo</span><br></pre></td></tr></table></figure>
-<h3 id="将最后一项gpgcheck=1改为0就好了">将最后一项gpgcheck=1改为0就好了</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fedora/">Fedora</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-Fedora国内源配置" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/22/Fedora国内源配置/" class="article-date">
-  	<time datetime="2015-08-22T13:12:41.000Z" itemprop="datePublished">2015-08-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/22/Fedora国内源配置/">Fedora国内源配置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-自动选择最快插件">1.自动选择最快插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install yum-fastestmirror</span><br></pre></td></tr></table></figure>
-<h3 id="2-rpmfusion源">2.rpmfusion源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm</span><br><span class="line">rpm -ivh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm</span><br></pre></td></tr></table></figure>
-<h3 id="3-flash源">3.flash源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-<span class="number">1.0</span>-<span class="number">1</span>.noarch.rpm</span><br><span class="line">yum install flash-plugin</span><br></pre></td></tr></table></figure>
-<h3 id="4-163源,sohu源,北交通,开源中国的直接可以用">4.163源,sohu源,北交通,开源中国的直接可以用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/yum.repos.d</span><br><span class="line"></span><br><span class="line">wget http://mirrors.<span class="number">163</span>.com/.help/fedora-<span class="number">163</span>.repo</span><br><span class="line">wget http://mirrors.<span class="number">163</span>.com/.help/fedora-updates-<span class="number">163</span>.repo</span><br><span class="line">wget http://mirrors.sohu.com/<span class="built_in">help</span>/fedora-sohu.repo</span><br><span class="line">wget http://mirrors.sohu.com/<span class="built_in">help</span>/fedora-updates-sohu.repo</span><br><span class="line">wget http://mirror.bjtu.edu.cn/fedora-bjtu.repo</span><br><span class="line">wget http://mirror.bjtu.edu.cn/fedora-updates-bjtu.repo</span><br><span class="line">wget http://mirrors.oschina.net/<span class="built_in">help</span>/fedora-oschina.repo</span><br><span class="line">wget http://mirrors.oschina.net/<span class="built_in">help</span>/fedora-updates-oschina.repo</span><br><span class="line"></span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fedora/">Fedora</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-Go反射的法则" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/20/Go反射的法则/" class="article-date">
-  	<time datetime="2015-08-20T03:17:01.000Z" itemprop="datePublished">2015-08-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/20/Go反射的法则/">Go反射的法则</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="反射的法则">反射的法则</h1><p>注：本文是<a href="http://blog.golang.org/laws-of-reflection/" target="_blank" rel="external">The Laws of Reflection</a>的中文翻译，转载自我的好兄弟 <a href="http://github.com/kurtzhong/" target="_blank" rel="external">Kurt Zhong</a>。</p>
-<h2 id="简介">简介</h2><p>反射在计算机领域指的是程序检查自身结构的能力，这通常是通过类型来完成的。这是一种元编程的形式。这同时也是困惑的源头之一。</p>
-<p>在这边文章中，我们试着通过解释让你理解在go中反射是如何工作的。每一种语言的反射模型都是不同的（并且很多语言压根不支持反射），但是这篇文章是关于Go的，因此文章接下来的部分，请把“反射”反射当做“Go中的反射”来理解。</p>
-<h2 id="类型和接口">类型和接口</h2><p>因为反射建立在类型系统之上，让我们首先从Go中的类型讲起。</p>
-<p>Go是静态语言。每一个变量都有一个静态的类型，即在编译的时候确切的已知和确定的一种类型：int，float32,*MyType，[]byte等等。如果我们声明：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">type MyInt int</span><br><span class="line"></span><br><span class="line"><span class="tag">var</span> <span class="tag">i</span> int</span><br><span class="line"><span class="tag">var</span> j MyInt</span><br></pre></td></tr></table></figure>
-<p>那么i的类型为int，j的类型为MyInt。变量i和j拥有截然不同的两种类型的静态类型，尽管底层的类型是一样的，你不能把一种变量类型的值赋给另外一个变量，要赋值必须通过类型转换。</p>
-<p>一类重要的类型的就是接口类型，它们代表着一系列方法。一个接口变量可以存储任何具体（非接口）的值，只要这些值实现了接口的方法。一个常见的列子就是io.Reader和io.Writer，Reader和Writer来源于io包的两种类型。</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Reader是一个接口，包含着基本的Read方法</span></span><br><span class="line"><span class="keyword">type</span> Reader interface &#123;</span><br><span class="line">    <span class="keyword">Read</span>(p []byte) (<span class="keyword">n</span> int, <span class="keyword">err</span> <span class="keyword">error</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Writer是一个接口，包含着基本的Write方法</span></span><br><span class="line"><span class="keyword">type</span> Writer interface &#123;</span><br><span class="line">    Write(p []byte) (<span class="keyword">n</span> int, <span class="keyword">err</span> <span class="keyword">error</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>任何类型实现了Read（或者Write）方法且签名一样就被称作实现了io.Reader（或者io.Writer）接口。在下面的讨论中，意味着一个io.Reader类型的变量可以保存任何有一个Read方法的值。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> r io<span class="class">.Reader</span></span><br><span class="line">r = os<span class="class">.Stdin</span></span><br><span class="line">r = bufio.<span class="function"><span class="title">NewReader</span><span class="params">(r)</span></span></span><br><span class="line">r = <span class="function"><span class="title">new</span><span class="params">(bytes.Buffer)</span></span></span><br><span class="line"><span class="comment">// and so on</span></span><br></pre></td></tr></table></figure>
-<p>十分重要的是，不论任何变量r可能保存任何具体的值。r的类型永远是io.Reader：Go是静态类型语言，r的静态类型是io.Reader。</p>
-<p>一个相当重要的接口类型的例子是空接口：</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>他代表着一个空的方法集，并且任何的值都满足空接口，因为任意的值都有零个或者更多的方法。</p>
-<p>有的人说Go的接口是动态类型，但是这么说事误导人的。接口是静态类型：一个接口类型的变量永远有一样的的静态类型，即使在运行的时候，保存在接口变量中的实际值的类型可能会改变，保存的值总是满足该接口的。</p>
-<p>我们需要对此认识十分清楚，因为反射和接口是紧密结合的。</p>
-<h2 id="反射的表现">反射的表现</h2><p>Russ Cox写了一篇详细的博客介绍Go中接口值是如何表现的。完全的重复该篇文章里的内容是没有必要的，但是简单的的总结却是可以的。</p>
-<p>一个接口的变量是按对保存的：一个赋给该变量具体的值，和该值的类型描述符。更加确切的说，值是底层实现该接口的值和完整描述该条目的的类型描述。例如：</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var r <span class="built_in">io</span>.Reader</span><br><span class="line">tty, err := <span class="built_in">os</span>.OpenFile(<span class="string">"/dev/tty"</span>, <span class="built_in">os</span>.O_RDWR, <span class="number">0</span>)</span><br><span class="line"><span class="keyword">if</span> err != <span class="keyword">nil</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">nil</span>, err</span><br><span class="line">&#125;</span><br><span class="line">r = tty</span><br></pre></td></tr></table></figure>
-<p>在这之后，r从形式上包含了一个(value，type)对，（tty，<em>os.File）注意类型</em>os.File不止实现了Read方法；尽管接口值只提供访问Read方法，内部的值携带着所有与该值的类型信息。因此我们可以做如下操作：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> w io<span class="class">.Writer</span></span><br><span class="line">w = r.(io.Writer)</span><br></pre></td></tr></table></figure>
-<p>这个语句中的表达式是一个类型的断言，其断言的内容是变量r内部保存的内容同时也实现了io.Writer接口，因此我们可以把她赋值给w。赋值之后，w会包含一个对（tty, *os.File）。这个值-类型对于保存在r中的值-类型对是一样的。接口的静态类型决定了在接口类型的变量可以调用什么方法，尽管该变量内含的具体值可能会有一个更大的方法集。</p>
-<p>我们还可以做如下操作：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">empty</span> <span class="class"><span class="keyword">interface</span></span>&#123;&#125;</span><br><span class="line"><span class="keyword">empty</span> = w</span><br></pre></td></tr></table></figure>
-<p>这样空接口的值会再次包含同样的类型-值对（tty，*os.File）。这十分的实用：一个空接口能保存任何的的值，并且包含所有我们可能需要一个值的信息。</p>
-<p>此处我们不需要做类型断言因为静态上w满足了空接口。在上面的例子中，我们把值从一Reader接口移到了Writer接口，我们需要显式的使用类型断言因为Writer的方法集不是Reader方法集的一个子集。</p>
-<p>一个重要的细节是一个接口里面的的对的形式是（值，具体的类型）而不是（值，接口的类型）。接口不保存接口的值。</p>
-<p>现在我们可以开始讲反射了。</p>
-<h2 id="1-_反射的第一条定律_-_反射从接口的值到反射的对象">1. 反射的第一条定律 - 反射从接口的值到反射的对象</h2><p>在最基本的层面，反射只是一个检查一个保存在接口变量中（类型，值）对的机制。首先，我们需要知道reflect包中的两个类型：Type和Value。这两个类型能让我们访问一个接口变量里面的内容。我们可以使用两个方法，reflect.TypeOf和reflect.ValueOf来获取一个接口变量中relefct.Type和reflect.Value的那一部分。（同时我们也能很容易的从reflect.Value中获取reflect.Type，但是让我们暂时Value和Type的概念分开。）</p>
-<p>让我们从TypeOf开始：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">    <span class="string">"reflect"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x float64 = <span class="number">3.4</span></span><br><span class="line">    fmt.<span class="type">Println</span>(<span class="string">"type:"</span>, <span class="built_in">reflect</span>.<span class="type">TypeOf</span>(x))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个程序会输出：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: <span class="built_in">float</span>64</span><br></pre></td></tr></table></figure>
-<p>你可能会想这里的接口在那里。因为这个程序看上去像是在传递一个float64的变量x，而不是在一个接口的值到reflect.TypeOf方法。但是接口是存在的，如godoc中显示的，reflect.TypeOf的方法签名包含一个空的接口：</p>
-<figure class="highlight capnproto"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// TypeOf返回保存在接口<span class="class"><span class="keyword">interface</span>&#123;</span>&#125;中的值的类型</span><br><span class="line">func TypeOf(i <span class="class"><span class="keyword">interface</span>&#123;</span>&#125;) Type</span><br></pre></td></tr></table></figure>
-<p>当我们调用reflect.TypeOf(x)的时候，x首先会被保存到一个空的接口口里面然后作为参数传递。reflect.TypeOf会解包该空接口信息并还原其类型信息。</p>
-<p>reflect.ValueOf的方法当然能恢复接口中的值。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> x  float64 = <span class="number">3.4</span></span><br><span class="line">fmt.<span class="function"><span class="title">Println</span><span class="params">(<span class="string">"value:"</span>, reflect.ValueOf(x)</span></span>)</span><br></pre></td></tr></table></figure>
-<p>会输出：</p>
-<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">value</span>: &lt;float64 <span class="keyword">Value</span>&gt;</span><br></pre></td></tr></table></figure>
-<p>reflect.Type和reflect.Value都有很多方法让我们检查和操作他们。一个重要的例子就是Value有一个Type的方法可以返回一个reflect.Value的Type。另外一个是Type和Value都有一个Kind方法可以返回一个常量来表明保存的哪一种值：Uint，Float64，Slice等等。同时Value上的一些诸如Int和Float的方法可以让我们（以int64和float6）来获取保存在接口内部的值。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> x float64 = <span class="number">3.4</span></span><br><span class="line">v := reflect.<span class="function"><span class="title">ValueOf</span><span class="params">(x)</span></span></span><br><span class="line">fmt.<span class="function"><span class="title">Println</span><span class="params">(<span class="string">"type:"</span>, v.Type()</span></span>)</span><br><span class="line">fmt.<span class="function"><span class="title">Println</span><span class="params">(<span class="string">"kind is float64:"</span>, v.Kind()</span></span> == reflect.Float64)</span><br><span class="line">fmt.<span class="function"><span class="title">Println</span><span class="params">(<span class="string">"value:"</span>, v.Float()</span></span>)</span><br></pre></td></tr></table></figure>
-<p>会输出：</p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type: float64</span><br><span class="line"><span class="keyword">kind</span> <span class="keyword">is</span> float64: true</span><br><span class="line">value: 3.4</span><br></pre></td></tr></table></figure>
-<p>同时也有一些诸如SetInt和SetFloat的方法，但是为了方便使用他们我需要了解可设置性（settability）,是下边要讨论的第三个法则。</p>
-<p>reflection库中有一些属性值得单独拿出来讲。首先，为了保持API的简洁，Value的“getter”和“setter”方法操作于能保存值的最大类型：例如int64代表所有有符号型的整型。即，Value的Int方法返回一个int64，SetInt接收一个int64的参数。使用这些方法的时候可能需要做类型的变换。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> x uint8 = <span class="string">'x'</span></span><br><span class="line">v := reflect.<span class="function"><span class="title">ValueOf</span><span class="params">(x)</span></span></span><br><span class="line">fmt.<span class="function"><span class="title">Println</span><span class="params">(<span class="string">"type:"</span>, v.Type()</span></span>)                            <span class="comment">// uint8.</span></span><br><span class="line">fmt.<span class="function"><span class="title">Println</span><span class="params">(<span class="string">"kind is uint8: "</span>, v.Kind()</span></span> == reflect.Uint8) <span class="comment">// true.</span></span><br><span class="line">x = <span class="function"><span class="title">uint8</span><span class="params">(v.Uint()</span></span>)</span><br></pre></td></tr></table></figure>
-<p>第二个特性是一个反射对象的Kind描述的时底层类型，而不是静态类型。如果一个反射对象包含一个用户定义的的整形类型，如在</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type MyInt int</span><br><span class="line"><span class="tag">var</span> x Myint = <span class="number">7</span></span><br><span class="line">v := reflect.<span class="function"><span class="title">ValueOf</span><span class="params">(x)</span></span></span><br></pre></td></tr></table></figure>
-<p>v的Kind仍然是reflect.Int，即使v的静态类型是MyInt而不是int。换句话说，Kind不能将一个int和MyInt区分开来，但是Type可以。</p>
-<h2 id="2-_反射的第二条法则_-_反射从反射对象到反射的值">2. 反射的第二条法则 - 反射从反射对象到反射的值</h2><p>和物理反射一样，Go中的反射会生成其自身的对立面。</p>
-<p>拿到一个reflect.Value我们通过使用Interface方法可以恢复接口的值；该方法的实际效果是将类型和值的信息打包回接口的表现的形式并且返回结果：</p>
-<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// <span class="keyword">Interface</span>以<span class="keyword">interface</span>&#123;&#125;的形式返回v的值</span><br><span class="line">func (v <span class="keyword">Value</span>) <span class="keyword">Interface</span>() <span class="keyword">interface</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>结果我们可以用：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y := v.<span class="function"><span class="title">Interface</span><span class="params">()</span></span>.(float64) <span class="comment">// y将会拥有类型float64</span></span><br><span class="line">fmt.<span class="function"><span class="title">Println</span><span class="params">(y)</span></span></span><br></pre></td></tr></table></figure>
-<p>来打印出反射对象v代表的float64值</p>
-<p>然而，我们还可以更进一步。fmt.Println，fmt.Printf等等的参数都是以空接口值的形式传递的，然后种子fmt宝的内部对传入的值进行解包，正如我们在之前的例子中看到的一样。因此为了打印relect.Value的内容，需要传递Interface方法的结果到打印方法：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fmt.<span class="function"><span class="title">Println</span><span class="params">(v.Interface()</span></span>)</span><br></pre></td></tr></table></figure>
-<p>（为什么不是fmt.Println(v)? 因为v是一个reflect.Value；我们需要其保存的具体的值）因为我们的值是一个float64，我们甚至可以使用一个浮点数的格式：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">fmt</span><span class="class">.Println</span>("<span class="tag">value</span> <span class="tag">is</span> %7<span class="class">.1e</span>\<span class="tag">n</span>, <span class="tag">v</span><span class="class">.Interface</span>())</span><br></pre></td></tr></table></figure>
-<p>并且得到如下的结果：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3.4e+000</span></span><br></pre></td></tr></table></figure>
-<p>同样的，这里没有必要对v.Interface()的结果做类型是float64的类型断言；空接口的值里面保存着值的类型信息，Printf可以对其进行恢复。</p>
-<p>再次重申：反射从反射的值到反射的对象，并且可以从反射对象到反射的值。</p>
-<h2 id="3-_反射的第三法则_-_要修改反射对象，其值必须是可以设置的">3. 反射的第三法则 - 要修改反射对象，其值必须是可以设置的</h2><p>第三条法则是最难以理解和困惑的，但是如果我们回到第一条法则就会变得容易的多。</p>
-<p>这里是一些不能运行的代码，但是值得拿来探讨下：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> x float64 = <span class="number">3.4</span></span><br><span class="line">v := refelct.<span class="function"><span class="title">ValueOf</span><span class="params">(x)</span></span></span><br><span class="line">v.<span class="function"><span class="title">SetFloat</span><span class="params">(<span class="number">7.1</span>)</span></span> <span class="comment">// 错误，会panic</span></span><br></pre></td></tr></table></figure>
-<p>如果你运行这段代码，程序会panic并带着如下错误信息：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">panic: reflect<span class="class">.Value</span><span class="class">.SetFloat</span> using unaddressable value</span><br></pre></td></tr></table></figure>
-<p>问题不在于值7.1不可寻址，而是v不可设值。设值性是一个反射Value的属性，并不是所有的反射Value都有这个属性。</p>
-<p>Value的CanSet方法能返回一个Value的设值性；在我们这个例子中：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> x float64 = <span class="number">3.4</span></span><br><span class="line">v := reflect.<span class="function"><span class="title">ValueOf</span><span class="params">(x)</span></span></span><br><span class="line">fmt.<span class="function"><span class="title">Println</span><span class="params">(<span class="string">"settability of v:"</span>, v.CanSet()</span></span>)</span><br></pre></td></tr></table></figure>
-<p>输出：</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">settability <span class="keyword">of</span> v: <span class="constant">false</span></span><br></pre></td></tr></table></figure>
-<p>在一个不可设置的Value上调用Set方法是会报错的。但是什么是设值性？</p>
-<p>设值性有一点像可寻址性，但是更加的严格。他是反射对象的一种属性，表示可以修改用来创建反射对象的实际存储。设置性由是否反射对象保存在原始对象。</p>
-<p>当我们说：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> x float64 = <span class="number">3.4</span></span><br><span class="line">v := reflect.<span class="function"><span class="title">ValueOf</span><span class="params">(x)</span></span></span><br></pre></td></tr></table></figure>
-<p>我们传递了一个x的拷贝到reflect.ValueOf，因此作为reflect.ValueOf的参数创建的反射值，是一个x的拷贝值而不是x自身，因而，在语句中：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v.<span class="function"><span class="title">SetFloat</span><span class="params">(<span class="number">7.1</span>)</span></span></span><br></pre></td></tr></table></figure>
-<p>如果这条语句能成功执行，其不会更新x，即使v看起来像其从x中创建的。相反，其会更新在反射值里x的一个拷贝而不是x自身不会受到影响。这样会招来更多的疑惑，也没有什么实际意义。因此这是非法的，而设置性是一个属性用来规避这个问题。</p>
-<p>如果这看起来有点过了，其实不是。这是一种熟悉的情形。想象一下将x传递给一个函数：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">f</span><span class="params">(x)</span></span></span><br></pre></td></tr></table></figure>
-<p>我们不会期待f真的能修改x的值因为我们传递的时x值的一个拷贝，而不是x本身。如果我们想f能修改直接修改x我们必须传递x一个地址，即指向x的指针：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">f</span><span class="params">(&amp;x)</span></span></span><br></pre></td></tr></table></figure>
-<p>这听起来十分容易理解和熟悉，反射跟这是一个原理。如果我们想通过反射改变x的值，我们必须给反射一个我们想修改值的指针。</p>
-<p>让我们试试，首先我们照常初始化x并且创建一个指向其的反射值，让我们称为p。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> x float64 = <span class="number">3.4</span></span><br><span class="line"><span class="tag">p</span> := reflect.<span class="function"><span class="title">ValueOf</span><span class="params">(&amp;x)</span></span> <span class="comment">// <span class="doctag">Note:</span> take the address of x.</span></span><br><span class="line">fmt.<span class="function"><span class="title">Println</span><span class="params">(<span class="string">"type of p:"</span>, p.Type()</span></span>)</span><br><span class="line">fmt.<span class="function"><span class="title">Println</span><span class="params">(<span class="string">"settability of p:"</span>, p.CanSet()</span></span>)</span><br></pre></td></tr></table></figure>
-<p>现在的输出是：</p>
-<figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">type</span> <span class="title">of</span> <span class="title">p</span>: *<span class="title">float64</span></span></span><br><span class="line">settablity <span class="keyword">of</span> p: <span class="keyword">false</span></span><br></pre></td></tr></table></figure>
-<p>反射对象不可设值，但是我们不是想设置p的值，而是*p。需要得到p指向的对象，我们调用Value上的Elem方法，其通过指针间接取值，并且将结果保存进一个反射Value，姑且称为v。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">v := <span class="tag">p</span>.<span class="function"><span class="title">Elem</span><span class="params">()</span></span></span><br><span class="line">fmt.<span class="function"><span class="title">Println</span><span class="params">(<span class="string">"settability of v:"</span>, v.CanSet()</span></span>)</span><br></pre></td></tr></table></figure>
-<p>现在v是一个可设值的的对象，正如结果显示的一样：</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">settability <span class="keyword">of</span> v: <span class="constant">true</span></span><br></pre></td></tr></table></figure>
-<p>并且，由于其代表x，我们终于能通过v.SetFloat来改变x的值：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">v.<span class="function"><span class="title">SetFloat</span><span class="params">(<span class="number">7.1</span>)</span></span></span><br><span class="line">fmt.<span class="function"><span class="title">Println</span><span class="params">(v.Interface()</span></span>)</span><br><span class="line">fmt.<span class="function"><span class="title">Println</span><span class="params">(x)</span></span></span><br></pre></td></tr></table></figure>
-<p>其输出正如期待的一样，是：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">7.1</span></span><br><span class="line"><span class="number">7.1</span></span><br></pre></td></tr></table></figure>
-<p>反射可能会很难理解，但是其做的事情跟语言做的事情一样，除了通过反射Types和Values能掩盖下面发生的事情。只需要记住，反射的Value需要某事物的地址，才能够修改其代表的值。</p>
-<h2 id="结构">结构</h2><p>在我们之前的例子中v自身不是一个指针，其只是从指针派生的东西。一个常见的用法是使用反射来修改一个结构的的字段。只要我们拥有结构的地址，我们就能修改其字段的值。</p>
-<p>这里有一个简单的例子来分析结果的值，t。我们使用结构的地址创建了一个反射对象因为我们之后想修改它。然后我们设置typeOfT并遍历字段使用直接的方法。注意我们抽出字段的名字，但是那些字段本身是通常的reflect.Value对象。</p>
-<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">type T struct &#123;</span><br><span class="line">    A <span class="keyword">int</span></span><br><span class="line">    B string</span><br><span class="line">&#125;</span><br><span class="line">t := T&#123;<span class="number">23</span>, <span class="string">"skidoo"</span>&#125;</span><br><span class="line">s := reflect.ValueOf(&amp;t).Elem()</span><br><span class="line">typeOfT := s.Type()</span><br><span class="line"><span class="keyword">for</span> i := 0; i &lt; s.NumField(); i++ &#123;</span><br><span class="line">    f := s.Field(i)</span><br><span class="line">    fmt.Printf(<span class="string">"%d: %s %s = %v\n"</span>, i,</span><br><span class="line">        typeOfT.Field(i).Name, f.Type(), f.Interface())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个程序的输出是：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>: A <span class="keyword">int</span> = <span class="number">23</span></span><br><span class="line"><span class="number">1</span>: B <span class="built_in">string</span> = skidoo</span><br></pre></td></tr></table></figure>
-<p>关于可设值性还有一个点：字段的名称是大写的，即导出的，因为只有导出的字段可以设置。</p>
-<p>因为s包含一个可以设值的的反射对象，我们可以修改结构的的字段。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s.<span class="function"><span class="title">Field</span><span class="params">(<span class="number">0</span>)</span></span>.<span class="function"><span class="title">SetInt</span><span class="params">(<span class="number">77</span>)</span></span></span><br><span class="line">s.<span class="function"><span class="title">Field</span><span class="params">(<span class="number">1</span>)</span></span>.<span class="function"><span class="title">SetString</span><span class="params">(<span class="string">"Sunset Strip"</span>)</span></span></span><br><span class="line">fmt.<span class="function"><span class="title">Println</span><span class="params">(<span class="string">"t is now"</span>, t)</span></span></span><br></pre></td></tr></table></figure>
-<p>这里是结果：</p>
-<figure class="highlight mizar"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t <span class="keyword">is</span> <span class="keyword">now</span> &#123;77 Sunset Strip&#125;</span><br></pre></td></tr></table></figure>
-<p>如果我们修改程序从t中来创建s，而不是&amp;t，调用SetInt和SetString就会失败，因为t的字段是不可设值的。</p>
-<h2 id="结尾">结尾</h2><p>让我们总结下反射的法则：</p>
+        <h2 id="日志应用">日志应用</h2><p>我们期望开发的Web应用程序能够把整个程序运行过程中出现的各种事件一一记录下来，Go语言中提供了一个简易的log包，我们使用该包可以方便的实现日志记录的功能，这些日志都是基于fmt包的打印再结合panic之类的函数来进行一般的打印、抛出错误处理。Go目前标准包只是包含了简单的功能，如果我们想把我们的应用日志保存到文件，然后又能够结合日志实现很多复杂的功能，可以使用第三方开发的一个日志系统（项目之前使用logrus）。<br><a href="https://github.com/cihub/seelog" target="_blank" rel="external">seelog</a>，通过该日志系统来实现我们应用的日志功能。</p>
+<h3 id="seelog_介绍">seelog 介绍</h3><p>seelog是用Go语言实现的一个日志系统，它提供了一些简单的函数来实现复杂的日志分配、过滤和格式化。主要有如下特性：</p>
 <ul>
-<li>反射从反射的值到反射的对象</li>
-<li>反射从反射的对象到反射的值</li>
-<li>要修改一个反射对象，其值必须是可设置的</li>
+<li>XML的动态配置，可以不用重新编译程序而动态的加载配置信息</li>
+<li>支持热更新，能够动态改变配置而不需要重启应用</li>
+<li>支持多输出流，能够同时把日志输出到多种流中、例如文件流、网络流等</li>
+<li>支持不同的日志输出</li>
+<li>命令行输出<ul>
+<li>文件输出</li>
+<li>缓存输出</li>
+<li>支持log rotate</li>
+<li>SMTP邮件</li>
 </ul>
-<p>一旦你理解了这些反射的法则，反射会变得很容易使用。尽管其仍然很难懂。反射是一个强大的工具，使用时需要小心，并且需要避免除非严格必要。</p>
-<p>关于反射我们还有很多没有讲到 - 通过通道发送和接受，安置内存，使用切片和映射，调用发发和函数 - 但是这篇文章已经够长的了，我们将会在之后的文章中讲其他的一些主题。</p>
-<p>By Rob Pike</p>
+</li>
+</ul>
+<h3 id="seelog_的好处">seelog 的好处</h3><ol>
+<li>seelog 本身接口丰富，同时有 debug, info, error, critical 及带 *f 两套接口，即 Debug, 和 Debugf, 类型于 Print 和 Printf</li>
+<li>seelog 可通过配置文件来配置一些特性，甚至还可以在运行时能过改变配置来改变输出。</li>
+<li>seelog 支持生成各种形式的日志文件，比如单纯的 log 文件，根据日期生成类似 yyy.mm.dd.log 文件，根据 size 生成类似 debug.1.log, debug.2.log 文件，而且支持压缩格式</li>
+<li>seelog 支持多个输出及分流输出，比如 Debug() 输出到 debug.log，Info()和Error() 输出到 控制台 和 msg.log 文件<br>seelog 支持自定义输出格式</li>
+</ol>
+<h3 id="seelog_的缺点">seelog 的缺点</h3><ol>
+<li>配置文件只支持xml（本人更偏好yaml）</li>
+</ol>
+<h3 id="入门教程">入门教程</h3><h4 id="配置文件_etc/seelog-xml">配置文件 etc/seelog.xml</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">seelog</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">outputs</span> <span class="attribute">formatid</span>=<span class="value">"main"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">filter</span> <span class="attribute">levels</span>=<span class="value">"info,critical,error"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">console</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">filter</span> <span class="attribute">levels</span>=<span class="value">"debug"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">file</span> <span class="attribute">path</span>=<span class="value">"log/debug.txt"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">outputs</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="tag">&lt;<span class="title">formats</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">format</span> <span class="attribute">id</span>=<span class="value">"main"</span> <span class="attribute">format</span>=<span class="value">"%Date/%Time [%LEV] %Msg%n"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">formats</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">seelog</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>&lt;outputs&gt; 的作用是把所有输出都重定向到其子节点表示的输出端， formatid=”main” 表示输出格式根据 id=”main” 那个节点显示<br>&lt;filter&gt; 用来过滤log的等级，比如，所有 info, critical, error 等级的log才会被写入该子节点，大家可以看到我这边的子节点是 ，也就是说我把所有关键信息都直接输出到控制台了。<br>&lt;file&gt; 就不解释了，一目了然，如果想知道如何实现上面提到的其他特性，请直接点对应的链接进去。</p>
+</blockquote>
+<h4 id="代码">代码</h4><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">defer <span class="built_in">log</span>.Flush<span class="params">()</span></span><br><span class="line"><span class="comment">// init log</span></span><br><span class="line"></span><br><span class="line">logger, err = <span class="built_in">log</span>.LoggerFromConfigAsFile<span class="params">(<span class="string">"etc/seelog.xml"</span>)</span></span><br><span class="line"><span class="keyword">if</span> err <span class="built_in">!</span>= nil &#123;</span><br><span class="line"><span class="built_in">log</span>.Critical<span class="params">(<span class="string">"err parsing config log file"</span>, err)</span></span><br><span class="line">return</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">log</span>.ReplaceLogger<span class="params">(logger)</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">log</span>.Info<span class="params">(<span class="string">"Hello from Seelog!"</span>)</span></span><br></pre></td></tr></table></figure>
+<h3 id="进阶：基于seelog的自定义日志处理">进阶：基于seelog的自定义日志处理</h3><h4 id="配置文件_etc/seelog-xml-1">配置文件 etc/seelog.xml</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">seelog</span> <span class="attribute">minlevel</span>=<span class="value">"warn"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">outputs</span> <span class="attribute">formatid</span>=<span class="value">"common"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">rollingfile</span> <span class="attribute">type</span>=<span class="value">"size"</span> <span class="attribute">filename</span>=<span class="value">"/data/logs/roll.log"</span> <span class="attribute">maxsize</span>=<span class="value">"100000"</span> <span class="attribute">maxrolls</span>=<span class="value">"5"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">filter</span> <span class="attribute">levels</span>=<span class="value">"critical"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">file</span> <span class="attribute">path</span>=<span class="value">"/data/logs/critical.log"</span> <span class="attribute">formatid</span>=<span class="value">"critical"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">smtp</span> <span class="attribute">formatid</span>=<span class="value">"criticalemail"</span> <span class="attribute">senderaddress</span>=<span class="value">"astaxie@gmail.com"</span> <span class="attribute">sendername</span>=<span class="value">"ShortUrl API"</span> <span class="attribute">hostname</span>=<span class="value">"smtp.gmail.com"</span> <span class="attribute">hostport</span>=<span class="value">"587"</span> <span class="attribute">username</span>=<span class="value">"mailusername"</span> <span class="attribute">password</span>=<span class="value">"mailpassword"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">recipient</span> <span class="attribute">address</span>=<span class="value">"xiemengjun@gmail.com"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="title">smtp</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">outputs</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">formats</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">format</span> <span class="attribute">id</span>=<span class="value">"common"</span> <span class="attribute">format</span>=<span class="value">"%Date/%Time [%LEV] %Msg%n"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">format</span> <span class="attribute">id</span>=<span class="value">"critical"</span> <span class="attribute">format</span>=<span class="value">"%File %FullPath %Func %Msg%n"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">format</span> <span class="attribute">id</span>=<span class="value">"criticalemail"</span> <span class="attribute">format</span>=<span class="value">"Critical error on our server!\n    %Time %Date %RelFile %Func %Msg \nSent by Seelog"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">formats</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">seelog</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="代码-1">代码</h4><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">defer <span class="built_in">log</span>.Flush<span class="params">()</span></span><br><span class="line"><span class="comment">// init log</span></span><br><span class="line"></span><br><span class="line">logger, err = <span class="built_in">log</span>.LoggerFromConfigAsFile<span class="params">(<span class="string">"etc/seelog.xml"</span>)</span></span><br><span class="line"><span class="keyword">if</span> err <span class="built_in">!</span>= nil &#123;</span><br><span class="line"><span class="built_in">log</span>.Critical<span class="params">(<span class="string">"err parsing config log file"</span>, err)</span></span><br><span class="line">return</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">log</span>.ReplaceLogger<span class="params">(logger)</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">log</span>.Info<span class="params">(<span class="string">"Hello from Seelog!"</span>)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">package logs</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"errors"</span></span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">    seelog <span class="string">"github.com/cihub/seelog"</span></span><br><span class="line">    <span class="string">"io"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> <span class="type">Logger</span> seelog.<span class="type">LoggerInterface</span></span><br><span class="line"></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">loadAppConfig</span><span class="params">()</span></span> &#123;</span><br><span class="line">    logger, err = log.<span class="type">LoggerFromConfigAsFile</span>(<span class="string">"etc/seelog.xml"</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.<span class="type">Println</span>(err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">UseLogger</span>(logger)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="type">DisableLog</span>()</span><br><span class="line">    loadAppConfig()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// DisableLog disables all library log output</span></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">DisableLog</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="type">Logger</span> = seelog.<span class="type">Disabled</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// UseLogger uses a specified seelog.LoggerInterface to output library log.</span></span><br><span class="line"><span class="comment">// Use this func if you are using Seelog logging system in your app.</span></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">UseLogger</span><span class="params">(newLogger seelog.LoggerInterface)</span></span> &#123;</span><br><span class="line">    <span class="type">Logger</span> = newLogger</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面主要实现了三个函数，</p>
+<ul>
+<li><p>DisableLog<br>初始化全局变量Logger为seelog的禁用状态，主要为了防止Logger被多次初始化</p>
+</li>
+<li><p>loadAppConfig<br>根据配置文件初始化seelog的配置信息，这里我们把配置文件通过字符串读取设置好了，当然也可以通过读取XML文件。里面的配置说明如下：</p>
+<ul>
+<li><p>seelog<br>minlevel参数可选，如果被配置,高于或等于此级别的日志会被记录，同理maxlevel。</p>
+</li>
+<li><p>outputs<br>输出信息的目的地，这里分成了两份数据，一份记录到log rotate文件里面。另一份设置了filter，如果这个错误级别是critical，那么将发送报警邮件。</p>
+</li>
+<li><p>formats<br>定义了各种日志的格式</p>
+</li>
+</ul>
+</li>
+<li><p>UseLogger<br>设置当前的日志器为相应的日志处理</p>
+</li>
+</ul>
+<h4 id="上面我们定义了一个自定义的日志处理包，下面就是使用示例：">上面我们定义了一个自定义的日志处理包，下面就是使用示例：</h4><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"net/http"</span></span><br><span class="line">    <span class="string">"project/logs"</span></span><br><span class="line">    <span class="string">"project/configs"</span></span><br><span class="line">    <span class="string">"project/routes"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    addr, _ := configs.MainConfig.String(<span class="string">"server"</span>, <span class="string">"addr"</span>)</span><br><span class="line">    logs.Logger.Info(<span class="string">"Start server at:%v"</span>, addr)</span><br><span class="line">    err := http.ListenAndServe(addr, routes.NewMux())</span><br><span class="line">    logs.Logger.Critical(<span class="string">"Server err:%v"</span>, err)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="发生错误发送邮件">发生错误发送邮件</h3><p>上面的例子解释了如何设置发送邮件，我们通过如下的smtp配置用来发送邮件：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">smtp</span> <span class="attribute">formatid</span>=<span class="value">"criticalemail"</span> <span class="attribute">senderaddress</span>=<span class="value">"astaxie@gmail.com"</span> <span class="attribute">sendername</span>=<span class="value">"ShortUrl API"</span> <span class="attribute">hostname</span>=<span class="value">"smtp.gmail.com"</span> <span class="attribute">hostport</span>=<span class="value">"587"</span> <span class="attribute">username</span>=<span class="value">"mailusername"</span> <span class="attribute">password</span>=<span class="value">"mailpassword"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">recipient</span> <span class="attribute">address</span>=<span class="value">"xiemengjun@gmail.com"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">smtp</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>邮件的格式通过criticalemail配置，然后通过其他的配置发送邮件服务器的配置，通过recipient配置接收邮件的用户，如果有多个用户可以再添加一行。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logs<span class="class">.Logger</span><span class="class">.Critical</span>(<span class="string">"test Critical message"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>现在，只要我们的应用在线上记录一个Critical的信息，你的邮箱就会收到一个Email，这样一旦线上的系统出现问题，你就能立马通过邮件获知，就能及时的进行处理。</p>
+<h3 id="使用应用日志">使用应用日志</h3><p>对于应用日志，每个人的应用场景可能会各不相同，有些人利用应用日志来做数据分析，有些人利用应用日志来做性能分析，有些人来做用户行为分析，还有些就是纯粹的记录，以方便应用出现问题的时候辅助查找问题。</p>
+<p>举一个例子，我们需要跟踪用户尝试登陆系统的操作。这里会把成功与不成功的尝试都记录下来。记录成功的使用”Info”日志级别，而不成功的使用”warn”级别。如果想查找所有不成功的登陆，我们可以利用linux的grep之类的命令工具，如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># cat /data/logs/roll.log | grep <span class="string">"failed login"</span></span></span><br><span class="line"><span class="number">2012</span>-<span class="number">12</span>-<span class="number">11</span> <span class="number">11</span>:<span class="number">12</span>:<span class="number">00</span> WARN : failed login attempt from <span class="number">11.22</span><span class="number">.33</span><span class="number">.44</span> username password</span><br></pre></td></tr></table></figure>
+<p>通过这种方式我们就可以很方便的查找相应的信息，这样有利于我们针对应用日志做一些统计和分析。另外我们还需要考虑日志的大小，对于一个高流量的Web应用来说，日志的增长是相当可怕的，所以我们在seelog的配置文件里面设置了logrotate，这样就能保证日志文件不会因为不断变大而导致我们的磁盘空间不够引起问题。</p>
+<h3 id="log_rotate">log rotate</h3><p>日志文件包含了关于系统中发生的事件的有用信息，在排障过程中或者系统性能分析时经常被用到。对于忙碌的服务器，日志文件大小会增长极快，服务器会很快消耗磁盘空间，这成了个问题。除此之外，处理一个单个的庞大日志文件也常常是件十分棘手的事。</p>
+<h5 id="Rolling_file_writer：_seelog的log_ratate">Rolling file writer： seelog的log ratate</h5><p>可以自动对日志进行截断（或轮循）、压缩以及删除旧的日志文件。例如，你可以设置etc/seelog.xml，让logs/roll.log日志文件已日期和大小轮循，并删除超过超过设置数量的最早的一个日志文件。配置完后，seelog的运作完全自动化，不必进行任何进一步的人为干预。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">seelog</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">outputs</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">rollingfile</span> <span class="attribute">type</span>=<span class="value">"size"</span> <span class="attribute">filename</span>=<span class="value">"logs/roll.log"</span> <span class="attribute">maxsize</span>=<span class="value">"1000"</span> <span class="attribute">maxrolls</span>=<span class="value">"5"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">outputs</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">seelog</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">seelog</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">outputs</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">rollingfile</span> <span class="attribute">type</span>=<span class="value">"date"</span> <span class="attribute">filename</span>=<span class="value">"logs/roll.log"</span> <span class="attribute">datepattern</span>=<span class="value">"02.01.2006"</span> <span class="attribute">maxrolls</span>=<span class="value">"7"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">outputs</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">seelog</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>namemode -命名卷文件的模式。<br>可能的参数：”postfix“-“后缀”，“prefix”-“前缀”。如果设置为“后缀”，卷文件看起来像“file.log.1”，“file.log.02.01.2006”。如果设置为“前缀”：“1.file.log’，’02 .01.2006.file.log”。默认值是“postfix”。</p>
+</li>
+<li><p>type -回转类型：“date”或“size”。</p>
+</li>
+<li><p>maxrolls -重命名的文件的最大数量。<br>如果超过此限制，较旧的卷被删除。参数应&gt;=0。注：之前版本2.3这个属性不适用于“date”的滚动。</p>
+</li>
+<li><p>archivetype - 用于指定旧卷的存储，而不是清除存档类型的属性。<br>可能的值：“none”，“ZIP”。如果设置为“none”，不执行归档（只删除旧卷）。</p>
+</li>
+<li><p>archivepath - 不设置的默认值为“none”。指定在存储就卷归档文件的路径。</p>
+</li>
+</ul>
+<h4 id="设置type为“size”所使用的参数：">设置type为“size”所使用的参数：</h4><ul>
+<li>maxsize -这是大小限制（以字节为单位），超过这会导致滚动。</li>
+</ul>
+<h4 id="设置type为“date”所使用的参数：">设置type为“date”所使用的参数：</h4><ul>
+<li>datepattern -通过’time.Local().Format“的方法赋值，来形成文件名的模式。<br>“date”（实际上，这意味着日期和时间）。<br>例如“02.01.2006”,使用此格式表示按每天截断。或者，“02.01.2006.15”，使用此格式表示按每小时截断。</li>
+</ul>
+<h3 id="小结">小结</h3><p>通过上面对seelog系统及如何基于它进行自定义日志系统的学习，现在我们可以很轻松的随需构建一个合适的功能强大的日志处理系统了。日志处理系统为数据分析提供了可靠的数据源，比如通过对日志的分析，我们可以进一步优化系统，或者应用出现问题时方便查找定位问题，另外seelog也提供了日志分级功能，通过对minlevel的配置，我们可以很方便的设置测试或发布版本的输出消息级别。</p>
 
       
     </div>
@@ -585,11 +316,11 @@
 
 
   
-    <article id="post-开启我的博客生涯" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-使用Github-Pages和Hexo搭建静态博客" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/08/19/开启我的博客生涯/" class="article-date">
-  	<time datetime="2015-08-19T11:55:18.000Z" itemprop="datePublished">2015-08-19</time>
+      <a href="/2015/08/27/使用Github-Pages和Hexo搭建静态博客/" class="article-date">
+  	<time datetime="2015-08-27T02:48:32.000Z" itemprop="datePublished">2015-08-27</time>
 </a>
     </div>
   
@@ -602,7 +333,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/19/开启我的博客生涯/">开启我的博客生涯</a>
+      <a class="article-title" href="/2015/08/27/使用Github-Pages和Hexo搭建静态博客/">使用Github Pages和Hexo搭建静态博客</a>
     </h1>
   
 
@@ -611,8 +342,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>不知道说些什么，今天是公元2015年8月19日，感觉有些迷惘。。。</p>
-
+        <h4 id="本博客是使用Github_Pages和Hexo搭建的静态博客，具体的搭建过程可参考不如的hexo你的博客，真的写的很详细，我就不再重复造轮子了。">本博客是使用Github Pages和Hexo搭建的静态博客，具体的搭建过程可参考不如的<a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客</a>，真的写的很详细，我就不再重复造轮子了。</h4>
       
     </div>
     
@@ -620,7 +350,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/胡扯/">胡扯</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
 	</div>
 
       
@@ -640,6 +370,516 @@
 
 
   
+    <article id="post-Go-IDE-搭建（Sublime-Text-3）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/26/Go-IDE-搭建（Sublime-Text-3）/" class="article-date">
+  	<time datetime="2015-08-26T05:40:42.000Z" itemprop="datePublished">2015-08-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/26/Go-IDE-搭建（Sublime-Text-3）/">Go IDE 搭建（Sublime Text 3）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="我的大环境">我的大环境</h3><h4 id="1-Fedora_22">1.Fedora 22</h4><h4 id="2-GO_1-5">2.GO 1.5</h4><h3 id="1-_安装Sublime_Text_3">1. 安装Sublime Text 3</h3><h4 id="1-_Sublime_Text_3（以下简称ST）的下载与安装,具体操作，请看我的博文。">1. Sublime Text 3（以下简称ST）的下载与安装,具体操作，请看我的博文。</h4><p><a href="http://golang.help/2015/08/24/Fedora%E4%B8%8B%E5%AE%89%E8%A3%9DSublime-Text-3/" target="_blank" rel="external">Fedora下安裝Sublime Text 3</a></p>
+<h3 id="2-_安装Package_Control">2. 安装Package Control</h3><h4 id="1-_接下来还要注意就是ST3下PackageControl的安装，这个跟ST2上就不同了，因为更新了python的借口，用了python3，建议参考官方的方法：">1. 接下来还要注意就是ST3下PackageControl的安装，这个跟ST2上就不同了，因为更新了python的借口，用了python3，建议参考官方的方法：</h4><p><a href="https://sublime.wbond.net/installation" target="_blank" rel="external">https://sublime.wbond.net/installation</a></p>
+<h4 id="2-_按住命令行_Ctrl+`_调出命令行输入以下代码:">2. 按住命令行 Ctrl+` 调出命令行输入以下代码:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request,os,hashlib; h = <span class="string">'eb2297e1a458f27d836c04bb0cbaf282'</span> + <span class="string">'d0e7a3098092775ccb37ca9d6b2e4b7d'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); <span class="built_in">print</span>(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> open(os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by)</span><br></pre></td></tr></table></figure>
+<h4 id="3-_安装好以后重启ST，就能使用Package_Control了">3. 安装好以后重启ST，就能使用Package Control了</h4><h3 id="3-_安装GoSublime">3. 安装GoSublime</h3><h4 id="1-_按快捷键_Ctrl+Shift+p_键入_pci，选择第一个Install_Package，键入GoSublime，回车安装，安装好后重启，则可以写你自己的Go代码了。">1. 按快捷键 Ctrl+Shift+p 键入 pci，选择第一个Install Package，键入GoSublime，回车安装，安装好后重启，则可以写你自己的Go代码了。</h4><h4 id="2-_配置GoSublime，以下是我的配置。">2. 配置GoSublime，以下是我的配置。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"env"</span>: &#123;</span><br><span class="line">		<span class="string">"GOPATH"</span>: <span class="string">"~/gopath"</span>,</span><br><span class="line">		<span class="string">"GOROOT"</span>: <span class="string">"/usr/local/go"</span>,</span><br><span class="line">		&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="4-_推荐几个ST3的Go插件:">4. 推荐几个ST3的Go插件:</h3><blockquote>
+<p>GoGDB<br>GoImports<br>GoOracle<br>Godef</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime/">Sublime</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Go-IDE-搭建（Atom）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/26/Go-IDE-搭建（Atom）/" class="article-date">
+  	<time datetime="2015-08-26T01:23:58.000Z" itemprop="datePublished">2015-08-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/26/Go-IDE-搭建（Atom）/">Go IDE 搭建（Atom）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>注：原文转载自 <a href="http://www.philo.top/2015/02/06/golang-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%BB%BA%E8%AE%AE/" target="_blank" rel="external">Philo</a>，本人在此之上修改。</p>
+<h3 id="我的大环境">我的大环境</h3><h4 id="1-Fedora_22">1.Fedora 22</h4><h4 id="2-GO_1-5">2.GO 1.5</h4><h3 id="go_环境安装">go 环境安装</h3><h4 id="1-_环境配置：（mercurial,golint,gooracle,goimport,gocode,godef）">1. 环境配置：（mercurial,golint,gooracle,goimport,gocode,godef）</h4><h5 id="1-_安装mercurial">1. 安装mercurial</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf install mercurial</span><br></pre></td></tr></table></figure>
+<h6 id="这个东西是用来做版本管理的，也是下载代码的工具类似git，貌似google的项目用的挺多的。">这个东西是用来做版本管理的，也是下载代码的工具类似git，貌似google的项目用的挺多的。</h6><h5 id="2-_安装golint">2. 安装golint</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/golang/lint</span><br><span class="line">go install github.com/golang/lint/golint</span><br></pre></td></tr></table></figure>
+<h5 id="3-_安装gooracle">3. 安装gooracle</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get -u golang.org/x/tools/cmd/oracle</span><br></pre></td></tr></table></figure>
+<h5 id="4-_安装goimport">4. 安装goimport</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get -u golang.org/x/tools/cmd/goimports</span><br></pre></td></tr></table></figure>
+<h5 id="5-_安装gocode">5. 安装gocode</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/nsf/gocode</span><br></pre></td></tr></table></figure>
+<h5 id="6-_安装_godef">6. 安装 godef</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/rogpeppe/godef</span><br></pre></td></tr></table></figure>
+<h4 id="2-_安装环境的时候经常会出现下载不下来的问题，大概是我网络不好吧。连接google经常出现问题。">2. 安装环境的时候经常会出现下载不下来的问题，大概是我网络不好吧。连接google经常出现问题。</h4><blockquote>
+<p>解决方案：<br>golang中国的下载频道中有一个第三方包的下载工具，只要输入地址之后人家会给你提供下载tar包的。<br>放到gopath中就ok了。<br>此步骤只能替代go get的步骤，最后还是需要go install</p>
+</blockquote>
+<h4 id="3-_go_install_之后会在_$GOPATH/bin/_中出现各种工具文件">3. go install 之后会在  $GOPATH/bin/ 中出现各种工具文件</h4><ol>
+<li><p>gocode 提供代码补全</p>
+</li>
+<li><p>godef 代码跳转</p>
+</li>
+<li><p>gofmt 自动代码整理</p>
+</li>
+<li><p>golint 代码语法检查</p>
+</li>
+<li><p>goimports 自动整理imports</p>
+</li>
+</ol>
+<blockquote>
+<p>oracle 代码callgraph查询（plugin中还在todolist中，但是不配置一直报错。实在烦。）</p>
+</blockquote>
+<h4 id="4-_最后的配置结果(安装完之后_Package-&gt;Go_Plus-&gt;Display_Go_Information)">4. 最后的配置结果(安装完之后 Package-&gt;Go Plus-&gt;Display Go Information)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Cover Tool: /usr/<span class="built_in">local</span>/go/pkg/tool/darwin_amd64/cover</span><br><span class="line">Vet Tool: /usr/<span class="built_in">local</span>/go/pkg/tool/darwin_amd64/vet</span><br><span class="line">Format Tool: /Users/Li-jianying/git/bin/goimports</span><br><span class="line">Lint Tool: /usr/<span class="built_in">local</span>/go/bin/golint</span><br><span class="line">Gocode Tool: /Users/Li-jianying/git/bin/gocode</span><br><span class="line">Gocode Status: Enabled</span><br><span class="line">Oracle Tool: /Users/Li-jianying/git/bin/oracle</span><br><span class="line">Git: /usr/bin/git</span><br><span class="line">Mercurial: /usr/<span class="built_in">local</span>/Cellar/mercurial/<span class="number">3.2</span>.<span class="number">1</span>/bin/hg</span><br><span class="line">PATH: /usr/<span class="built_in">local</span>/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/<span class="built_in">local</span>/go/bin</span><br></pre></td></tr></table></figure>
+<p>没有红色的行就没有问题了。</p>
+<h3 id="项目管理，自动文件跳转">项目管理，自动文件跳转</h3><h4 id="1-_插件：project-manager">1. 插件：project-manager</h4><blockquote>
+<p>这个插件是非常hot的，在atom.io的首页上排名还是非常靠前的。</p>
+</blockquote>
+<h4 id="2-_使用细节：">2. 使用细节：</h4><h5 id="1-_配合tree_view_（_ctrl_-_\_）_打开关闭project_file">1. 配合tree view （ ctrl - \ ） 打开关闭project file</h5><h5 id="2-_搜索项目文件_（_ctrl_-_t_）">2. 搜索项目文件 （ ctrl - t ）</h5><blockquote>
+<p>输入的时候按照顺序输入关键字<br>比如说 user模块的controll中的go源代码<br>搜索的时候可以使用多个快捷键 =》 user controll go<br>就可以准确的找到源代码了</p>
+</blockquote>
+<h5 id="3-_打开项目列表_（_alt_-_shift_-_p_）">3. 打开项目列表 （ alt - shift - p ）</h5><blockquote>
+<p>然后就会显示出来一个项目列表回车就可以打开项目。</p>
+</blockquote>
+<h4 id="3-_总结：">3. 总结：</h4><blockquote>
+<p>感觉这个插件的treeview用途的确不是很大，因为正常项目的项目文件会很多。<br>不过是快速打开项目（文件夹）是非常方便的，配合快速打开文件还是相当爽的。</p>
+</blockquote>
+<h3 id="自动语法检，自动补全">自动语法检，自动补全</h3><h4 id="1-_插件go-plus,autocomplete-plus(dependance),gocode">1. 插件go-plus,autocomplete-plus(dependance),gocode</h4><h4 id="2-_使用细节：在保存的时候">2. 使用细节：在保存的时候</h4><h5 id="1-_会自动补上imports">1. 会自动补上imports</h5><h5 id="2-会自动整理代码">2.会自动整理代码</h5><blockquote>
+<p>比如说 a:=5 会变成 a := 5<br>两个空行自动变成一个空格</p>
+</blockquote>
+<h5 id="3-_lint自动检查语法错误（go_build_的错误都会显示出来）">3. lint自动检查语法错误（go build 的错误都会显示出来）</h5><h5 id="4-_vet会自动检查语法拼写建议">4. vet会自动检查语法拼写建议</h5><blockquote>
+<p>函数，结构体 会提示补上注释。<br>比如说会提示你函数前面需要加入godoc类型的注释： // functionname<br>注释的第一行需要使用双斜杠注释+空格+函数名+空格+简短的函数功能说明。</p>
+</blockquote>
+<h4 id="3-_使用细节：_在编辑的时候">3. 使用细节： 在编辑的时候</h4><h5 id="1-_go-plus会配合autocomplete-plus会自动补全包名字（tab补全，回车不行，这个真心舒服）">1. go-plus会配合autocomplete-plus会自动补全包名字（tab补全，回车不行，这个真心舒服）</h5><h5 id="2-_包名-之后输入方法名开头几个字母会给出补全建议。">2. 包名.之后输入方法名开头几个字母会给出补全建议。</h5><h4 id="4-_gocode_自动补全插件">4. gocode 自动补全插件</h4><h5 id="1-_这个插件继承自autocomplete,因为年久失修。api用的是老版本，所以一直都会出现api警告。（我是实用主义，视而不见）">1. 这个插件继承自autocomplete,因为年久失修。api用的是老版本，所以一直都会出现api警告。（我是实用主义，视而不见）</h5><h5 id="2-_gocode如果找不到就进入代码找到文件autocomplete-view-coffee_中105行写成绝对路径就肯定没有问题了。">2. gocode如果找不到就进入代码找到文件autocomplete-view.coffee 中105行写成绝对路径就肯定没有问题了。</h5><h5 id="3-_绑定快捷键，因为这个插件没有绑定快捷键的文件（keymap）所以需要在keymap-cson下自己手动绑定配置如下：">3. 绑定快捷键，因为这个插件没有绑定快捷键的文件（keymap）所以需要在keymap.cson下自己手动绑定配置如下：</h5><blockquote>
+<p>‘.active.pane’:<br>‘ctrl-;’: ‘gocode:toggle’</p>
+</blockquote>
+<h3 id="查找定义">查找定义</h3><h4 id="1-_插件_godef">1. 插件 godef</h4><h4 id="2-_使用细节:">2. 使用细节:</h4><h5 id="光标在目标代码上的时候，使用快捷键ctrl-k跳转到目标代码的定义代码上。">光标在目标代码上的时候，使用快捷键ctrl-k跳转到目标代码的定义代码上。</h5><h3 id="灵活的运行">灵活的运行</h3><h4 id="1-_安装插件atom-runner">1. 安装插件atom-runner</h4><h4 id="2-_修改源代码中的go_run运行为go:_‘sh_[绝对路径到你的全局run脚上]_‘+atom-project-getRepo()-project-path">2. 修改源代码中的go run运行为go: ‘sh [绝对路径到你的全局run脚上] ‘+atom.project.getRepo().project.path</h4><h4 id="3-_脚本的_$1_会是你项目运行的路径。然后你的所有项目都可以添加一个run-sh_来指定一个构建运行的方案。">3. 脚本的 $1 会是你项目运行的路径。然后你的所有项目都可以添加一个run.sh 来指定一个构建运行的方案。</h4><h4 id="4-_做完之后不管当前在查看什么文件都可以运行整个项目。">4. 做完之后不管当前在查看什么文件都可以运行整个项目。</h4><h4 id="5-_其他语言也可以这样做。毕竟单个文件的项目不是很常见（开发的时候）">5. 其他语言也可以这样做。毕竟单个文件的项目不是很常见（开发的时候）</h4><h3 id="总结">总结</h3><h4 id="1-_我这里只是总结了我用的所有的golang相关的atom插件。">1. 我这里只是总结了我用的所有的golang相关的atom插件。</h4><h4 id="2-_要相信golang使用编辑器就够用的事实了。因为_go_tool_实在是太好用了。">2. 要相信golang使用编辑器就够用的事实了。因为 go tool 实在是太好用了。</h4>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Atom/">Atom</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Atom中文显示乱码解决方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/24/Atom中文显示乱码解决方法/" class="article-date">
+  	<time datetime="2015-08-24T07:17:43.000Z" itemprop="datePublished">2015-08-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/24/Atom中文显示乱码解决方法/">Atom中文显示乱码解决方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-先查看操作系统是否安装了这些字体，打开终端输入：_fc-list_:lang=zh_命令查看安装的字体">1.先查看操作系统是否安装了这些字体，打开终端输入： fc-list :lang=zh 命令查看安装的字体</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">fc</span>-list :lang=zh</span><br></pre></td></tr></table></figure>
+<h3 id="2-下载文泉驿字体">2.下载文泉驿字体</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf install wqy-*</span><br></pre></td></tr></table></figure>
+<h3 id="3-设置Atom字体">3.设置Atom字体</h3><h4 id="从菜单中打开_Edit-&gt;Open_your_config选项，或者Packages-&gt;Setting_views-&gt;Open，">从菜单中打开 Edit-&gt;Open your config选项，或者Packages-&gt;Setting views-&gt;Open，</h4><h4 id="找到config-cson文件中的editor子项，或者setting_views中的font-family选项，把字体设置成_文泉驿_系列字体才可以显示中文。">找到config.cson文件中的editor子项，或者setting views中的font-family选项，把字体设置成 文泉驿 系列字体才可以显示中文。</h4><h4 id="比如：">比如：</h4><h4 id="WenQuanYi_Micro_Hei_Mono,文泉驛等寬微米黑,文泉驿等宽微米黑">WenQuanYi Micro Hei Mono,文泉驛等寬微米黑,文泉驿等宽微米黑</h4><h4 id="WenQuanYi_Zen_Hei_Sharp,文泉驛點陣正黑,文泉驿点阵正黑">WenQuanYi Zen Hei Sharp,文泉驛點陣正黑,文泉驿点阵正黑</h4><h4 id="WenQuanYi_Micro_Hei,文泉驛微米黑,文泉驿微米黑">WenQuanYi Micro Hei,文泉驛微米黑,文泉驿微米黑</h4><h4 id="WenQuanYi_Zen_Hei_Mono,文泉驛等寬正黑,文泉驿等宽正黑">WenQuanYi Zen Hei Mono,文泉驛等寬正黑,文泉驿等宽正黑</h4><h4 id="WenQuanYi_Zen_Hei,文泉驛正黑,文泉驿正黑">WenQuanYi Zen Hei,文泉驛正黑,文泉驿正黑</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">例如，我的配置如下：</span><br><span class="line"> <span class="tag">editor</span>:</span><br><span class="line">    <span class="tag">invisibles</span>:</span><br><span class="line">      &#123;&#125;</span><br><span class="line">    <span class="attribute">tabLength</span>: <span class="number">4</span></span><br><span class="line">    <span class="attribute">fontFamily</span>: <span class="string">"WenQuanYi Micro Hei Mono,文泉驛等寬微米黑,文泉驿等宽微米黑"</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Atom/">Atom</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Fedora下安裝Sublime-Text-3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/24/Fedora下安裝Sublime-Text-3/" class="article-date">
+  	<time datetime="2015-08-24T06:32:33.000Z" itemprop="datePublished">2015-08-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/24/Fedora下安裝Sublime-Text-3/">Fedora下安裝Sublime Text 3</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="编辑安装脚本：install-sublime-text-sh">编辑安装脚本：install-sublime-text.sh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/sh</span></span><br><span class="line">SHORTCUT=<span class="string">"[Desktop Entry]</span><br><span class="line">Name=Sublime Text 3</span><br><span class="line">Comment=Edit text files</span><br><span class="line">Exec=/usr/local/sublime-text-3/sublime_text</span><br><span class="line">Icon=/usr/local/sublime-text-3/Icon/128x128/sublime_text.png</span><br><span class="line">Terminal=false</span><br><span class="line">Type=Application</span><br><span class="line">Encoding=UTF-8</span><br><span class="line">Categories=Utility;TextEditor;"</span></span><br><span class="line">SCRIPT=<span class="string">"#!/bin/sh</span><br><span class="line">if [ \$&#123;1&#125; == \"--help\" ]; then</span><br><span class="line">    /usr/local/sublime-text-3/sublime_text --help</span><br><span class="line">else</span><br><span class="line">    /usr/local/sublime-text-3/sublime_text \$@ &gt; /dev/null 2&gt;&amp;1 &amp;</span><br><span class="line">fi"</span></span><br><span class="line"></span><br><span class="line">curl -L <span class="string">"http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3083_x64.tar.bz2"</span> -o <span class="string">"/usr/src/Sublime Text 3.tar.bz2"</span></span><br><span class="line"><span class="built_in">cd</span> /usr/src</span><br><span class="line">tar -xvjf <span class="string">"Sublime Text 3.tar.bz2"</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"sublime_text_3"</span></span><br><span class="line">mkdir -pv <span class="string">"/usr/local/sublime-text-3"</span></span><br><span class="line">mv -fv * <span class="string">"/usr/local/sublime-text-3/"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;SCRIPT&#125;</span>"</span> &gt; <span class="string">"/usr/local/bin/subl"</span></span><br><span class="line">chmod +x <span class="string">"/usr/local/bin/subl"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;SHORTCUT&#125;</span>"</span> &gt; <span class="string">"/usr/share/applications/sublime-text-3.desktop"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Finish!"</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime/">Sublime</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Linux下Go-1-5-安装配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/23/Linux下Go-1-5-安装配置/" class="article-date">
+  	<time datetime="2015-08-22T17:12:54.000Z" itemprop="datePublished">2015-08-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/23/Linux下Go-1-5-安装配置/">Linux下Go 1.5 安装</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-获取golang_1-5_安装包">1.获取golang 1.5 安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://storage.googleapis.com/golang/go1.<span class="number">5</span>.linux-amd64.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="2-解压到/usr/local">2.解压到/usr/local</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -C /usr/<span class="built_in">local</span> -xzf go1.<span class="number">5</span>.linux-amd64.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="3-配置环境变量">3.配置环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/go/bin</span><br><span class="line"><span class="built_in">export</span> GOPATH=<span class="variable">$HOME</span>/gopath</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$GOPATH</span>/bin</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Go/">Go</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-virtualbox启动错误解决" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/23/virtualbox启动错误解决/" class="article-date">
+  	<time datetime="2015-08-22T16:28:40.000Z" itemprop="datePublished">2015-08-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/23/virtualbox启动错误解决/">virtualbox启动错误解决</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="运行_/etc/init-d/vboxdrv_setup_报错">运行 /etc/init.d/vboxdrv setup 报错</h3><h4 id="错误日志_“unable_to_find_the_sources_of_your_current_Linux_kernel”">错误日志 “unable to find the sources of your current Linux kernel”</h4><h4 id="错误的原因是没有内核原文件">错误的原因是没有内核原文件</h4><h4 id="1-从软件仓库下载gcc,然后安装，这个是编译器">1.从软件仓库下载gcc,然后安装，这个是编译器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc</span><br></pre></td></tr></table></figure>
+<h4 id="2-安装make，这个是自动编译源码的工具，写好makefile就可以方便编译">2.安装make，这个是自动编译源码的工具，写好makefile就可以方便编译</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install make</span><br></pre></td></tr></table></figure>
+<h4 id="3-安装内核，编译内核，驱动必要的">3.安装内核，编译内核，驱动必要的</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install kernel-headers</span><br></pre></td></tr></table></figure>
+<h4 id="4-同上">4.同上</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install kernel-devel</span><br></pre></td></tr></table></figure>
+<h4 id="重新启动电脑，启动时系统会自动从新的内核文件选项启动。">重新启动电脑，启动时系统会自动从新的内核文件选项启动。</h4><h4 id="不要改回到原来的选项默认就好（回到原来的选项还会出现上面的错误）。">不要改回到原来的选项默认就好（回到原来的选项还会出现上面的错误）。</h4>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Virtualbox/">Virtualbox</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-npm国内镜像" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/23/npm国内镜像/" class="article-date">
+  	<time datetime="2015-08-22T16:09:34.000Z" itemprop="datePublished">2015-08-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/23/npm国内镜像/">npm国内镜像</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="解决_NMP_ERR">解决 NMP ERR</h1><h2 id="镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:">镜像使用方法（三种办法任意一种都能解决问题，建议使用第三种，将配置写死，下次用的时候配置还在）:</h2><h3 id="1-通过config命令">1.通过config命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org </span><br><span class="line">npm info underscore （如果上面配置正确这个命令会有字符串response</span><br></pre></td></tr></table></figure>
+<h3 id="2-命令行指定">2.命令行指定</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm --registry https://registry.npm.taobao.org info underscore</span><br></pre></td></tr></table></figure>
+<h3 id="3-编辑_~/-npmrc_加入下面内容">3.编辑 ~/.npmrc 加入下面内容</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">registry = https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NodeJS/">NodeJS</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Fedora常用软件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/22/Fedora常用软件/" class="article-date">
+  	<time datetime="2015-08-22T14:19:52.000Z" itemprop="datePublished">2015-08-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/22/Fedora常用软件/">Fedora常用软件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="鼠标右键打开终端">鼠标右键打开终端</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf -y install nautilus-open-terminal</span><br></pre></td></tr></table></figure>
+<h3 id="lynx是纯文本模式的网页浏览器，不支持图形、音视频等多媒体信息。">lynx是纯文本模式的网页浏览器，不支持图形、音视频等多媒体信息。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf -y install lynx</span><br></pre></td></tr></table></figure>
+<h3 id="桌面应用">桌面应用</h3><h4 id="1-安装和配置GNOME-tweak-tool：sudo_yum_install_gnome-tweak-tool">1.安装和配置GNOME-tweak-tool：sudo yum install gnome-tweak-tool</h4><h4 id="2-打开gnome-tweak-tool，让桌面显示文件，激活右键等功能。">2.打开gnome-tweak-tool，让桌面显示文件，激活右键等功能。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf -y install gnome-tweak-tool</span><br></pre></td></tr></table></figure>
+<h3 id="安装剪贴板工具">安装剪贴板工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf -y install parcellite</span><br></pre></td></tr></table></figure>
+<h3 id="YUM_Extender或“yumex”是YUM包管理系统的图形化工具，便于我们对软件包的管理：">YUM Extender或“yumex”是YUM包管理系统的图形化工具，便于我们对软件包的管理：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf -y install yumex-dnf</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fedora/">Fedora</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">

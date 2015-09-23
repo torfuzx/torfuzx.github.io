@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Go IDE 搭建（Atom） | Leslie&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="注：原文转载自 Philo，本人在此之上修改。
+我的大环境1.Fedora 222.GO 1.5go 环境安装1. 环境配置：（mercurial,golint,gooracle,goimport,gocode,godef）1. 安装mercurial1dnf install mercurial
+这个东西是用来做版本管理的，也是下载代码的工具类似git，貌似google的项目用的挺多的。2. 安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go IDE 搭建（Atom）">
+<meta property="og:url" content="http://yoursite.com/2015/08/26/Go-IDE-搭建（Atom）/index.html">
+<meta property="og:site_name" content="Leslie's Blog">
+<meta property="og:description" content="注：原文转载自 Philo，本人在此之上修改。
+我的大环境1.Fedora 222.GO 1.5go 环境安装1. 环境配置：（mercurial,golint,gooracle,goimport,gocode,godef）1. 安装mercurial1dnf install mercurial
+这个东西是用来做版本管理的，也是下载代码的工具类似git，貌似google的项目用的挺多的。2. 安装">
+<meta property="og:updated_time" content="2015-09-23T01:56:05.909Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Go IDE 搭建（Atom）">
+<meta name="twitter:description" content="注：原文转载自 Philo，本人在此之上修改。
+我的大环境1.Fedora 222.GO 1.5go 环境安装1. 环境配置：（mercurial,golint,gooracle,goimport,gocode,godef）1. 安装mercurial1dnf install mercurial
+这个东西是用来做版本管理的，也是下载代码的工具类似git，貌似google的项目用的挺多的。2. 安装">
+  
+    <link rel="alternative" href="/atom.xml" title="Leslie&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/assets/blogImg/leslie.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Leslie</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">golang开发者</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="http://github.com/torfuzx/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/notask/" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="mailto://torfu@qq.com/" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Atom/" style="font-size: 20px;">Atom</a> <a href="/tags/Chromium/" style="font-size: 10px;">Chromium</a> <a href="/tags/Fedora/" style="font-size: 20px;">Fedora</a> <a href="/tags/Go/" style="font-size: 20px;">Go</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/NodeJS/" style="font-size: 20px;">NodeJS</a> <a href="/tags/Sublime/" style="font-size: 20px;">Sublime</a> <a href="/tags/Virtualbox/" style="font-size: 10px;">Virtualbox</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/胡扯/" style="font-size: 10px;">胡扯</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://laoxu.blog.51cto.com/">老徐的私房菜</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">勿忘初心，方得始终。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Leslie</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/assets/blogImg/leslie.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Leslie</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">golang开发者</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="http://github.com/torfuzx/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/notask/" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="mailto://torfu@qq.com/" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Go-IDE-搭建（Atom）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/26/Go-IDE-搭建（Atom）/" class="article-date">
+  	<time datetime="2015-08-26T01:23:58.000Z" itemprop="datePublished">2015-08-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Go IDE 搭建（Atom）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Atom/">Atom</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>注：原文转载自 <a href="http://www.philo.top/2015/02/06/golang-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%BB%BA%E8%AE%AE/" target="_blank" rel="external">Philo</a>，本人在此之上修改。</p>
+<h3 id="我的大环境">我的大环境</h3><h4 id="1-Fedora_22">1.Fedora 22</h4><h4 id="2-GO_1-5">2.GO 1.5</h4><h3 id="go_环境安装">go 环境安装</h3><h4 id="1-_环境配置：（mercurial,golint,gooracle,goimport,gocode,godef）">1. 环境配置：（mercurial,golint,gooracle,goimport,gocode,godef）</h4><h5 id="1-_安装mercurial">1. 安装mercurial</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf install mercurial</span><br></pre></td></tr></table></figure>
+<h6 id="这个东西是用来做版本管理的，也是下载代码的工具类似git，貌似google的项目用的挺多的。">这个东西是用来做版本管理的，也是下载代码的工具类似git，貌似google的项目用的挺多的。</h6><h5 id="2-_安装golint">2. 安装golint</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/golang/lint</span><br><span class="line">go install github.com/golang/lint/golint</span><br></pre></td></tr></table></figure>
+<h5 id="3-_安装gooracle">3. 安装gooracle</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get -u golang.org/x/tools/cmd/oracle</span><br></pre></td></tr></table></figure>
+<h5 id="4-_安装goimport">4. 安装goimport</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get -u golang.org/x/tools/cmd/goimports</span><br></pre></td></tr></table></figure>
+<h5 id="5-_安装gocode">5. 安装gocode</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/nsf/gocode</span><br></pre></td></tr></table></figure>
+<h5 id="6-_安装_godef">6. 安装 godef</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/rogpeppe/godef</span><br></pre></td></tr></table></figure>
+<h4 id="2-_安装环境的时候经常会出现下载不下来的问题，大概是我网络不好吧。连接google经常出现问题。">2. 安装环境的时候经常会出现下载不下来的问题，大概是我网络不好吧。连接google经常出现问题。</h4><blockquote>
+<p>解决方案：<br>golang中国的下载频道中有一个第三方包的下载工具，只要输入地址之后人家会给你提供下载tar包的。<br>放到gopath中就ok了。<br>此步骤只能替代go get的步骤，最后还是需要go install</p>
+</blockquote>
+<h4 id="3-_go_install_之后会在_$GOPATH/bin/_中出现各种工具文件">3. go install 之后会在  $GOPATH/bin/ 中出现各种工具文件</h4><ol>
+<li><p>gocode 提供代码补全</p>
+</li>
+<li><p>godef 代码跳转</p>
+</li>
+<li><p>gofmt 自动代码整理</p>
+</li>
+<li><p>golint 代码语法检查</p>
+</li>
+<li><p>goimports 自动整理imports</p>
+</li>
+</ol>
+<blockquote>
+<p>oracle 代码callgraph查询（plugin中还在todolist中，但是不配置一直报错。实在烦。）</p>
+</blockquote>
+<h4 id="4-_最后的配置结果(安装完之后_Package-&gt;Go_Plus-&gt;Display_Go_Information)">4. 最后的配置结果(安装完之后 Package-&gt;Go Plus-&gt;Display Go Information)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Cover Tool: /usr/<span class="built_in">local</span>/go/pkg/tool/darwin_amd64/cover</span><br><span class="line">Vet Tool: /usr/<span class="built_in">local</span>/go/pkg/tool/darwin_amd64/vet</span><br><span class="line">Format Tool: /Users/Li-jianying/git/bin/goimports</span><br><span class="line">Lint Tool: /usr/<span class="built_in">local</span>/go/bin/golint</span><br><span class="line">Gocode Tool: /Users/Li-jianying/git/bin/gocode</span><br><span class="line">Gocode Status: Enabled</span><br><span class="line">Oracle Tool: /Users/Li-jianying/git/bin/oracle</span><br><span class="line">Git: /usr/bin/git</span><br><span class="line">Mercurial: /usr/<span class="built_in">local</span>/Cellar/mercurial/<span class="number">3.2</span>.<span class="number">1</span>/bin/hg</span><br><span class="line">PATH: /usr/<span class="built_in">local</span>/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/<span class="built_in">local</span>/go/bin</span><br></pre></td></tr></table></figure>
+<p>没有红色的行就没有问题了。</p>
+<h3 id="项目管理，自动文件跳转">项目管理，自动文件跳转</h3><h4 id="1-_插件：project-manager">1. 插件：project-manager</h4><blockquote>
+<p>这个插件是非常hot的，在atom.io的首页上排名还是非常靠前的。</p>
+</blockquote>
+<h4 id="2-_使用细节：">2. 使用细节：</h4><h5 id="1-_配合tree_view_（_ctrl_-_\_）_打开关闭project_file">1. 配合tree view （ ctrl - \ ） 打开关闭project file</h5><h5 id="2-_搜索项目文件_（_ctrl_-_t_）">2. 搜索项目文件 （ ctrl - t ）</h5><blockquote>
+<p>输入的时候按照顺序输入关键字<br>比如说 user模块的controll中的go源代码<br>搜索的时候可以使用多个快捷键 =》 user controll go<br>就可以准确的找到源代码了</p>
+</blockquote>
+<h5 id="3-_打开项目列表_（_alt_-_shift_-_p_）">3. 打开项目列表 （ alt - shift - p ）</h5><blockquote>
+<p>然后就会显示出来一个项目列表回车就可以打开项目。</p>
+</blockquote>
+<h4 id="3-_总结：">3. 总结：</h4><blockquote>
+<p>感觉这个插件的treeview用途的确不是很大，因为正常项目的项目文件会很多。<br>不过是快速打开项目（文件夹）是非常方便的，配合快速打开文件还是相当爽的。</p>
+</blockquote>
+<h3 id="自动语法检，自动补全">自动语法检，自动补全</h3><h4 id="1-_插件go-plus,autocomplete-plus(dependance),gocode">1. 插件go-plus,autocomplete-plus(dependance),gocode</h4><h4 id="2-_使用细节：在保存的时候">2. 使用细节：在保存的时候</h4><h5 id="1-_会自动补上imports">1. 会自动补上imports</h5><h5 id="2-会自动整理代码">2.会自动整理代码</h5><blockquote>
+<p>比如说 a:=5 会变成 a := 5<br>两个空行自动变成一个空格</p>
+</blockquote>
+<h5 id="3-_lint自动检查语法错误（go_build_的错误都会显示出来）">3. lint自动检查语法错误（go build 的错误都会显示出来）</h5><h5 id="4-_vet会自动检查语法拼写建议">4. vet会自动检查语法拼写建议</h5><blockquote>
+<p>函数，结构体 会提示补上注释。<br>比如说会提示你函数前面需要加入godoc类型的注释： // functionname<br>注释的第一行需要使用双斜杠注释+空格+函数名+空格+简短的函数功能说明。</p>
+</blockquote>
+<h4 id="3-_使用细节：_在编辑的时候">3. 使用细节： 在编辑的时候</h4><h5 id="1-_go-plus会配合autocomplete-plus会自动补全包名字（tab补全，回车不行，这个真心舒服）">1. go-plus会配合autocomplete-plus会自动补全包名字（tab补全，回车不行，这个真心舒服）</h5><h5 id="2-_包名-之后输入方法名开头几个字母会给出补全建议。">2. 包名.之后输入方法名开头几个字母会给出补全建议。</h5><h4 id="4-_gocode_自动补全插件">4. gocode 自动补全插件</h4><h5 id="1-_这个插件继承自autocomplete,因为年久失修。api用的是老版本，所以一直都会出现api警告。（我是实用主义，视而不见）">1. 这个插件继承自autocomplete,因为年久失修。api用的是老版本，所以一直都会出现api警告。（我是实用主义，视而不见）</h5><h5 id="2-_gocode如果找不到就进入代码找到文件autocomplete-view-coffee_中105行写成绝对路径就肯定没有问题了。">2. gocode如果找不到就进入代码找到文件autocomplete-view.coffee 中105行写成绝对路径就肯定没有问题了。</h5><h5 id="3-_绑定快捷键，因为这个插件没有绑定快捷键的文件（keymap）所以需要在keymap-cson下自己手动绑定配置如下：">3. 绑定快捷键，因为这个插件没有绑定快捷键的文件（keymap）所以需要在keymap.cson下自己手动绑定配置如下：</h5><blockquote>
+<p>‘.active.pane’:<br>‘ctrl-;’: ‘gocode:toggle’</p>
+</blockquote>
+<h3 id="查找定义">查找定义</h3><h4 id="1-_插件_godef">1. 插件 godef</h4><h4 id="2-_使用细节:">2. 使用细节:</h4><h5 id="光标在目标代码上的时候，使用快捷键ctrl-k跳转到目标代码的定义代码上。">光标在目标代码上的时候，使用快捷键ctrl-k跳转到目标代码的定义代码上。</h5><h3 id="灵活的运行">灵活的运行</h3><h4 id="1-_安装插件atom-runner">1. 安装插件atom-runner</h4><h4 id="2-_修改源代码中的go_run运行为go:_‘sh_[绝对路径到你的全局run脚上]_‘+atom-project-getRepo()-project-path">2. 修改源代码中的go run运行为go: ‘sh [绝对路径到你的全局run脚上] ‘+atom.project.getRepo().project.path</h4><h4 id="3-_脚本的_$1_会是你项目运行的路径。然后你的所有项目都可以添加一个run-sh_来指定一个构建运行的方案。">3. 脚本的 $1 会是你项目运行的路径。然后你的所有项目都可以添加一个run.sh 来指定一个构建运行的方案。</h4><h4 id="4-_做完之后不管当前在查看什么文件都可以运行整个项目。">4. 做完之后不管当前在查看什么文件都可以运行整个项目。</h4><h4 id="5-_其他语言也可以这样做。毕竟单个文件的项目不是很常见（开发的时候）">5. 其他语言也可以这样做。毕竟单个文件的项目不是很常见（开发的时候）</h4><h3 id="总结">总结</h3><h4 id="1-_我这里只是总结了我用的所有的golang相关的atom插件。">1. 我这里只是总结了我用的所有的golang相关的atom插件。</h4><h4 id="2-_要相信golang使用编辑器就够用的事实了。因为_go_tool_实在是太好用了。">2. 要相信golang使用编辑器就够用的事实了。因为 go tool 实在是太好用了。</h4>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/26/Go-IDE-搭建（Sublime-Text-3）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Go IDE 搭建（Sublime Text 3）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/24/Atom中文显示乱码解决方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Atom中文显示乱码解决方法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Go-IDE-搭建（Atom）" data-title="Go IDE 搭建（Atom）" data-url="http://yoursite.com/2015/08/26/Go-IDE-搭建（Atom）/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"noask"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Leslie
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Fedora国内源配置 | Leslie&#39;s Blog</title>
+  <title>Atom中文显示乱码解决方法 | Leslie&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.自动选择最快插件1yum install yum-fastestmirror
-2.rpmfusion源12rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpmrpm -ivh http://download1.rpmfusion.org/nonfree/fedor">
+  <meta name="description" content="1.先查看操作系统是否安装了这些字体，打开终端输入： fc-list :lang=zh 命令查看安装的字体1fc-list :lang=zh
+2.下载文泉驿字体1dnf install wqy-*
+3.设置Atom字体从菜单中打开 Edit-&amp;gt;Open your config选项，或者Packages-&amp;gt;Setting views-&amp;gt;Open，找到config.cson文件中的e">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fedora国内源配置">
-<meta property="og:url" content="http://yoursite.com/2015/08/22/Fedora国内源配置/index.html">
+<meta property="og:title" content="Atom中文显示乱码解决方法">
+<meta property="og:url" content="http://yoursite.com/2015/08/24/Atom中文显示乱码解决方法/index.html">
 <meta property="og:site_name" content="Leslie's Blog">
-<meta property="og:description" content="1.自动选择最快插件1yum install yum-fastestmirror
-2.rpmfusion源12rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpmrpm -ivh http://download1.rpmfusion.org/nonfree/fedor">
+<meta property="og:description" content="1.先查看操作系统是否安装了这些字体，打开终端输入： fc-list :lang=zh 命令查看安装的字体1fc-list :lang=zh
+2.下载文泉驿字体1dnf install wqy-*
+3.设置Atom字体从菜单中打开 Edit-&amp;gt;Open your config选项，或者Packages-&amp;gt;Setting views-&amp;gt;Open，找到config.cson文件中的e">
 <meta property="og:updated_time" content="2015-09-23T01:56:05.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fedora国内源配置">
-<meta name="twitter:description" content="1.自动选择最快插件1yum install yum-fastestmirror
-2.rpmfusion源12rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpmrpm -ivh http://download1.rpmfusion.org/nonfree/fedor">
+<meta name="twitter:title" content="Atom中文显示乱码解决方法">
+<meta name="twitter:description" content="1.先查看操作系统是否安装了这些字体，打开终端输入： fc-list :lang=zh 命令查看安装的字体1fc-list :lang=zh
+2.下载文泉驿字体1dnf install wqy-*
+3.设置Atom字体从菜单中打开 Edit-&amp;gt;Open your config选项，或者Packages-&amp;gt;Setting views-&amp;gt;Open，找到config.cson文件中的e">
   
     <link rel="alternative" href="/atom.xml" title="Leslie&#39;s Blog" type="application/atom+xml">
   
@@ -184,11 +187,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-Fedora国内源配置" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Atom中文显示乱码解决方法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/08/22/Fedora国内源配置/" class="article-date">
-  	<time datetime="2015-08-22T13:12:41.000Z" itemprop="datePublished">2015-08-22</time>
+      <a href="/2015/08/24/Atom中文显示乱码解决方法/" class="article-date">
+  	<time datetime="2015-08-24T07:17:43.000Z" itemprop="datePublished">2015-08-24</time>
 </a>
     </div>
   
@@ -201,7 +204,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Fedora国内源配置
+      Atom中文显示乱码解决方法
     </h1>
   
 
@@ -210,7 +213,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fedora/">Fedora</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Atom/">Atom</a></li></ul>
 	</div>
 
         
@@ -221,10 +224,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-自动选择最快插件">1.自动选择最快插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install yum-fastestmirror</span><br></pre></td></tr></table></figure>
-<h3 id="2-rpmfusion源">2.rpmfusion源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm</span><br><span class="line">rpm -ivh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm</span><br></pre></td></tr></table></figure>
-<h3 id="3-flash源">3.flash源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-<span class="number">1.0</span>-<span class="number">1</span>.noarch.rpm</span><br><span class="line">yum install flash-plugin</span><br></pre></td></tr></table></figure>
-<h3 id="4-163源,sohu源,北交通的直接可以用">4.163源,sohu源,北交通的直接可以用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/yum.repos.d</span><br><span class="line"></span><br><span class="line">wget http://mirrors.<span class="number">163</span>.com/.help/fedora-<span class="number">163</span>.repo</span><br><span class="line">wget http://mirrors.<span class="number">163</span>.com/.help/fedora-updates-<span class="number">163</span>.repo</span><br><span class="line">wget http://mirrors.sohu.com/<span class="built_in">help</span>/fedora-sohu.repo</span><br><span class="line">wget http://mirrors.sohu.com/<span class="built_in">help</span>/fedora-updates-sohu.repo</span><br><span class="line">wget http://mirror.bjtu.edu.cn/fedora-bjtu.repo</span><br><span class="line">wget http://mirror.bjtu.edu.cn/fedora-updates-bjtu.repo</span><br><span class="line"></span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
+        <h3 id="1-先查看操作系统是否安装了这些字体，打开终端输入：_fc-list_:lang=zh_命令查看安装的字体">1.先查看操作系统是否安装了这些字体，打开终端输入： fc-list :lang=zh 命令查看安装的字体</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">fc</span>-list :lang=zh</span><br></pre></td></tr></table></figure>
+<h3 id="2-下载文泉驿字体">2.下载文泉驿字体</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf install wqy-*</span><br></pre></td></tr></table></figure>
+<h3 id="3-设置Atom字体">3.设置Atom字体</h3><h4 id="从菜单中打开_Edit-&gt;Open_your_config选项，或者Packages-&gt;Setting_views-&gt;Open，">从菜单中打开 Edit-&gt;Open your config选项，或者Packages-&gt;Setting views-&gt;Open，</h4><h4 id="找到config-cson文件中的editor子项，或者setting_views中的font-family选项，把字体设置成_文泉驿_系列字体才可以显示中文。">找到config.cson文件中的editor子项，或者setting views中的font-family选项，把字体设置成 文泉驿 系列字体才可以显示中文。</h4><h4 id="比如：">比如：</h4><h4 id="WenQuanYi_Micro_Hei_Mono,文泉驛等寬微米黑,文泉驿等宽微米黑">WenQuanYi Micro Hei Mono,文泉驛等寬微米黑,文泉驿等宽微米黑</h4><h4 id="WenQuanYi_Zen_Hei_Sharp,文泉驛點陣正黑,文泉驿点阵正黑">WenQuanYi Zen Hei Sharp,文泉驛點陣正黑,文泉驿点阵正黑</h4><h4 id="WenQuanYi_Micro_Hei,文泉驛微米黑,文泉驿微米黑">WenQuanYi Micro Hei,文泉驛微米黑,文泉驿微米黑</h4><h4 id="WenQuanYi_Zen_Hei_Mono,文泉驛等寬正黑,文泉驿等宽正黑">WenQuanYi Zen Hei Mono,文泉驛等寬正黑,文泉驿等宽正黑</h4><h4 id="WenQuanYi_Zen_Hei,文泉驛正黑,文泉驿正黑">WenQuanYi Zen Hei,文泉驛正黑,文泉驿正黑</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">例如，我的配置如下：</span><br><span class="line"> <span class="tag">editor</span>:</span><br><span class="line">    <span class="tag">invisibles</span>:</span><br><span class="line">      &#123;&#125;</span><br><span class="line">    <span class="attribute">tabLength</span>: <span class="number">4</span></span><br><span class="line">    <span class="attribute">fontFamily</span>: <span class="string">"WenQuanYi Micro Hei Mono,文泉驛等寬微米黑,文泉驿等宽微米黑"</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -234,18 +236,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/08/22/Fedora下安装Chromium/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/08/26/Go-IDE-搭建（Atom）/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Fedora下安装Chromium
+          Go IDE 搭建（Atom）
         
       </div>
     </a>
   
   
-    <a href="/2015/08/20/Go反射的法则/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Go反射的法则</div>
+    <a href="/2015/08/24/Fedora下安裝Sublime-Text-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Fedora下安裝Sublime Text 3</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -274,7 +276,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Fedora国内源配置" data-title="Fedora国内源配置" data-url="http://yoursite.com/2015/08/22/Fedora国内源配置/"></div>
+	<div class="ds-thread" data-thread-key="Atom中文显示乱码解决方法" data-title="Atom中文显示乱码解决方法" data-url="http://yoursite.com/2015/08/24/Atom中文显示乱码解决方法/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Fedora国内源配置 | Leslie&#39;s Blog</title>
+  <title>Go IDE 搭建（Sublime Text 3） | Leslie&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.自动选择最快插件1yum install yum-fastestmirror
-2.rpmfusion源12rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpmrpm -ivh http://download1.rpmfusion.org/nonfree/fedor">
+  <meta name="description" content="我的大环境1.Fedora 222.GO 1.51. 安装Sublime Text 31. Sublime Text 3（以下简称ST）的下载与安装,具体操作，请看我的博文。Fedora下安裝Sublime Text 3
+2. 安装Package Control1. 接下来还要注意就是ST3下PackageControl的安装，这个跟ST2上就不同了，因为更新了python的借口，用了python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fedora国内源配置">
-<meta property="og:url" content="http://yoursite.com/2015/08/22/Fedora国内源配置/index.html">
+<meta property="og:title" content="Go IDE 搭建（Sublime Text 3）">
+<meta property="og:url" content="http://yoursite.com/2015/08/26/Go-IDE-搭建（Sublime-Text-3）/index.html">
 <meta property="og:site_name" content="Leslie's Blog">
-<meta property="og:description" content="1.自动选择最快插件1yum install yum-fastestmirror
-2.rpmfusion源12rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpmrpm -ivh http://download1.rpmfusion.org/nonfree/fedor">
+<meta property="og:description" content="我的大环境1.Fedora 222.GO 1.51. 安装Sublime Text 31. Sublime Text 3（以下简称ST）的下载与安装,具体操作，请看我的博文。Fedora下安裝Sublime Text 3
+2. 安装Package Control1. 接下来还要注意就是ST3下PackageControl的安装，这个跟ST2上就不同了，因为更新了python的借口，用了python">
 <meta property="og:updated_time" content="2015-09-23T01:56:05.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fedora国内源配置">
-<meta name="twitter:description" content="1.自动选择最快插件1yum install yum-fastestmirror
-2.rpmfusion源12rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpmrpm -ivh http://download1.rpmfusion.org/nonfree/fedor">
+<meta name="twitter:title" content="Go IDE 搭建（Sublime Text 3）">
+<meta name="twitter:description" content="我的大环境1.Fedora 222.GO 1.51. 安装Sublime Text 31. Sublime Text 3（以下简称ST）的下载与安装,具体操作，请看我的博文。Fedora下安裝Sublime Text 3
+2. 安装Package Control1. 接下来还要注意就是ST3下PackageControl的安装，这个跟ST2上就不同了，因为更新了python的借口，用了python">
   
     <link rel="alternative" href="/atom.xml" title="Leslie&#39;s Blog" type="application/atom+xml">
   
@@ -184,11 +184,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-Fedora国内源配置" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Go-IDE-搭建（Sublime-Text-3）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/08/22/Fedora国内源配置/" class="article-date">
-  	<time datetime="2015-08-22T13:12:41.000Z" itemprop="datePublished">2015-08-22</time>
+      <a href="/2015/08/26/Go-IDE-搭建（Sublime-Text-3）/" class="article-date">
+  	<time datetime="2015-08-26T05:40:42.000Z" itemprop="datePublished">2015-08-26</time>
 </a>
     </div>
   
@@ -201,7 +201,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Fedora国内源配置
+      Go IDE 搭建（Sublime Text 3）
     </h1>
   
 
@@ -210,7 +210,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fedora/">Fedora</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime/">Sublime</a></li></ul>
 	</div>
 
         
@@ -221,10 +221,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-自动选择最快插件">1.自动选择最快插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install yum-fastestmirror</span><br></pre></td></tr></table></figure>
-<h3 id="2-rpmfusion源">2.rpmfusion源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm</span><br><span class="line">rpm -ivh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm</span><br></pre></td></tr></table></figure>
-<h3 id="3-flash源">3.flash源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-<span class="number">1.0</span>-<span class="number">1</span>.noarch.rpm</span><br><span class="line">yum install flash-plugin</span><br></pre></td></tr></table></figure>
-<h3 id="4-163源,sohu源,北交通的直接可以用">4.163源,sohu源,北交通的直接可以用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/yum.repos.d</span><br><span class="line"></span><br><span class="line">wget http://mirrors.<span class="number">163</span>.com/.help/fedora-<span class="number">163</span>.repo</span><br><span class="line">wget http://mirrors.<span class="number">163</span>.com/.help/fedora-updates-<span class="number">163</span>.repo</span><br><span class="line">wget http://mirrors.sohu.com/<span class="built_in">help</span>/fedora-sohu.repo</span><br><span class="line">wget http://mirrors.sohu.com/<span class="built_in">help</span>/fedora-updates-sohu.repo</span><br><span class="line">wget http://mirror.bjtu.edu.cn/fedora-bjtu.repo</span><br><span class="line">wget http://mirror.bjtu.edu.cn/fedora-updates-bjtu.repo</span><br><span class="line"></span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
+        <h3 id="我的大环境">我的大环境</h3><h4 id="1-Fedora_22">1.Fedora 22</h4><h4 id="2-GO_1-5">2.GO 1.5</h4><h3 id="1-_安装Sublime_Text_3">1. 安装Sublime Text 3</h3><h4 id="1-_Sublime_Text_3（以下简称ST）的下载与安装,具体操作，请看我的博文。">1. Sublime Text 3（以下简称ST）的下载与安装,具体操作，请看我的博文。</h4><p><a href="http://golang.help/2015/08/24/Fedora%E4%B8%8B%E5%AE%89%E8%A3%9DSublime-Text-3/" target="_blank" rel="external">Fedora下安裝Sublime Text 3</a></p>
+<h3 id="2-_安装Package_Control">2. 安装Package Control</h3><h4 id="1-_接下来还要注意就是ST3下PackageControl的安装，这个跟ST2上就不同了，因为更新了python的借口，用了python3，建议参考官方的方法：">1. 接下来还要注意就是ST3下PackageControl的安装，这个跟ST2上就不同了，因为更新了python的借口，用了python3，建议参考官方的方法：</h4><p><a href="https://sublime.wbond.net/installation" target="_blank" rel="external">https://sublime.wbond.net/installation</a></p>
+<h4 id="2-_按住命令行_Ctrl+`_调出命令行输入以下代码:">2. 按住命令行 Ctrl+` 调出命令行输入以下代码:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request,os,hashlib; h = <span class="string">'eb2297e1a458f27d836c04bb0cbaf282'</span> + <span class="string">'d0e7a3098092775ccb37ca9d6b2e4b7d'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); <span class="built_in">print</span>(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> open(os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by)</span><br></pre></td></tr></table></figure>
+<h4 id="3-_安装好以后重启ST，就能使用Package_Control了">3. 安装好以后重启ST，就能使用Package Control了</h4><h3 id="3-_安装GoSublime">3. 安装GoSublime</h3><h4 id="1-_按快捷键_Ctrl+Shift+p_键入_pci，选择第一个Install_Package，键入GoSublime，回车安装，安装好后重启，则可以写你自己的Go代码了。">1. 按快捷键 Ctrl+Shift+p 键入 pci，选择第一个Install Package，键入GoSublime，回车安装，安装好后重启，则可以写你自己的Go代码了。</h4><h4 id="2-_配置GoSublime，以下是我的配置。">2. 配置GoSublime，以下是我的配置。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"env"</span>: &#123;</span><br><span class="line">		<span class="string">"GOPATH"</span>: <span class="string">"~/gopath"</span>,</span><br><span class="line">		<span class="string">"GOROOT"</span>: <span class="string">"/usr/local/go"</span>,</span><br><span class="line">		&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="4-_推荐几个ST3的Go插件:">4. 推荐几个ST3的Go插件:</h3><blockquote>
+<p>GoGDB<br>GoImports<br>GoOracle<br>Godef</p>
+</blockquote>
 
       
     </div>
@@ -234,18 +237,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/08/22/Fedora下安装Chromium/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/08/27/使用Github-Pages和Hexo搭建静态博客/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Fedora下安装Chromium
+          使用Github Pages和Hexo搭建静态博客
         
       </div>
     </a>
   
   
-    <a href="/2015/08/20/Go反射的法则/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Go反射的法则</div>
+    <a href="/2015/08/26/Go-IDE-搭建（Atom）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Go IDE 搭建（Atom）</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -274,7 +277,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Fedora国内源配置" data-title="Fedora国内源配置" data-url="http://yoursite.com/2015/08/22/Fedora国内源配置/"></div>
+	<div class="ds-thread" data-thread-key="Go-IDE-搭建（Sublime-Text-3）" data-title="Go IDE 搭建（Sublime Text 3）" data-url="http://yoursite.com/2015/08/26/Go-IDE-搭建（Sublime-Text-3）/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

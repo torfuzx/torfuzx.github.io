@@ -5,28 +5,28 @@
   
   <title>Linux下NodeJS的安装配置 | Leslie&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="检查是否已经安装1rpm -qa | grep python
-查版本1python
-最好是重新安装 Python推荐版本（ &amp;gt;= v2.5.0 &amp;amp; &amp;lt; 3.0.0 ），否则影响nodejs运行进入安装目录1cd /usr/local/
-删除原有安装12rm -rf noderm -rf node-v0.12.7-linux-x64
-解压压缩包1tar -zxv -f node-">
+  <meta name="description" content="1.检查是否已经安装1rpm -qa | grep python
+2.查版本1python
+最好是重新安装 Python推荐版本（ &amp;gt;= v2.5.0 &amp;amp; &amp;lt; 3.0.0 ），否则影响nodejs运行3.进入安装目录1cd /usr/local/
+4.删除原有安装12rm -rf noderm -rf node-v0.12.7-linux-x64
+5.解压压缩包1tar -zx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux下NodeJS的安装配置">
 <meta property="og:url" content="http://yoursite.com/2015/08/22/Linux下NodeJS的安装配置/index.html">
 <meta property="og:site_name" content="Leslie's Blog">
-<meta property="og:description" content="检查是否已经安装1rpm -qa | grep python
-查版本1python
-最好是重新安装 Python推荐版本（ &amp;gt;= v2.5.0 &amp;amp; &amp;lt; 3.0.0 ），否则影响nodejs运行进入安装目录1cd /usr/local/
-删除原有安装12rm -rf noderm -rf node-v0.12.7-linux-x64
-解压压缩包1tar -zxv -f node-">
-<meta property="og:updated_time" content="2015-08-22T13:53:18.240Z">
+<meta property="og:description" content="1.检查是否已经安装1rpm -qa | grep python
+2.查版本1python
+最好是重新安装 Python推荐版本（ &amp;gt;= v2.5.0 &amp;amp; &amp;lt; 3.0.0 ），否则影响nodejs运行3.进入安装目录1cd /usr/local/
+4.删除原有安装12rm -rf noderm -rf node-v0.12.7-linux-x64
+5.解压压缩包1tar -zx">
+<meta property="og:updated_time" content="2015-09-23T01:56:05.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下NodeJS的安装配置">
-<meta name="twitter:description" content="检查是否已经安装1rpm -qa | grep python
-查版本1python
-最好是重新安装 Python推荐版本（ &amp;gt;= v2.5.0 &amp;amp; &amp;lt; 3.0.0 ），否则影响nodejs运行进入安装目录1cd /usr/local/
-删除原有安装12rm -rf noderm -rf node-v0.12.7-linux-x64
-解压压缩包1tar -zxv -f node-">
+<meta name="twitter:description" content="1.检查是否已经安装1rpm -qa | grep python
+2.查版本1python
+最好是重新安装 Python推荐版本（ &amp;gt;= v2.5.0 &amp;amp; &amp;lt; 3.0.0 ），否则影响nodejs运行3.进入安装目录1cd /usr/local/
+4.删除原有安装12rm -rf noderm -rf node-v0.12.7-linux-x64
+5.解压压缩包1tar -zx">
   
     <link rel="alternative" href="/atom.xml" title="Leslie&#39;s Blog" type="application/atom+xml">
   
@@ -125,7 +125,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Fedora/" style="font-size: 20px;">Fedora</a> <a href="/tags/NodeJS/" style="font-size: 10px;">NodeJS</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/胡扯/" style="font-size: 10px;">胡扯</a>
+						<a href="/tags/Atom/" style="font-size: 20px;">Atom</a> <a href="/tags/Chromium/" style="font-size: 10px;">Chromium</a> <a href="/tags/Fedora/" style="font-size: 20px;">Fedora</a> <a href="/tags/Go/" style="font-size: 20px;">Go</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/NodeJS/" style="font-size: 20px;">NodeJS</a> <a href="/tags/Sublime/" style="font-size: 20px;">Sublime</a> <a href="/tags/Virtualbox/" style="font-size: 10px;">Virtualbox</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/胡扯/" style="font-size: 10px;">胡扯</a>
 					</div>
 				</section>
 				
@@ -230,14 +230,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="检查是否已经安装">检查是否已经安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep python</span><br></pre></td></tr></table></figure>
-<h3 id="查版本">查版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python</span><br></pre></td></tr></table></figure>
-<h3 id="最好是重新安装_Python推荐版本（_&gt;=_v2-5-0_&amp;_&lt;_3-0-0_），否则影响nodejs运行">最好是重新安装 Python推荐版本（ &gt;= v2.5.0 &amp; &lt; 3.0.0 ），否则影响nodejs运行</h3><h3 id="进入安装目录">进入安装目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/</span><br></pre></td></tr></table></figure>
-<h3 id="删除原有安装">删除原有安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf node</span><br><span class="line">rm -rf node-v0.<span class="number">12.7</span>-linux-x64</span><br></pre></td></tr></table></figure>
-<h3 id="解压压缩包">解压压缩包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxv <span class="operator">-f</span> node-v0.<span class="number">12.7</span>-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
-<h3 id="修改目录">修改目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv node-v0.<span class="number">12.7</span>-linux-x64 node</span><br></pre></td></tr></table></figure>
-<h3 id="添加环境变量并使之生效，内容如下：">添加环境变量并使之生效，内容如下：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=/usr/<span class="built_in">local</span>/python/bin:/usr/<span class="built_in">local</span>/node/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
-<h3 id="测试命令">测试命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+        <h3 id="1-检查是否已经安装">1.检查是否已经安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep python</span><br></pre></td></tr></table></figure>
+<h3 id="2-查版本">2.查版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python</span><br></pre></td></tr></table></figure>
+<h3 id="最好是重新安装_Python推荐版本（_&gt;=_v2-5-0_&amp;_&lt;_3-0-0_），否则影响nodejs运行">最好是重新安装 Python推荐版本（ &gt;= v2.5.0 &amp; &lt; 3.0.0 ），否则影响nodejs运行</h3><h3 id="3-进入安装目录">3.进入安装目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/</span><br></pre></td></tr></table></figure>
+<h3 id="4-删除原有安装">4.删除原有安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf node</span><br><span class="line">rm -rf node-v0.<span class="number">12.7</span>-linux-x64</span><br></pre></td></tr></table></figure>
+<h3 id="5-解压压缩包">5.解压压缩包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxv <span class="operator">-f</span> node-v0.<span class="number">12.7</span>-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="6-修改目录">6.修改目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv node-v0.<span class="number">12.7</span>-linux-x64 node</span><br></pre></td></tr></table></figure>
+<h3 id="7-添加环境变量并使之生效，内容如下：">7.添加环境变量并使之生效，内容如下：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/python/bin</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> NODE_HOME=/usr/<span class="built_in">local</span>/node</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$NODE_HOME</span>/bin</span><br><span class="line"><span class="built_in">export</span> NODE_PATH=<span class="variable">$NODE_HOME</span>/lib/node_modules</span><br></pre></td></tr></table></figure>
+<h3 id="8-测试命令">8.测试命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+
       
     </div>
     

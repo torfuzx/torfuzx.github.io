@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Golang Seelog 入门 | Leslie&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="日志应用我们期望开发的Web应用程序能够把整个程序运行过程中出现的各种事件一一记录下来，Go语言中提供了一个简易的log包，我们使用该包可以方便的实现日志记录的功能，这些日志都是基于fmt包的打印再结合panic之类的函数来进行一般的打印、抛出错误处理。Go目前标准包只是包含了简单的功能，如果我们想把我们的应用日志保存到文件，然后又能够结合日志实现很多复杂的功能，可以使用第三方开发的一个日志系统（">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Golang Seelog 入门">
+<meta property="og:url" content="http://yoursite.com/2015/09/17/Golang-Seelog-入门/index.html">
+<meta property="og:site_name" content="Leslie's Blog">
+<meta property="og:description" content="日志应用我们期望开发的Web应用程序能够把整个程序运行过程中出现的各种事件一一记录下来，Go语言中提供了一个简易的log包，我们使用该包可以方便的实现日志记录的功能，这些日志都是基于fmt包的打印再结合panic之类的函数来进行一般的打印、抛出错误处理。Go目前标准包只是包含了简单的功能，如果我们想把我们的应用日志保存到文件，然后又能够结合日志实现很多复杂的功能，可以使用第三方开发的一个日志系统（">
+<meta property="og:updated_time" content="2015-09-17T08:44:17.842Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Golang Seelog 入门">
+<meta name="twitter:description" content="日志应用我们期望开发的Web应用程序能够把整个程序运行过程中出现的各种事件一一记录下来，Go语言中提供了一个简易的log包，我们使用该包可以方便的实现日志记录的功能，这些日志都是基于fmt包的打印再结合panic之类的函数来进行一般的打印、抛出错误处理。Go目前标准包只是包含了简单的功能，如果我们想把我们的应用日志保存到文件，然后又能够结合日志实现很多复杂的功能，可以使用第三方开发的一个日志系统（">
+  
+    <link rel="alternative" href="/atom.xml" title="Leslie&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/assets/blogImg/leslie.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Leslie</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">golang开发者</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="http://github.com/torfuzx/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/notask/" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="mailto://torfu@qq.com/" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Atom/" style="font-size: 20px;">Atom</a> <a href="/tags/Chromium/" style="font-size: 10px;">Chromium</a> <a href="/tags/Fedora/" style="font-size: 20px;">Fedora</a> <a href="/tags/Go/" style="font-size: 20px;">Go</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/NodeJS/" style="font-size: 20px;">NodeJS</a> <a href="/tags/Sublime/" style="font-size: 20px;">Sublime</a> <a href="/tags/Virtualbox/" style="font-size: 10px;">Virtualbox</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/胡扯/" style="font-size: 10px;">胡扯</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://laoxu.blog.51cto.com/">老徐的私房菜</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">勿忘初心，方得始终。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Leslie</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/assets/blogImg/leslie.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Leslie</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">golang开发者</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="http://github.com/torfuzx/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/notask/" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="mailto://torfu@qq.com/" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Golang-Seelog-入门" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/17/Golang-Seelog-入门/" class="article-date">
+  	<time datetime="2015-09-17T06:37:10.000Z" itemprop="datePublished">2015-09-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Golang Seelog 入门
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/">golang</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="日志应用">日志应用</h2><p>我们期望开发的Web应用程序能够把整个程序运行过程中出现的各种事件一一记录下来，Go语言中提供了一个简易的log包，我们使用该包可以方便的实现日志记录的功能，这些日志都是基于fmt包的打印再结合panic之类的函数来进行一般的打印、抛出错误处理。Go目前标准包只是包含了简单的功能，如果我们想把我们的应用日志保存到文件，然后又能够结合日志实现很多复杂的功能，可以使用第三方开发的一个日志系统（项目之前使用logrus）。<br><a href="https://github.com/cihub/seelog" target="_blank" rel="external">seelog</a>，通过该日志系统来实现我们应用的日志功能。</p>
+<h3 id="seelog_介绍">seelog 介绍</h3><p>seelog是用Go语言实现的一个日志系统，它提供了一些简单的函数来实现复杂的日志分配、过滤和格式化。主要有如下特性：</p>
+<ul>
+<li>XML的动态配置，可以不用重新编译程序而动态的加载配置信息</li>
+<li>支持热更新，能够动态改变配置而不需要重启应用</li>
+<li>支持多输出流，能够同时把日志输出到多种流中、例如文件流、网络流等</li>
+<li>支持不同的日志输出</li>
+<li>命令行输出<ul>
+<li>文件输出</li>
+<li>缓存输出</li>
+<li>支持log rotate</li>
+<li>SMTP邮件</li>
+</ul>
+</li>
+</ul>
+<h3 id="seelog_的好处">seelog 的好处</h3><ol>
+<li>seelog 本身接口丰富，同时有 debug, info, error, critical 及带 *f 两套接口，即 Debug, 和 Debugf, 类型于 Print 和 Printf</li>
+<li>seelog 可通过配置文件来配置一些特性，甚至还可以在运行时能过改变配置来改变输出。</li>
+<li>seelog 支持生成各种形式的日志文件，比如单纯的 log 文件，根据日期生成类似 yyy.mm.dd.log 文件，根据 size 生成类似 debug.1.log, debug.2.log 文件，而且支持压缩格式</li>
+<li>seelog 支持多个输出及分流输出，比如 Debug() 输出到 debug.log，Info()和Error() 输出到 控制台 和 msg.log 文件<br>seelog 支持自定义输出格式</li>
+</ol>
+<h3 id="seelog_的缺点">seelog 的缺点</h3><ol>
+<li>配置文件只支持xml（本人更偏好yaml）</li>
+</ol>
+<h3 id="入门教程">入门教程</h3><h4 id="配置文件_etc/seelog-xml">配置文件 etc/seelog.xml</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">seelog</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">outputs</span> <span class="attribute">formatid</span>=<span class="value">"main"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">filter</span> <span class="attribute">levels</span>=<span class="value">"info,critical,error"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">console</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">filter</span> <span class="attribute">levels</span>=<span class="value">"debug"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">file</span> <span class="attribute">path</span>=<span class="value">"log/debug.txt"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">outputs</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="tag">&lt;<span class="title">formats</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">format</span> <span class="attribute">id</span>=<span class="value">"main"</span> <span class="attribute">format</span>=<span class="value">"%Date/%Time [%LEV] %Msg%n"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">formats</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">seelog</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>&lt;outputs&gt; 的作用是把所有输出都重定向到其子节点表示的输出端， formatid=”main” 表示输出格式根据 id=”main” 那个节点显示<br>&lt;filter&gt; 用来过滤log的等级，比如，所有 info, critical, error 等级的log才会被写入该子节点，大家可以看到我这边的子节点是 ，也就是说我把所有关键信息都直接输出到控制台了。<br>&lt;file&gt; 就不解释了，一目了然，如果想知道如何实现上面提到的其他特性，请直接点对应的链接进去。</p>
+</blockquote>
+<h4 id="代码">代码</h4><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">defer <span class="built_in">log</span>.Flush<span class="params">()</span></span><br><span class="line"><span class="comment">// init log</span></span><br><span class="line"></span><br><span class="line">logger, err = <span class="built_in">log</span>.LoggerFromConfigAsFile<span class="params">(<span class="string">"etc/seelog.xml"</span>)</span></span><br><span class="line"><span class="keyword">if</span> err <span class="built_in">!</span>= nil &#123;</span><br><span class="line"><span class="built_in">log</span>.Critical<span class="params">(<span class="string">"err parsing config log file"</span>, err)</span></span><br><span class="line">return</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">log</span>.ReplaceLogger<span class="params">(logger)</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">log</span>.Info<span class="params">(<span class="string">"Hello from Seelog!"</span>)</span></span><br></pre></td></tr></table></figure>
+<h3 id="进阶：基于seelog的自定义日志处理">进阶：基于seelog的自定义日志处理</h3><h4 id="配置文件_etc/seelog-xml-1">配置文件 etc/seelog.xml</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">seelog</span> <span class="attribute">minlevel</span>=<span class="value">"warn"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">outputs</span> <span class="attribute">formatid</span>=<span class="value">"common"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">rollingfile</span> <span class="attribute">type</span>=<span class="value">"size"</span> <span class="attribute">filename</span>=<span class="value">"/data/logs/roll.log"</span> <span class="attribute">maxsize</span>=<span class="value">"100000"</span> <span class="attribute">maxrolls</span>=<span class="value">"5"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">filter</span> <span class="attribute">levels</span>=<span class="value">"critical"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">file</span> <span class="attribute">path</span>=<span class="value">"/data/logs/critical.log"</span> <span class="attribute">formatid</span>=<span class="value">"critical"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">smtp</span> <span class="attribute">formatid</span>=<span class="value">"criticalemail"</span> <span class="attribute">senderaddress</span>=<span class="value">"astaxie@gmail.com"</span> <span class="attribute">sendername</span>=<span class="value">"ShortUrl API"</span> <span class="attribute">hostname</span>=<span class="value">"smtp.gmail.com"</span> <span class="attribute">hostport</span>=<span class="value">"587"</span> <span class="attribute">username</span>=<span class="value">"mailusername"</span> <span class="attribute">password</span>=<span class="value">"mailpassword"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">recipient</span> <span class="attribute">address</span>=<span class="value">"xiemengjun@gmail.com"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="title">smtp</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">outputs</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">formats</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">format</span> <span class="attribute">id</span>=<span class="value">"common"</span> <span class="attribute">format</span>=<span class="value">"%Date/%Time [%LEV] %Msg%n"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">format</span> <span class="attribute">id</span>=<span class="value">"critical"</span> <span class="attribute">format</span>=<span class="value">"%File %FullPath %Func %Msg%n"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">format</span> <span class="attribute">id</span>=<span class="value">"criticalemail"</span> <span class="attribute">format</span>=<span class="value">"Critical error on our server!\n    %Time %Date %RelFile %Func %Msg \nSent by Seelog"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">formats</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">seelog</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="代码-1">代码</h4><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">defer <span class="built_in">log</span>.Flush<span class="params">()</span></span><br><span class="line"><span class="comment">// init log</span></span><br><span class="line"></span><br><span class="line">logger, err = <span class="built_in">log</span>.LoggerFromConfigAsFile<span class="params">(<span class="string">"etc/seelog.xml"</span>)</span></span><br><span class="line"><span class="keyword">if</span> err <span class="built_in">!</span>= nil &#123;</span><br><span class="line"><span class="built_in">log</span>.Critical<span class="params">(<span class="string">"err parsing config log file"</span>, err)</span></span><br><span class="line">return</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">log</span>.ReplaceLogger<span class="params">(logger)</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">log</span>.Info<span class="params">(<span class="string">"Hello from Seelog!"</span>)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">package logs</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"errors"</span></span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">    seelog <span class="string">"github.com/cihub/seelog"</span></span><br><span class="line">    <span class="string">"io"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> <span class="type">Logger</span> seelog.<span class="type">LoggerInterface</span></span><br><span class="line"></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">loadAppConfig</span><span class="params">()</span></span> &#123;</span><br><span class="line">    logger, err = log.<span class="type">LoggerFromConfigAsFile</span>(<span class="string">"etc/seelog.xml"</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.<span class="type">Println</span>(err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">UseLogger</span>(logger)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="type">DisableLog</span>()</span><br><span class="line">    loadAppConfig()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// DisableLog disables all library log output</span></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">DisableLog</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="type">Logger</span> = seelog.<span class="type">Disabled</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// UseLogger uses a specified seelog.LoggerInterface to output library log.</span></span><br><span class="line"><span class="comment">// Use this func if you are using Seelog logging system in your app.</span></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">UseLogger</span><span class="params">(newLogger seelog.LoggerInterface)</span></span> &#123;</span><br><span class="line">    <span class="type">Logger</span> = newLogger</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面主要实现了三个函数，</p>
+<ul>
+<li><p>DisableLog<br>初始化全局变量Logger为seelog的禁用状态，主要为了防止Logger被多次初始化</p>
+</li>
+<li><p>loadAppConfig<br>根据配置文件初始化seelog的配置信息，这里我们把配置文件通过字符串读取设置好了，当然也可以通过读取XML文件。里面的配置说明如下：</p>
+<ul>
+<li><p>seelog<br>minlevel参数可选，如果被配置,高于或等于此级别的日志会被记录，同理maxlevel。</p>
+</li>
+<li><p>outputs<br>输出信息的目的地，这里分成了两份数据，一份记录到log rotate文件里面。另一份设置了filter，如果这个错误级别是critical，那么将发送报警邮件。</p>
+</li>
+<li><p>formats<br>定义了各种日志的格式</p>
+</li>
+</ul>
+</li>
+<li><p>UseLogger<br>设置当前的日志器为相应的日志处理</p>
+</li>
+</ul>
+<h4 id="上面我们定义了一个自定义的日志处理包，下面就是使用示例：">上面我们定义了一个自定义的日志处理包，下面就是使用示例：</h4><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"net/http"</span></span><br><span class="line">    <span class="string">"project/logs"</span></span><br><span class="line">    <span class="string">"project/configs"</span></span><br><span class="line">    <span class="string">"project/routes"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    addr, _ := configs.MainConfig.String(<span class="string">"server"</span>, <span class="string">"addr"</span>)</span><br><span class="line">    logs.Logger.Info(<span class="string">"Start server at:%v"</span>, addr)</span><br><span class="line">    err := http.ListenAndServe(addr, routes.NewMux())</span><br><span class="line">    logs.Logger.Critical(<span class="string">"Server err:%v"</span>, err)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="发生错误发送邮件">发生错误发送邮件</h3><p>上面的例子解释了如何设置发送邮件，我们通过如下的smtp配置用来发送邮件：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">smtp</span> <span class="attribute">formatid</span>=<span class="value">"criticalemail"</span> <span class="attribute">senderaddress</span>=<span class="value">"astaxie@gmail.com"</span> <span class="attribute">sendername</span>=<span class="value">"ShortUrl API"</span> <span class="attribute">hostname</span>=<span class="value">"smtp.gmail.com"</span> <span class="attribute">hostport</span>=<span class="value">"587"</span> <span class="attribute">username</span>=<span class="value">"mailusername"</span> <span class="attribute">password</span>=<span class="value">"mailpassword"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">recipient</span> <span class="attribute">address</span>=<span class="value">"xiemengjun@gmail.com"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">smtp</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>邮件的格式通过criticalemail配置，然后通过其他的配置发送邮件服务器的配置，通过recipient配置接收邮件的用户，如果有多个用户可以再添加一行。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logs<span class="class">.Logger</span><span class="class">.Critical</span>(<span class="string">"test Critical message"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>现在，只要我们的应用在线上记录一个Critical的信息，你的邮箱就会收到一个Email，这样一旦线上的系统出现问题，你就能立马通过邮件获知，就能及时的进行处理。</p>
+<h3 id="使用应用日志">使用应用日志</h3><p>对于应用日志，每个人的应用场景可能会各不相同，有些人利用应用日志来做数据分析，有些人利用应用日志来做性能分析，有些人来做用户行为分析，还有些就是纯粹的记录，以方便应用出现问题的时候辅助查找问题。</p>
+<p>举一个例子，我们需要跟踪用户尝试登陆系统的操作。这里会把成功与不成功的尝试都记录下来。记录成功的使用”Info”日志级别，而不成功的使用”warn”级别。如果想查找所有不成功的登陆，我们可以利用linux的grep之类的命令工具，如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># cat /data/logs/roll.log | grep <span class="string">"failed login"</span></span></span><br><span class="line"><span class="number">2012</span>-<span class="number">12</span>-<span class="number">11</span> <span class="number">11</span>:<span class="number">12</span>:<span class="number">00</span> WARN : failed login attempt from <span class="number">11.22</span><span class="number">.33</span><span class="number">.44</span> username password</span><br></pre></td></tr></table></figure>
+<p>通过这种方式我们就可以很方便的查找相应的信息，这样有利于我们针对应用日志做一些统计和分析。另外我们还需要考虑日志的大小，对于一个高流量的Web应用来说，日志的增长是相当可怕的，所以我们在seelog的配置文件里面设置了logrotate，这样就能保证日志文件不会因为不断变大而导致我们的磁盘空间不够引起问题。</p>
+<h3 id="log_rotate">log rotate</h3><p>日志文件包含了关于系统中发生的事件的有用信息，在排障过程中或者系统性能分析时经常被用到。对于忙碌的服务器，日志文件大小会增长极快，服务器会很快消耗磁盘空间，这成了个问题。除此之外，处理一个单个的庞大日志文件也常常是件十分棘手的事。</p>
+<h5 id="Rolling_file_writer：_seelog的log_ratate">Rolling file writer： seelog的log ratate</h5><p>可以自动对日志进行截断（或轮循）、压缩以及删除旧的日志文件。例如，你可以设置etc/seelog.xml，让logs/roll.log日志文件已日期和大小轮循，并删除超过超过设置数量的最早的一个日志文件。配置完后，seelog的运作完全自动化，不必进行任何进一步的人为干预。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">seelog</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">outputs</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">rollingfile</span> <span class="attribute">type</span>=<span class="value">"size"</span> <span class="attribute">filename</span>=<span class="value">"logs/roll.log"</span> <span class="attribute">maxsize</span>=<span class="value">"1000"</span> <span class="attribute">maxrolls</span>=<span class="value">"5"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">outputs</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">seelog</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">seelog</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">outputs</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">rollingfile</span> <span class="attribute">type</span>=<span class="value">"date"</span> <span class="attribute">filename</span>=<span class="value">"logs/roll.log"</span> <span class="attribute">datepattern</span>=<span class="value">"02.01.2006"</span> <span class="attribute">maxrolls</span>=<span class="value">"7"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">outputs</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">seelog</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>namemode -命名卷文件的模式。<br>可能的参数：”postfix“-“后缀”，“prefix”-“前缀”。如果设置为“后缀”，卷文件看起来像“file.log.1”，“file.log.02.01.2006”。如果设置为“前缀”：“1.file.log’，’02 .01.2006.file.log”。默认值是“postfix”。</p>
+</li>
+<li><p>type -回转类型：“date”或“size”。</p>
+</li>
+<li><p>maxrolls -重命名的文件的最大数量。<br>如果超过此限制，较旧的卷被删除。参数应&gt;=0。注：之前版本2.3这个属性不适用于“date”的滚动。</p>
+</li>
+<li><p>archivetype - 用于指定旧卷的存储，而不是清除存档类型的属性。<br>可能的值：“none”，“ZIP”。如果设置为“none”，不执行归档（只删除旧卷）。</p>
+</li>
+<li><p>archivepath - 不设置的默认值为“none”。指定在存储就卷归档文件的路径。</p>
+</li>
+</ul>
+<h4 id="设置type为“size”所使用的参数：">设置type为“size”所使用的参数：</h4><ul>
+<li>maxsize -这是大小限制（以字节为单位），超过这会导致滚动。</li>
+</ul>
+<h4 id="设置type为“date”所使用的参数：">设置type为“date”所使用的参数：</h4><ul>
+<li>datepattern -通过’time.Local().Format“的方法赋值，来形成文件名的模式。<br>“date”（实际上，这意味着日期和时间）。<br>例如“02.01.2006”,使用此格式表示按每天截断。或者，“02.01.2006.15”，使用此格式表示按每小时截断。</li>
+</ul>
+<h3 id="小结">小结</h3><p>通过上面对seelog系统及如何基于它进行自定义日志系统的学习，现在我们可以很轻松的随需构建一个合适的功能强大的日志处理系统了。日志处理系统为数据分析提供了可靠的数据源，比如通过对日志的分析，我们可以进一步优化系统，或者应用出现问题时方便查找定位问题，另外seelog也提供了日志分级功能，通过对minlevel的配置，我们可以很方便的设置测试或发布版本的输出消息级别。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/08/27/使用Github-Pages和Hexo搭建静态博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用Github Pages和Hexo搭建静态博客</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Golang-Seelog-入门" data-title="Golang Seelog 入门" data-url="http://yoursite.com/2015/09/17/Golang-Seelog-入门/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"noask"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Leslie
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
