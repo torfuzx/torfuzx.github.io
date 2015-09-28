@@ -112,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Atom/" style="font-size: 20px;">Atom</a> <a href="/tags/Chromium/" style="font-size: 10px;">Chromium</a> <a href="/tags/Fedora/" style="font-size: 20px;">Fedora</a> <a href="/tags/Go/" style="font-size: 20px;">Go</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/NodeJS/" style="font-size: 20px;">NodeJS</a> <a href="/tags/Sublime/" style="font-size: 20px;">Sublime</a> <a href="/tags/Virtualbox/" style="font-size: 10px;">Virtualbox</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/胡扯/" style="font-size: 10px;">胡扯</a>
+						<a href="/tags/Atom/" style="font-size: 15px;">Atom</a> <a href="/tags/Chromium/" style="font-size: 10px;">Chromium</a> <a href="/tags/Fedora/" style="font-size: 15px;">Fedora</a> <a href="/tags/Go/" style="font-size: 20px;">Go</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/NodeJS/" style="font-size: 15px;">NodeJS</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/Virtualbox/" style="font-size: 10px;">Virtualbox</a> <a href="/tags/胡扯/" style="font-size: 10px;">胡扯</a>
 					</div>
 				</section>
 				
@@ -181,6 +181,64 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-virtualbox启动错误解决" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/23/virtualbox启动错误解决/" class="article-date">
+  	<time datetime="2015-08-22T16:28:40.000Z" itemprop="datePublished">2015-08-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/23/virtualbox启动错误解决/">virtualbox启动错误解决</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="运行_/etc/init-d/vboxdrv_setup_报错">运行 /etc/init.d/vboxdrv setup 报错</h3><h4 id="错误日志_“unable_to_find_the_sources_of_your_current_Linux_kernel”">错误日志 “unable to find the sources of your current Linux kernel”</h4><h4 id="错误的原因是没有内核原文件">错误的原因是没有内核原文件</h4><h4 id="1-从软件仓库下载gcc,然后安装，这个是编译器">1.从软件仓库下载gcc,然后安装，这个是编译器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc</span><br></pre></td></tr></table></figure>
+<h4 id="2-安装make，这个是自动编译源码的工具，写好makefile就可以方便编译">2.安装make，这个是自动编译源码的工具，写好makefile就可以方便编译</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install make</span><br></pre></td></tr></table></figure>
+<h4 id="3-安装内核，编译内核，驱动必要的">3.安装内核，编译内核，驱动必要的</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install kernel-headers</span><br></pre></td></tr></table></figure>
+<h4 id="4-同上">4.同上</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install kernel-devel</span><br></pre></td></tr></table></figure>
+<h4 id="重新启动电脑，启动时系统会自动从新的内核文件选项启动。">重新启动电脑，启动时系统会自动从新的内核文件选项启动。</h4><h4 id="不要改回到原来的选项默认就好（回到原来的选项还会出现上面的错误）。">不要改回到原来的选项默认就好（回到原来的选项还会出现上面的错误）。</h4>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Virtualbox/">Virtualbox</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-npm国内镜像" class="article article-type-post" itemscope itemprop="blogPost">
   

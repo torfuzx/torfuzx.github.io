@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux信号（signal） | 別問的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="12345678910111213141516171819202122232425262728SIGHUP                    终止进程                     终端线路挂断SIGINT                    终止进程                     中断进程SIGQUIT                   建立CORE文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux信号（signal）">
+<meta property="og:url" content="http://yoursite.com/2015/09/28/Linux信号（signal）/index.html">
+<meta property="og:site_name" content="別問的博客">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728SIGHUP                    终止进程                     终端线路挂断SIGINT                    终止进程                     中断进程SIGQUIT                   建立CORE文件">
+<meta property="og:updated_time" content="2015-09-28T07:14:19.331Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux信号（signal）">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728SIGHUP                    终止进程                     终端线路挂断SIGINT                    终止进程                     中断进程SIGQUIT                   建立CORE文件">
+  
+    <link rel="alternative" href="/atom.xml" title="別問的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/assets/blogImg/leslie.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">別問</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">golang开发者，关注Docker技术</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="http://github.com/torfuzx/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/notask/" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="mailto://torfu@qq.com/" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Atom/" style="font-size: 15px;">Atom</a> <a href="/tags/Chromium/" style="font-size: 10px;">Chromium</a> <a href="/tags/Fedora/" style="font-size: 15px;">Fedora</a> <a href="/tags/Go/" style="font-size: 20px;">Go</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/NodeJS/" style="font-size: 15px;">NodeJS</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/Virtualbox/" style="font-size: 10px;">Virtualbox</a> <a href="/tags/胡扯/" style="font-size: 10px;">胡扯</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://laoxu.blog.51cto.com/">老徐的私房菜</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">一个不入流的Go程序员，码畜</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">別問</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/assets/blogImg/leslie.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">別問</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">golang开发者，关注Docker技术</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="http://github.com/torfuzx/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/notask/" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="mailto://torfu@qq.com/" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Linux信号（signal）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/28/Linux信号（signal）/" class="article-date">
+  	<time datetime="2015-09-28T06:54:18.000Z" itemprop="datePublished">2015-09-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux信号（signal）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">SIGHUP                    终止进程                     终端线路挂断</span><br><span class="line">SIGINT                    终止进程                     中断进程</span><br><span class="line">SIGQUIT                   建立CORE文件                 终止进程，并且生成core文件</span><br><span class="line">SIGILL                    建立CORE文件                 非法指令</span><br><span class="line">SIGTRAP                   建立CORE文件                 跟踪自陷</span><br><span class="line">SIGBUS                    建立CORE文件                 总线错误</span><br><span class="line">SIGSEGV                   建立CORE文件                 段非法错误</span><br><span class="line">SIGFPE                    建立CORE文件                 浮点异常</span><br><span class="line">SIGIOT                    建立CORE文件                 执行<span class="keyword">I</span>/<span class="keyword">O</span>自陷</span><br><span class="line">SIGKILL                   终止进程                     杀死进程</span><br><span class="line">SIGPIPE                   终止进程                     向一个没有读进程的管道写数据</span><br><span class="line">SIGALARM                  终止进程                     计时器到时</span><br><span class="line">SIGTERM                   终止进程                     软件终止信号</span><br><span class="line">SIGSTOP                   停止进程                     非终端来的停止信号</span><br><span class="line">SIGTSTP                   停止进程                     终端来的停止信号</span><br><span class="line">SIGCONT                   忽略信号                     继续执行一个停止的进程</span><br><span class="line">SIGURG                    忽略信号                     <span class="keyword">I</span>/<span class="keyword">O</span>紧急信号</span><br><span class="line">SIGIO                     忽略信号                     描述符上可以进行<span class="keyword">I</span>/<span class="keyword">O</span></span><br><span class="line">SIGCHLD                   忽略信号                     当子进程停止或退出时通知父进程</span><br><span class="line">SIGTTOU                   停止进程                     后台进程写终端</span><br><span class="line">SIGTTIN                   停止进程                     后台进程读终端</span><br><span class="line">SIGXGPU                   终止进程                     CPU时限超时</span><br><span class="line">SIGXFSZ                   终止进程                     文件长度过长</span><br><span class="line">SIGWINCH                  忽略信号                     窗口大小发生变化</span><br><span class="line">SIGPROF                   终止进程                     统计分布图用计时器到时</span><br><span class="line">SIGUSR1                   终止进程                     用户定义信号<span class="number">1</span></span><br><span class="line">SIGUSR2                   终止进程                     用户定义信号<span class="number">2</span></span><br><span class="line">SIGVTALRM                 终止进程                     虚拟计时器到时</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>SIGHUP 本信号在用户终端连接(正常或非正常)结束时发出, 通常是在终端的控制进程结束时, 通知同一session内的各个作业, 这时它们与控制终端不再关联. </p>
+</li>
+<li><p>SIGINT 程序终止(interrupt)信号, 在用户键入INTR字符(通常是Ctrl-C)时发出. </p>
+</li>
+<li><p>SIGQUIT 和SIGINT类似, 但由QUIT字符(通常是Ctrl-)来控制. 进程在因收到SIGQUIT退出时会产生core文件, 在这个意义上类似于一个程序错误信号. </p>
+</li>
+<li><p>SIGILL 执行了非法指令. 通常是因为可执行文件本身出现错误, 或者试图执行数据段. 堆栈溢出时也有可能产生这个信号. </p>
+</li>
+<li><p>SIGTRAP 由断点指令或其它trap指令产生. 由debugger使用. </p>
+</li>
+<li><p>SIGABRT 程序自己发现错误并调用abort时产生. </p>
+</li>
+<li><p>SIGIOT 在PDP-11上由iot指令产生, 在其它机器上和SIGABRT一样. </p>
+</li>
+<li><p>SIGBUS 非法地址, 包括内存地址对齐(alignment)出错. eg: 访问一个四个字长的整数, 但其地址不是4的倍数. </p>
+</li>
+<li><p>SIGFPE 在发生致命的算术运算错误时发出. 不仅包括浮点运算错误, 还包括溢出及除数为0等其它所有的算术的错误. </p>
+</li>
+<li><p>SIGKILL 用来立即结束程序的运行. 本信号不能被阻塞, 处理和忽略. </p>
+</li>
+<li><p>SIGUSR1 留给用户使用. </p>
+</li>
+<li><p>SIGSEGV 试图访问未分配给自己的内存, 或试图往没有写权限的内存地址写数据. </p>
+</li>
+<li><p>SIGUSR2 留给用户使用. </p>
+</li>
+<li><p>SIGPIPE Broken pipe. </p>
+</li>
+<li><p>SIGALRM 时钟定时信号, 计算的是实际的时间或时钟时间. alarm函数使用该信号. </p>
+</li>
+<li><p>SIGTERM 程序结束(terminate)信号, 与SIGKILL不同的是该信号可以被阻塞和处理. 通常用来要求程序自己正常退出. shell命令kill缺省产生这个信号.</p>
+</li>
+<li><p>SIGCHLD 子进程结束时, 父进程会收到这个信号. </p>
+</li>
+<li><p>SIGCONT 让一个停止(stopped)的进程继续执行. 本信号不能被阻塞. 可以用一个handler来让程序在由stopped状态变为继续执行时完成特定的工作. 例如, 重新显示提示符. </p>
+</li>
+<li><p>SIGSTOP 停止(stopped)进程的执行. 注意它和terminate以及interrupt的区别:该进程还未结束, 只是暂停执行. 本信号不能被阻塞, 处理或忽略.</p>
+</li>
+<li><p>SIGTSTP 停止进程的运行, 但该信号可以被处理和忽略. 用户键入SUSP字符时(通常是Ctrl-Z)发出这个信号. </p>
+</li>
+<li><p>SIGTTIN 当后台作业要从用户终端读数据时, 该作业中的所有进程会收到SIGTTIN信号. 缺省时这些进程会停止执行. </p>
+</li>
+<li><p>SIGTTOU 类似于SIGTTIN, 但在写终端(或修改终端模式)时收到. </p>
+</li>
+<li><p>SIGURG 有”紧急”数据或out-of-band数据到达socket时产生. </p>
+</li>
+<li><p>SIGXCPU 超过CPU时间资源限制. 这个限制可以由getrlimit/setrlimit来读取/改变. </p>
+</li>
+<li><p>SIGXFSZ 超过文件大小资源限制. </p>
+</li>
+<li><p>SIGVTALRM 虚拟时钟信号. 类似于SIGALRM, 但是计算的是该进程占用的CPU时间. </p>
+</li>
+<li><p>SIGPROF 类似于SIGALRM/SIGVTALRM, 但包括该进程用的CPU时间以及系统调用的时间. </p>
+</li>
+<li><p>SIGWINCH 窗口大小改变时发出. </p>
+</li>
+<li><p>SIGIO 文件描述符准备就绪, 可以开始进行输入/输出操作. </p>
+</li>
+<li><p>SIGPWR Power failure. </p>
+</li>
+</ol>
+<h5 id="有两个信号可以停止进程:SIGTERM和SIGKILL。">有两个信号可以停止进程:SIGTERM和SIGKILL。</h5><ul>
+<li><p>SIGTERM比较友好，进程能捕捉这个信号，根据您的需要来关闭程序。在关闭程序之前，您可以结束打开的记录文件和完成正在做的任务。在某些情况下，假如进程正在进行作业而且不能中断，那么进程可以忽略这个SIGTERM信号。</p>
+</li>
+<li><p>对于SIGKILL信号，进程是不能忽略的。这是一个 “我不管您在做什么,立刻停止”的信号。假如您发送SIGKILL信号给进程，Linux就将进程停止在那里。</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/09/24/Golang-优秀的第三方库/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Golang 优秀的第三方库</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Linux信号（signal）" data-title="Linux信号（signal）" data-url="http://yoursite.com/2015/09/28/Linux信号（signal）/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"noask"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 別問
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
