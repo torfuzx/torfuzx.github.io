@@ -182,6 +182,63 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Linux下Go-1-5-安装配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/23/Linux下Go-1-5-安装配置/" class="article-date">
+  	<time datetime="2015-08-22T17:12:54.000Z" itemprop="datePublished">2015-08-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/23/Linux下Go-1-5-安装配置/">Linux下Go 1.5 安装</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-获取golang_1-5_安装包">1.获取golang 1.5 安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://storage.googleapis.com/golang/go1.<span class="number">5</span>.linux-amd64.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="2-解压到/usr/local">2.解压到/usr/local</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -C /usr/<span class="built_in">local</span> -xzf go1.<span class="number">5</span>.linux-amd64.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="3-配置环境变量">3.配置环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/go/bin</span><br><span class="line"><span class="built_in">export</span> GOPATH=<span class="variable">$HOME</span>/gopath</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$GOPATH</span>/bin</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Go/">Go</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-virtualbox启动错误解决" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

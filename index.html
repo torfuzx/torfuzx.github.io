@@ -182,6 +182,176 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Lua极简入门指南（一）：基础知识篇" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/08/Lua极简入门指南（一）：基础知识篇/" class="article-date">
+  	<time datetime="2015-10-08T09:48:44.000Z" itemprop="datePublished">2015-10-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/08/Lua极简入门指南（一）：基础知识篇/">Lua极简入门指南（一）：基础知识篇</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Chunks">Chunks</h2><h5 id="一个_Chunk_就是一组被执行的语句，例如一个文件或者交互模式下的一行。">一个 Chunk 就是一组被执行的语句，例如一个文件或者交互模式下的一行。</h5><h2 id="标识符（identifiers）">标识符（identifiers）</h2><h5 id="我们应该避免使用以___开头并跟上一个或者多个大写字母的字符串来作标识符，它们被保留作特殊的用途（例如：_VERSION）。">我们应该避免使用以 _ 开头并跟上一个或者多个大写字母的字符串来作标识符，它们被保留作特殊的用途（例如：_VERSION）。</h5><h2 id="注释">注释</h2><h5 id="单行注释使用">单行注释使用</h5><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--</span></span><br></pre></td></tr></table></figure>
+<h5 id="多行注释使用">多行注释使用</h5><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--[[ 和 --]]</span></span><br></pre></td></tr></table></figure>
+<h2 id="类型简介">类型简介</h2><h5 id="Lua_存在的数据类型包括：">Lua 存在的数据类型包括：</h5><ol>
+<li><p>nil。此类型只有一个值 nil。用于表示“空”值。全局变量默认为 nil，删除一个已经赋值的全局变量只需要将其赋值为 nil（对比 JavaScript，赋值 null 并不能完全删除对象的属性，属性还存在，值为 null）</p>
+</li>
+<li><p>boolean。此类型有两个值 true 和 false。在 Lua 中，false 和 nil 都表示条件假，其他值都表示条件真（区别于 C/C++ 等语言的是，0 是真）</p>
+</li>
+<li><p>number。双精浮点数（IEEE 754 标准），Lua 没有整数类型</p>
+</li>
+<li><p>string。你可以保存任意的二进制数据到字符串中（包括 0）。字符串中的字符是不可以改变的（需要改变时，你只能创建一个新的字符串）。获取字符串的长度，可以使用 # 操作符（长度操作符）。例如：print(#”hello”)。字符串可以使用单引号，也可以使用双引号包裹，对于多行的字符串还可以使用 [[ 和 ]] 包裹。字符串中可以使用转义字符，例如 \n \r 等。使用 [[ 和 ]] 包裹的字符串中的转义字符不会被转义</p>
+</li>
+<li><p>userdata。用于保存任意的 C 数据。userdata 只能支持赋值操作和比较测试</p>
+</li>
+<li><p>function。函数是第一类值（first-class value），我们能够像使用其他变量一样的使用函数（函数能够保存在变量中，可以作为参数传递给函数）</p>
+</li>
+<li><p>thread。区别于我们常常说的系统级线程</p>
+</li>
+<li><p>table。被实现为关联数组（associative arrays），可以通过任何值来进行索引（nil 除外）。和全局变量一样，table 中未赋值的域为 nil，删除一个域只需要将其赋值为 nil（实际上，全局变量就是被放置在一个 table 中）</p>
+</li>
+</ol>
+<hr>
+<h5 id="type_函数用于返回值的类型：">type 函数用于返回值的类型：</h5><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span><span class="function"><span class="params">(type(<span class="string">"Hello World"</span>))</span> --&gt;</span> string</span><br><span class="line"><span class="built_in">print</span><span class="function"><span class="params">(type(<span class="number">10.4</span>*<span class="number">3</span>))</span>        --&gt;</span> number</span><br><span class="line"><span class="built_in">print</span><span class="function"><span class="params">(type(<span class="built_in">print</span>))</span>         --&gt;</span> <span class="keyword">function</span></span><br><span class="line"><span class="built_in">print</span><span class="function"><span class="params">(type(type(X)))</span>       --&gt;</span> string</span><br></pre></td></tr></table></figure>
+<p>在 Lua 中，任何的变量都可以保存任何的值。</p>
+<h2 id="table_使用简介">table 使用简介</h2><h5 id="使用构造表达式可以创建一个_table：">使用构造表达式可以创建一个 table：</h5><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby">- 创建一个空的 table</span><br><span class="line"></span>a = &#123;&#125;</span><br><span class="line"> </span><br><span class="line">-<span class="ruby">- 创建并初始化一个 table，这里</span><br><span class="line"></span>-<span class="ruby">- days[<span class="number">1</span>] == <span class="string">"Sunday"</span></span><br><span class="line"></span>-<span class="ruby">- days[<span class="number">2</span>] == <span class="string">"Monday"</span></span><br><span class="line"></span>-<span class="ruby">- ...</span><br><span class="line"></span>days = &#123; "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" &#125;</span><br><span class="line"> </span><br><span class="line">-<span class="ruby">- 创建并初始化一个 table，这里</span><br><span class="line"></span>-<span class="ruby">- a[<span class="string">"x"</span>] == <span class="number">10</span></span><br><span class="line"></span>-<span class="ruby">- a[<span class="string">"y"</span>] == <span class="number">20</span></span><br><span class="line"></span>a = &#123; x = 10, y = 20 &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="使用_[]_操作符访问_table_的域：">使用 [] 操作符访问 table 的域：</h5><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">a</span> = &#123;&#125;</span><br><span class="line">k = <span class="string">"x"</span></span><br><span class="line"><span class="operator">a</span>[k] = <span class="number">10</span></span><br><span class="line"><span class="operator">a</span>[<span class="string">"x"</span>] = <span class="number">20</span></span><br><span class="line">print(<span class="operator">a</span>[<span class="string">"y"</span>]) <span class="comment">--&gt; nil</span></span><br><span class="line"><span class="operator">a</span>.x = <span class="number">30</span></span><br></pre></td></tr></table></figure>
+<p>注意，a.name 的语法等价于 a[“name”]。</p>
+<h5 id="table_可以用于表示数组，这时候索引为整数，并且从_1（而非_0）开始，例如：">table 可以用于表示数组，这时候索引为整数，并且从 1（而非 0）开始，例如：</h5><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="setting">a = <span class="value">&#123; <span class="string">'a'</span>, <span class="string">'b'</span> &#125;</span></span></span><br><span class="line"><span class="setting">a[1] =<span class="value">= <span class="string">'a'</span></span></span></span><br><span class="line"><span class="setting">a[2] =<span class="value">= <span class="string">'b'</span></span></span></span><br></pre></td></tr></table></figure>
+<h5 id="长度操作符可以获取_table_数组部分的长度：">长度操作符可以获取 table <strong>数组部分</strong>的长度：</h5><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">a</span> = &#123;&#125;</span><br><span class="line"><span class="operator">a</span>[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line"><span class="operator">a</span>[<span class="number">2</span>] = <span class="number">2</span></span><br><span class="line">print(<span class="comment">#a) --&gt; 2</span></span><br><span class="line"> </span><br><span class="line"><span class="operator">a</span>.<span class="operator">a</span> = <span class="number">1</span></span><br><span class="line"><span class="operator">a</span>.b = <span class="number">2</span></span><br><span class="line">print(<span class="comment">#a) --&gt; 2</span></span><br><span class="line"> </span><br><span class="line"><span class="operator">a</span> = &#123;&#125;</span><br><span class="line"><span class="operator">a</span>.<span class="operator">a</span> = <span class="number">1</span></span><br><span class="line"><span class="operator">a</span>.b = <span class="number">2</span></span><br><span class="line">print(<span class="comment">#a) --&gt; 0</span></span><br></pre></td></tr></table></figure>
+<h2 id="表达式">表达式</h2><h5 id="算术操作符">算术操作符</h5><ol>
+<li>+（加）</li>
+<li>-（减）</li>
+<li>*（乘）</li>
+<li>/（除）</li>
+<li>^（幂）</li>
+<li>%（取模）</li>
+</ol>
+<h5 id="任何算术操作符都试图将操作数转换为数值类型，例如：">任何算术操作符都试图将操作数转换为数值类型，例如：</h5><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span><span class="function"><span class="params">(<span class="number">10</span> + <span class="string">'1'</span>)</span> --&gt;</span> <span class="number">11</span></span><br></pre></td></tr></table></figure>
+<h5 id="关系操作符">关系操作符</h5><ol>
+<li>&lt;（小于）</li>
+<li>>（大于）</li>
+<li>&lt;=（小于等于）</li>
+<li>>=（大于等于）</li>
+<li>==（等于）</li>
+<li>~=（不等于）</li>
+</ol>
+<h5 id="两个不同类型的值是不相等的，例如：">两个不同类型的值是不相等的，例如：</h5><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">nil</span> ~= <span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+<h5 id="table、userdata_类型是通过引用进行比较的，例如：">table、userdata 类型是通过引用进行比较的，例如：</h5><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">a</span> = &#123;&#125;<span class="comment">; a.x = 1; a.y = 0</span></span><br><span class="line">b = &#123;&#125;<span class="comment">; b.x = 1; b.y = 0</span></span><br><span class="line">c = <span class="literal">a</span></span><br></pre></td></tr></table></figure>
+<p>这里 a 和 c 引用一个相同的对象，因此 a == c，但是 a ~= b（即便 a、b 内容相同）。</p>
+<h5 id="逻辑操作符">逻辑操作符</h5><ol>
+<li>and</li>
+<li>or</li>
+<li>not</li>
+</ol>
+<p>逻辑操作符有返回值。对于 and 操作来说，如果第一个操作数为 false 时返回此操作数，否则返回第二个操作数。对于 or 操作来说，如果第一个操作数不为 false 时返回此操作数，否则返回第二个操作数。</p>
+<h5 id="连接操作符">连接操作符</h5><h5 id="字符串连接可以使用连接操作符_“-”，例如：">字符串连接可以使用连接操作符 “..”，例如：</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"Hello "</span> .. <span class="string">"World"</span>)</span></span></span><br></pre></td></tr></table></figure>
+<h5 id="连接操作符试图将操作数转化为字符串，例如：">连接操作符试图将操作数转化为字符串，例如：</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"number: "</span> .. <span class="number">1</span>)</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="语句">语句</h2><h5 id="多赋值（multiple_assignment）支持，例如：">多赋值（multiple assignment）支持，例如：</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">a</span>, <span class="tag">b</span> = <span class="number">1</span>, <span class="number">2</span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(a)</span></span> --&gt; <span class="number">1</span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(b)</span></span> --&gt; <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h5 id="多赋值的一个惯用法就是交换两个变量的值：">多赋值的一个惯用法就是交换两个变量的值：</h5><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x, y = <span class="number">1</span>, <span class="number">2</span></span><br><span class="line">x, y = y, x</span><br><span class="line"><span class="built_in">print</span><span class="function"><span class="params">(x)</span> --&gt;</span> <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span><span class="function"><span class="params">(y)</span> --&gt;</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h5 id="创建局部变量使用_local：">创建局部变量使用 local：</h5><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">j</span> = <span class="number">10</span>       -- 全局变量 <span class="built_in">j</span></span><br><span class="line">local <span class="built_in">i</span> = <span class="number">10</span> -- 局部变量 <span class="built_in">i</span></span><br></pre></td></tr></table></figure>
+<h5 id="局部变量的作用域限制于他们声明的块（block）。块（block）包括：">局部变量的作用域限制于他们声明的块（block）。块（block）包括：</h5><ol>
+<li>控制结构的主体部分</li>
+<li>函数体</li>
+<li>chunk</li>
+<li>do-end</li>
+</ol>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="literal">true</span> <span class="keyword">then</span></span><br><span class="line">    local x = <span class="number">20</span></span><br><span class="line">    <span class="built_in">print</span><span class="function"><span class="params">(x)</span> --&gt;</span> <span class="number">20</span></span><br><span class="line">end</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span><span class="function"><span class="params">(x)</span> --&gt;</span> nil</span><br></pre></td></tr></table></figure>
+<h5 id="我们可以使用_do-end_关键字来构造一个块：">我们可以使用 do-end 关键字来构造一个块：</h5><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">    local x = <span class="number">20</span></span><br><span class="line">    <span class="built_in">print</span><span class="function"><span class="params">(x)</span> --&gt;</span> <span class="number">20</span></span><br><span class="line">end</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span><span class="function"><span class="params">(x)</span> --&gt;</span> nil</span><br></pre></td></tr></table></figure>
+<h5 id="访问局部变量要快于访问全局变量。在_Lua_中有一个习惯用法：">访问局部变量要快于访问全局变量。在 Lua 中有一个习惯用法：</h5><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> foo = foo</span><br></pre></td></tr></table></figure>
+<h5 id="用于创建一个局部变量并初始化为同名的全局变量。这样做常常出于两个原因：">用于创建一个局部变量并初始化为同名的全局变量。这样做常常出于两个原因：</h5><ol>
+<li>避免某些类型的全局变量被修改</li>
+<li>提高访问速度</li>
+</ol>
+<h2 id="控制结构">控制结构</h2><h5 id="if_then_elseif_else">if then elseif else</h5><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="operator">a</span> &lt; <span class="number">0</span> <span class="keyword">then</span></span><br><span class="line">    <span class="operator">a</span> = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">end</span></span><br><span class="line"> </span><br><span class="line"><span class="title">if</span> <span class="title">a</span> &lt; <span class="title">b</span> <span class="title">then</span></span></span><br><span class="line">    <span class="constant">return</span> <span class="operator">a</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="constant">return</span> b</span><br><span class="line"><span class="function"><span class="keyword">end</span></span><br><span class="line"> </span><br><span class="line"><span class="title">if</span> <span class="title">op</span> == '+' <span class="title">then</span></span></span><br><span class="line">    r = <span class="operator">a</span> + b</span><br><span class="line">elseif op == <span class="string">'-'</span> <span class="keyword">then</span></span><br><span class="line">    r = <span class="operator">a</span> - b</span><br><span class="line">elseif op == <span class="string">'*'</span> <span class="keyword">then</span></span><br><span class="line">    r = <span class="operator">a</span> * b</span><br><span class="line">elseif op == <span class="string">'/'</span> <span class="keyword">then</span></span><br><span class="line">    r = <span class="operator">a</span> / b</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    error(<span class="string">'invalid operation'</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>Lua 中没有 switch 语句。</p>
+<h5 id="while">while</h5><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">local</span> i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> <span class="operator">a</span>[i] <span class="built_in">do</span></span><br><span class="line">    print(<span class="operator">a</span>[i])</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h5 id="repeat">repeat</h5><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">repeat</span></span><br><span class="line">    <span class="built_in">line</span> = io.<span class="built_in">read</span>()</span><br><span class="line"><span class="keyword">until</span> <span class="built_in">line</span> ~= <span class="string">''</span></span><br><span class="line">print(<span class="built_in">line</span>)</span><br></pre></td></tr></table></figure>
+<p>区别于 while，repeat 会先执行循环体，然后判断测试条件。</p>
+<h5 id="数值型_for（numeric_for）">数值型 for（numeric for）</h5><p>for 有两种：</p>
+<ol>
+<li>数值型 for（numeric for）</li>
+<li>泛型 for（generic for）</li>
+</ol>
+<p>数值型 for 的语法如下：</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> var = <span class="built_in">exp1</span>, <span class="built_in">exp2</span>, exp3 <span class="built_in">do</span></span><br><span class="line">    &lt;something&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>这里 exp1 作为 var 的初始值，exp2 为 var 的最大值，exp3 为 var 每次递增的值，exp3 是可选的，默认为 1。范例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-- 输出 <span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="keyword">for</span> i = <span class="number">1</span>, <span class="number">3</span> <span class="function"><span class="keyword">do</span></span><br><span class="line">    <span class="title">print</span><span class="params">(i)</span></span><br><span class="line">end</span></span><br></pre></td></tr></table></figure>
+<p>有一些需要注意的地方：</p>
+<ol>
+<li>for 中的 exp1、exp2、exp3 只会被计算一次值，例如：</li>
+</ol>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i = <span class="number">1</span>, f(x) <span class="keyword">do</span> <span class="built_in">print</span>(i) <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>这里的 f(x) 只会被调用一次</p>
+<ol>
+<li>控制变量 var 只是一个局部变量</li>
+<li>不要尝试去修改控制变量 var 的值（结果是未知的）</li>
+</ol>
+<h2 id="泛型_for">泛型 for</h2><h5 id="泛型_for_通过一个迭代器函数来实现遍历，例如：">泛型 for 通过一个迭代器函数来实现遍历，例如：</h5><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> <span class="built_in">pairs</span>(t) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(k, v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>这里的 pairs 就是一个迭代器函数，此 for 循环遍历 table t，每次获取到的 key 保存在变量 k 中，获取到的 value 保存在变量 v 中。除了 pairs 还有其他的迭代器可以用：</p>
+<ol>
+<li>io.lines 可用于迭代文件中的行</li>
+<li>ipairs 可用于迭代 table 的数组部分</li>
+</ol>
+<p>我们还可以自己编写迭代器。</p>
+<h2 id="break、return、goto">break、return、goto</h2><p>break 语句用于跳出一个循环（for、repeat、while）。</p>
+<p>return 语句用于为函数返回结果。在 Lua 中，return 语句必须是一个块的最后一条语句，看一个例子：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span></span></span><br><span class="line">    <span class="comment">-- 语法错误</span></span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">local</span> i = <span class="number">1</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>有时候，我们出于某些原因（例如为了 debug），我们需要在一个函数中插入一个 return 语句，这时候可以这么做：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span></span></span><br><span class="line">    <span class="comment">-- ...</span></span><br><span class="line">    <span class="keyword">do</span> <span class="keyword">return</span> <span class="keyword">end</span></span><br><span class="line">    <span class="comment">-- ...</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>goto 语句用于在函数中跳转。goto 语句可以让执行跳转到特定的标签（label）处，例如：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">goto quit</span><br><span class="line">print(<span class="emphasis">'come on'</span>)</span><br><span class="line"><span class="attribute">::quit::</span></span><br><span class="line">print(<span class="emphasis">'quit'</span>)</span><br></pre></td></tr></table></figure>
+<p>这里输出 quit。正如我们看到的，标签的写法为 ::name::。goto 跳转也是存在限制的：</p>
+<ol>
+<li>不允许跳转到一个块中去</li>
+<li>不允许跳转到函数之外去</li>
+<li>不允许跳入局部变量的作用域中</li>
+</ol>
+<p>对于第三点，看一个例子：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">goto quit</span><br><span class="line">local a</span><br><span class="line"><span class="attribute">::quit::</span></span><br><span class="line">print(<span class="emphasis">'quit'</span>)</span><br></pre></td></tr></table></figure>
+<p>执行成功，没有语法错误。这是因为局部变量的作用域结束于变量定义的块的最后一个非 void 语句，而标签被认为是一个 void 语句，对于上面的例子来说，a 的作用域在 ::quit:: 之前就结束了，因此 goto quit 并没有跳入局部变量 a 的作用域中。</p>
+<p>利用 goto 可以比较方便的编写状态机，例如（s1、s2 为状态）：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">::s1:: <span class="operator"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> <span class="keyword">c</span> = io.<span class="keyword">read</span>(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">c</span> == <span class="string">'0'</span> <span class="keyword">then</span> <span class="keyword">goto</span> s2</span><br><span class="line">    elseif <span class="keyword">c</span> == nil <span class="keyword">then</span> print<span class="string">'ok'</span>;</span> return</span><br><span class="line">    else goto s1</span><br><span class="line">    <span class="operator"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"> </span><br><span class="line">::s2:: <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> <span class="keyword">c</span> = io.<span class="keyword">read</span>(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">c</span> == <span class="string">'0'</span> <span class="keyword">then</span> <span class="keyword">goto</span> s1</span><br><span class="line">    elseif <span class="keyword">c</span> == nil <span class="keyword">then</span> print<span class="string">'not ok'</span>;</span> return</span><br><span class="line">    else goto s2</span><br><span class="line">    <span class="operator"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">goto</span> s1</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-Linux信号（signal）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -470,8 +640,8 @@
 <li>XML的动态配置，可以不用重新编译程序而动态的加载配置信息</li>
 <li>支持热更新，能够动态改变配置而不需要重启应用</li>
 <li>支持多输出流，能够同时把日志输出到多种流中、例如文件流、网络流等</li>
-<li>支持不同的日志输出</li>
-<li>命令行输出<ul>
+<li>支持不同的日志输出<ul>
+<li>命令行输出</li>
 <li>文件输出</li>
 <li>缓存输出</li>
 <li>支持log rotate</li>
@@ -481,7 +651,7 @@
 </ul>
 <h3 id="seelog_的好处">seelog 的好处</h3><ol>
 <li>seelog 本身接口丰富，同时有 debug, info, error, critical 及带 *f 两套接口，即 Debug, 和 Debugf, 类型于 Print 和 Printf</li>
-<li>seelog 可通过配置文件来配置一些特性，甚至还可以在运行时能过改变配置来改变输出。</li>
+<li>seelog 可通过配置文件来配置一些特性，甚至还可以在运行时能过改变配置来改变输出</li>
 <li>seelog 支持生成各种形式的日志文件，比如单纯的 log 文件，根据日期生成类似 yyy.mm.dd.log 文件，根据 size 生成类似 debug.1.log, debug.2.log 文件，而且支持压缩格式</li>
 <li>seelog 支持多个输出及分流输出，比如 Debug() 输出到 debug.log，Info()和Error() 输出到 控制台 和 msg.log 文件<br>seelog 支持自定义输出格式</li>
 </ol>
@@ -882,63 +1052,6 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime/">Sublime</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-Linux下Go-1-5-安装配置" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/23/Linux下Go-1-5-安装配置/" class="article-date">
-  	<time datetime="2015-08-22T17:12:54.000Z" itemprop="datePublished">2015-08-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/23/Linux下Go-1-5-安装配置/">Linux下Go 1.5 安装</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-获取golang_1-5_安装包">1.获取golang 1.5 安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://storage.googleapis.com/golang/go1.<span class="number">5</span>.linux-amd64.tar.gz</span><br></pre></td></tr></table></figure>
-<h3 id="2-解压到/usr/local">2.解压到/usr/local</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -C /usr/<span class="built_in">local</span> -xzf go1.<span class="number">5</span>.linux-amd64.tar.gz</span><br></pre></td></tr></table></figure>
-<h3 id="3-配置环境变量">3.配置环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/go/bin</span><br><span class="line"><span class="built_in">export</span> GOPATH=<span class="variable">$HOME</span>/gopath</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$GOPATH</span>/bin</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Go/">Go</a></li></ul>
 	</div>
 
       

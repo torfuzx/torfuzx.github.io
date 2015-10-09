@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2015/09/17/Golang-Seelog-入门/index.html">
 <meta property="og:site_name" content="別問的博客">
 <meta property="og:description" content="日志应用我们期望开发的Web应用程序能够把整个程序运行过程中出现的各种事件一一记录下来，Go语言中提供了一个简易的log包，我们使用该包可以方便的实现日志记录的功能，这些日志都是基于fmt包的打印再结合panic之类的函数来进行一般的打印、抛出错误处理。Go目前标准包只是包含了简单的功能，如果我们想把我们的应用日志保存到文件，然后又能够结合日志实现很多复杂的功能，可以使用第三方开发的一个日志系统（">
-<meta property="og:updated_time" content="2015-09-28T06:57:37.720Z">
+<meta property="og:updated_time" content="2015-10-08T08:28:32.144Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Golang Seelog 入门">
 <meta name="twitter:description" content="日志应用我们期望开发的Web应用程序能够把整个程序运行过程中出现的各种事件一一记录下来，Go语言中提供了一个简易的log包，我们使用该包可以方便的实现日志记录的功能，这些日志都是基于fmt包的打印再结合panic之类的函数来进行一般的打印、抛出错误处理。Go目前标准包只是包含了简单的功能，如果我们想把我们的应用日志保存到文件，然后又能够结合日志实现很多复杂的功能，可以使用第三方开发的一个日志系统（">
@@ -224,8 +224,8 @@
 <li>XML的动态配置，可以不用重新编译程序而动态的加载配置信息</li>
 <li>支持热更新，能够动态改变配置而不需要重启应用</li>
 <li>支持多输出流，能够同时把日志输出到多种流中、例如文件流、网络流等</li>
-<li>支持不同的日志输出</li>
-<li>命令行输出<ul>
+<li>支持不同的日志输出<ul>
+<li>命令行输出</li>
 <li>文件输出</li>
 <li>缓存输出</li>
 <li>支持log rotate</li>
@@ -235,7 +235,7 @@
 </ul>
 <h3 id="seelog_的好处">seelog 的好处</h3><ol>
 <li>seelog 本身接口丰富，同时有 debug, info, error, critical 及带 *f 两套接口，即 Debug, 和 Debugf, 类型于 Print 和 Printf</li>
-<li>seelog 可通过配置文件来配置一些特性，甚至还可以在运行时能过改变配置来改变输出。</li>
+<li>seelog 可通过配置文件来配置一些特性，甚至还可以在运行时能过改变配置来改变输出</li>
 <li>seelog 支持生成各种形式的日志文件，比如单纯的 log 文件，根据日期生成类似 yyy.mm.dd.log 文件，根据 size 生成类似 debug.1.log, debug.2.log 文件，而且支持压缩格式</li>
 <li>seelog 支持多个输出及分流输出，比如 Debug() 输出到 debug.log，Info()和Error() 输出到 控制台 和 msg.log 文件<br>seelog 支持自定义输出格式</li>
 </ol>
