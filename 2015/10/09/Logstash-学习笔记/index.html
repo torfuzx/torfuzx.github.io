@@ -3,18 +3,31 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Fedora下安装Chromium | 別問的博客</title>
+  <title>Logstash 学习笔记 | 別問的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.Fedora官方源中没有包含Chromium，需要先添加安装源。1234567Stable repo(稳定版本):http://repos.fedorapeople.org/repos/spot/chromium-stable/http://repos.fedorapeople.org/repos/spot/chromium-stable/fedora-chromium-stable.repo">
+  <meta name="description" content="#简介
+
+Logstash 是一个完全开源的工具，他可以对你的日志进行收集、分析，并将其存储供以后使用（如，搜索），您可以使用它。说到搜索，logstash带有一个web界面，搜索和展示所有日志。
+
+kibana 也是一个开源和免费的工具，他可以帮助您汇总、分析和搜索重要数据日志并提供友好的web界面。他可以为 Logstash 和 ElasticSearch 提供的日志分析的 Web 界面">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fedora下安装Chromium">
-<meta property="og:url" content="http://yoursite.com/2015/08/22/Fedora下安装Chromium/index.html">
+<meta property="og:title" content="Logstash 学习笔记">
+<meta property="og:url" content="http://yoursite.com/2015/10/09/Logstash-学习笔记/index.html">
 <meta property="og:site_name" content="別問的博客">
-<meta property="og:description" content="1.Fedora官方源中没有包含Chromium，需要先添加安装源。1234567Stable repo(稳定版本):http://repos.fedorapeople.org/repos/spot/chromium-stable/http://repos.fedorapeople.org/repos/spot/chromium-stable/fedora-chromium-stable.repo">
-<meta property="og:updated_time" content="2015-09-23T01:56:05.909Z">
+<meta property="og:description" content="#简介
+
+Logstash 是一个完全开源的工具，他可以对你的日志进行收集、分析，并将其存储供以后使用（如，搜索），您可以使用它。说到搜索，logstash带有一个web界面，搜索和展示所有日志。
+
+kibana 也是一个开源和免费的工具，他可以帮助您汇总、分析和搜索重要数据日志并提供友好的web界面。他可以为 Logstash 和 ElasticSearch 提供的日志分析的 Web 界面">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/logstash.png">
+<meta property="og:updated_time" content="2015-10-09T07:40:18.521Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fedora下安装Chromium">
-<meta name="twitter:description" content="1.Fedora官方源中没有包含Chromium，需要先添加安装源。1234567Stable repo(稳定版本):http://repos.fedorapeople.org/repos/spot/chromium-stable/http://repos.fedorapeople.org/repos/spot/chromium-stable/fedora-chromium-stable.repo">
+<meta name="twitter:title" content="Logstash 学习笔记">
+<meta name="twitter:description" content="#简介
+
+Logstash 是一个完全开源的工具，他可以对你的日志进行收集、分析，并将其存储供以后使用（如，搜索），您可以使用它。说到搜索，logstash带有一个web界面，搜索和展示所有日志。
+
+kibana 也是一个开源和免费的工具，他可以帮助您汇总、分析和搜索重要数据日志并提供友好的web界面。他可以为 Logstash 和 ElasticSearch 提供的日志分析的 Web 界面">
   
     <link rel="alternative" href="/atom.xml" title="別問的博客" type="application/atom+xml">
   
@@ -181,11 +194,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-Fedora下安装Chromium" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Logstash-学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/08/22/Fedora下安装Chromium/" class="article-date">
-  	<time datetime="2015-08-22T13:24:24.000Z" itemprop="datePublished">2015-08-22</time>
+      <a href="/2015/10/09/Logstash-学习笔记/" class="article-date">
+  	<time datetime="2015-10-09T06:20:49.000Z" itemprop="datePublished">2015-10-09</time>
 </a>
     </div>
   
@@ -198,7 +211,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Fedora下安装Chromium
+      Logstash 学习笔记
     </h1>
   
 
@@ -207,7 +220,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chromium/">Chromium</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Logstash/">Logstash</a></li></ul>
 	</div>
 
         
@@ -218,10 +231,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-Fedora官方源中没有包含Chromium，需要先添加安装源。">1.Fedora官方源中没有包含Chromium，需要先添加安装源。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Stable repo(稳定版本):</span><br><span class="line">http://repos.fedorapeople.org/repos/spot/chromium-stable/</span><br><span class="line">http://repos.fedorapeople.org/repos/spot/chromium-stable/fedora-chromium-stable.repo</span><br><span class="line"></span><br><span class="line">Unstable repo(非稳定版本,开发测试中的构建版本,是最新版本):</span><br><span class="line">http://repos.fedorapeople.org/repos/spot/chromium-unstable/</span><br><span class="line">http://repos.fedorapeople.org/repos/spot/chromium-unstable/fedora-chromium.repo</span><br></pre></td></tr></table></figure>
-<h3 id="2-选择添加上面其中一个源,使用wget命令下载源库文件到_/etc/yum-repos-d/_目录下">2.选择添加上面其中一个源,使用wget命令下载源库文件到 /etc/yum.repos.d/ 目录下</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/yum.repos.d</span><br><span class="line"></span><br><span class="line">获取稳定库</span><br><span class="line">wget http://repos.fedorapeople.org/repos/spot/chromium-stable/fedora-chromium.repo</span><br><span class="line"></span><br><span class="line">安装Chromium</span><br><span class="line">yum install chromium</span><br></pre></td></tr></table></figure>
-<h3 id="3-如果安装中出现错误：“Couldn’t_open_file_/etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-i386”">3.如果安装中出现错误：“Couldn’t open file /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-i386”</h3><h3 id="检查仓库配置是否正确">检查仓库配置是否正确</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/yum.repos.d/*.repo</span><br></pre></td></tr></table></figure>
-<h3 id="将最后一项gpgcheck=1改为0就好了">将最后一项gpgcheck=1改为0就好了</h3>
+        <p>#简介</p>
+<ol>
+<li><p>Logstash 是一个完全开源的工具，他可以对你的日志进行收集、分析，并将其存储供以后使用（如，搜索），您可以使用它。说到搜索，logstash带有一个web界面，搜索和展示所有日志。</p>
+</li>
+<li><p>kibana 也是一个开源和免费的工具，他可以帮助您汇总、分析和搜索重要数据日志并提供友好的web界面。他可以为 Logstash 和 ElasticSearch 提供的日志分析的 Web 界面</p>
+</li>
+</ol>
+<h1 id="流程">流程</h1><p>简单来讲他具体的工作流程就是 logstash agent 监控并过滤日志，将过滤后的日志内容发给redis(这里的redis只处理队列不做存储)，logstash index将日志收集在一起交给全文搜索服务ElasticSearch 可以用ElasticSearch进行自定义搜索 通过Kibana 来结合自定义搜索进行页面展示，下图是 Kibana官网上的流程图</p>
+<p><img src="/assets/blogImg/logstash.png" alt="Logstash"></p>
+
       
     </div>
     
@@ -230,18 +249,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/08/22/Linux下NodeJS的安装配置/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/10/21/Golang-编程百例/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Linux下NodeJS的安装配置
+          Golang 编程百例
         
       </div>
     </a>
   
   
-    <a href="/2015/08/22/Fedora国内源配置/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Fedora国内源配置</div>
+    <a href="/2015/10/08/Lua极简入门指南（一）：基础知识篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Lua极简入门指南（一）：基础知识篇</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -270,7 +289,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Fedora下安装Chromium" data-title="Fedora下安装Chromium" data-url="http://yoursite.com/2015/08/22/Fedora下安装Chromium/"></div>
+	<div class="ds-thread" data-thread-key="Logstash-学习笔记" data-title="Logstash 学习笔记" data-url="http://yoursite.com/2015/10/09/Logstash-学习笔记/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

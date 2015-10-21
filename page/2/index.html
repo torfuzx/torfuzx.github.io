@@ -112,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Atom/" style="font-size: 15px;">Atom</a> <a href="/tags/Chromium/" style="font-size: 10px;">Chromium</a> <a href="/tags/Fedora/" style="font-size: 15px;">Fedora</a> <a href="/tags/Go/" style="font-size: 20px;">Go</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/NodeJS/" style="font-size: 15px;">NodeJS</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/Virtualbox/" style="font-size: 10px;">Virtualbox</a> <a href="/tags/胡扯/" style="font-size: 10px;">胡扯</a>
+						<a href="/tags/Atom/" style="font-size: 15px;">Atom</a> <a href="/tags/Chromium/" style="font-size: 10px;">Chromium</a> <a href="/tags/Fedora/" style="font-size: 15px;">Fedora</a> <a href="/tags/Go/" style="font-size: 20px;">Go</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/NodeJS/" style="font-size: 15px;">NodeJS</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/Virtualbox/" style="font-size: 10px;">Virtualbox</a> <a href="/tags/胡扯/" style="font-size: 10px;">胡扯</a>
 					</div>
 				</section>
 				
@@ -181,6 +181,118 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Atom中文显示乱码解决方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/24/Atom中文显示乱码解决方法/" class="article-date">
+  	<time datetime="2015-08-24T07:17:43.000Z" itemprop="datePublished">2015-08-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/24/Atom中文显示乱码解决方法/">Atom中文显示乱码解决方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-先查看操作系统是否安装了这些字体，打开终端输入：_fc-list_:lang=zh_命令查看安装的字体">1.先查看操作系统是否安装了这些字体，打开终端输入： fc-list :lang=zh 命令查看安装的字体</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">fc</span>-list :lang=zh</span><br></pre></td></tr></table></figure>
+<h3 id="2-下载文泉驿字体">2.下载文泉驿字体</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf install wqy-*</span><br></pre></td></tr></table></figure>
+<h3 id="3-设置Atom字体">3.设置Atom字体</h3><h4 id="从菜单中打开_Edit-&gt;Open_your_config选项，或者Packages-&gt;Setting_views-&gt;Open，">从菜单中打开 Edit-&gt;Open your config选项，或者Packages-&gt;Setting views-&gt;Open，</h4><h4 id="找到config-cson文件中的editor子项，或者setting_views中的font-family选项，把字体设置成_文泉驿_系列字体才可以显示中文。">找到config.cson文件中的editor子项，或者setting views中的font-family选项，把字体设置成 文泉驿 系列字体才可以显示中文。</h4><h4 id="比如：">比如：</h4><h4 id="WenQuanYi_Micro_Hei_Mono,文泉驛等寬微米黑,文泉驿等宽微米黑">WenQuanYi Micro Hei Mono,文泉驛等寬微米黑,文泉驿等宽微米黑</h4><h4 id="WenQuanYi_Zen_Hei_Sharp,文泉驛點陣正黑,文泉驿点阵正黑">WenQuanYi Zen Hei Sharp,文泉驛點陣正黑,文泉驿点阵正黑</h4><h4 id="WenQuanYi_Micro_Hei,文泉驛微米黑,文泉驿微米黑">WenQuanYi Micro Hei,文泉驛微米黑,文泉驿微米黑</h4><h4 id="WenQuanYi_Zen_Hei_Mono,文泉驛等寬正黑,文泉驿等宽正黑">WenQuanYi Zen Hei Mono,文泉驛等寬正黑,文泉驿等宽正黑</h4><h4 id="WenQuanYi_Zen_Hei,文泉驛正黑,文泉驿正黑">WenQuanYi Zen Hei,文泉驛正黑,文泉驿正黑</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">例如，我的配置如下：</span><br><span class="line"> <span class="tag">editor</span>:</span><br><span class="line">    <span class="tag">invisibles</span>:</span><br><span class="line">      &#123;&#125;</span><br><span class="line">    <span class="attribute">tabLength</span>: <span class="number">4</span></span><br><span class="line">    <span class="attribute">fontFamily</span>: <span class="string">"WenQuanYi Micro Hei Mono,文泉驛等寬微米黑,文泉驿等宽微米黑"</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Atom/">Atom</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Fedora下安裝Sublime-Text-3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/24/Fedora下安裝Sublime-Text-3/" class="article-date">
+  	<time datetime="2015-08-24T06:32:33.000Z" itemprop="datePublished">2015-08-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/24/Fedora下安裝Sublime-Text-3/">Fedora下安裝Sublime Text 3</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="编辑安装脚本：install-sublime-text-sh">编辑安装脚本：install-sublime-text.sh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/sh</span></span><br><span class="line">SHORTCUT=<span class="string">"[Desktop Entry]</span><br><span class="line">Name=Sublime Text 3</span><br><span class="line">Comment=Edit text files</span><br><span class="line">Exec=/usr/local/sublime-text-3/sublime_text</span><br><span class="line">Icon=/usr/local/sublime-text-3/Icon/128x128/sublime_text.png</span><br><span class="line">Terminal=false</span><br><span class="line">Type=Application</span><br><span class="line">Encoding=UTF-8</span><br><span class="line">Categories=Utility;TextEditor;"</span></span><br><span class="line">SCRIPT=<span class="string">"#!/bin/sh</span><br><span class="line">if [ \$&#123;1&#125; == \"--help\" ]; then</span><br><span class="line">    /usr/local/sublime-text-3/sublime_text --help</span><br><span class="line">else</span><br><span class="line">    /usr/local/sublime-text-3/sublime_text \$@ &gt; /dev/null 2&gt;&amp;1 &amp;</span><br><span class="line">fi"</span></span><br><span class="line"></span><br><span class="line">curl -L <span class="string">"http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3083_x64.tar.bz2"</span> -o <span class="string">"/usr/src/Sublime Text 3.tar.bz2"</span></span><br><span class="line"><span class="built_in">cd</span> /usr/src</span><br><span class="line">tar -xvjf <span class="string">"Sublime Text 3.tar.bz2"</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"sublime_text_3"</span></span><br><span class="line">mkdir -pv <span class="string">"/usr/local/sublime-text-3"</span></span><br><span class="line">mv -fv * <span class="string">"/usr/local/sublime-text-3/"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;SCRIPT&#125;</span>"</span> &gt; <span class="string">"/usr/local/bin/subl"</span></span><br><span class="line">chmod +x <span class="string">"/usr/local/bin/subl"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;SHORTCUT&#125;</span>"</span> &gt; <span class="string">"/usr/share/applications/sublime-text-3.desktop"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Finish!"</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime/">Sublime</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-Linux下Go-1-5-安装配置" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -764,64 +876,9 @@
 
 
   
-    <article id="post-开启我的博客生涯" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/19/开启我的博客生涯/" class="article-date">
-  	<time datetime="2015-08-19T11:55:18.000Z" itemprop="datePublished">2015-08-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/19/开启我的博客生涯/">开启我的博客生涯</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>不知道说些什么，今天是公元2015年8月19日，感觉有些迷惘。。。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/胡扯/">胡扯</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
