@@ -112,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Atom/" style="font-size: 15px;">Atom</a> <a href="/tags/Chromium/" style="font-size: 10px;">Chromium</a> <a href="/tags/Fedora/" style="font-size: 15px;">Fedora</a> <a href="/tags/Go/" style="font-size: 20px;">Go</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/NodeJS/" style="font-size: 15px;">NodeJS</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/Virtualbox/" style="font-size: 10px;">Virtualbox</a> <a href="/tags/胡扯/" style="font-size: 10px;">胡扯</a>
+						<a href="/tags/Atom/" style="font-size: 15px;">Atom</a> <a href="/tags/Chromium/" style="font-size: 10px;">Chromium</a> <a href="/tags/DNS/" style="font-size: 10px;">DNS</a> <a href="/tags/Fedora/" style="font-size: 15px;">Fedora</a> <a href="/tags/Go/" style="font-size: 20px;">Go</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/NodeJS/" style="font-size: 15px;">NodeJS</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/Virtualbox/" style="font-size: 10px;">Virtualbox</a> <a href="/tags/胡扯/" style="font-size: 10px;">胡扯</a>
 					</div>
 				</section>
 				
@@ -181,6 +181,64 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Fedora国内源配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/22/Fedora国内源配置/" class="article-date">
+  	<time datetime="2015-08-22T13:12:41.000Z" itemprop="datePublished">2015-08-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/22/Fedora国内源配置/">Fedora国内源配置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-自动选择最快插件">1.自动选择最快插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install yum-fastestmirror</span><br></pre></td></tr></table></figure>
+<h3 id="2-rpmfusion源">2.rpmfusion源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm</span><br><span class="line">rpm -ivh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h3 id="3-flash源">3.flash源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-<span class="number">1.0</span>-<span class="number">1</span>.noarch.rpm</span><br><span class="line">yum install flash-plugin</span><br></pre></td></tr></table></figure>
+<h3 id="4-163源,sohu源,北交通的直接可以用">4.163源,sohu源,北交通的直接可以用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/yum.repos.d</span><br><span class="line"></span><br><span class="line">wget http://mirrors.<span class="number">163</span>.com/.help/fedora-<span class="number">163</span>.repo</span><br><span class="line">wget http://mirrors.<span class="number">163</span>.com/.help/fedora-updates-<span class="number">163</span>.repo</span><br><span class="line">wget http://mirrors.sohu.com/<span class="built_in">help</span>/fedora-sohu.repo</span><br><span class="line">wget http://mirrors.sohu.com/<span class="built_in">help</span>/fedora-updates-sohu.repo</span><br><span class="line">wget http://mirror.bjtu.edu.cn/fedora-bjtu.repo</span><br><span class="line">wget http://mirror.bjtu.edu.cn/fedora-updates-bjtu.repo</span><br><span class="line"></span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fedora/">Fedora</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-Go反射的法则" class="article article-type-post" itemscope itemprop="blogPost">
   
