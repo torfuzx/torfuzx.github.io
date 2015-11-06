@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>让非root用户使用wireshark | 別問的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="默认情况下，访问网络端口需要root权限，而wireshark的只是/usr/share/dumpcap的一个UI，/usr/share/dumpcap需要root权限，所以没法non-root用户无法读取网卡列表。解决办法很简单，sudo wireshark
+但是wireshark官方不推荐这么做：
+
+Running as user “root” and group “root”.This co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让非root用户使用wireshark">
+<meta property="og:url" content="http://yoursite.com/2015/11/06/让非root用户使用wireshark/index.html">
+<meta property="og:site_name" content="別問的博客">
+<meta property="og:description" content="默认情况下，访问网络端口需要root权限，而wireshark的只是/usr/share/dumpcap的一个UI，/usr/share/dumpcap需要root权限，所以没法non-root用户无法读取网卡列表。解决办法很简单，sudo wireshark
+但是wireshark官方不推荐这么做：
+
+Running as user “root” and group “root”.This co">
+<meta property="og:updated_time" content="2015-11-06T03:36:05.908Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="让非root用户使用wireshark">
+<meta name="twitter:description" content="默认情况下，访问网络端口需要root权限，而wireshark的只是/usr/share/dumpcap的一个UI，/usr/share/dumpcap需要root权限，所以没法non-root用户无法读取网卡列表。解决办法很简单，sudo wireshark
+但是wireshark官方不推荐这么做：
+
+Running as user “root” and group “root”.This co">
+  
+    <link rel="alternative" href="/atom.xml" title="別問的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/assets/blogImg/leslie.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">別問</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">golang开发者，关注Docker技术</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="http://github.com/torfuzx/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/notask/" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="mailto://torfu@qq.com/" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Atom/" style="font-size: 13.33px;">Atom</a> <a href="/tags/Chromium/" style="font-size: 10px;">Chromium</a> <a href="/tags/DNS/" style="font-size: 10px;">DNS</a> <a href="/tags/Fedora/" style="font-size: 13.33px;">Fedora</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Go/" style="font-size: 20px;">Go</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/NodeJS/" style="font-size: 13.33px;">NodeJS</a> <a href="/tags/Sublime/" style="font-size: 16.67px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 13.33px;">Ubuntu</a> <a href="/tags/Virtualbox/" style="font-size: 10px;">Virtualbox</a> <a href="/tags/Wireshark/" style="font-size: 10px;">Wireshark</a> <a href="/tags/胡扯/" style="font-size: 10px;">胡扯</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://laoxu.blog.51cto.com/">老徐的私房菜</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">一个不入流的Go程序员，码畜</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">別問</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/assets/blogImg/leslie.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">別問</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">golang开发者，关注Docker技术</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="http://github.com/torfuzx/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/notask/" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="mailto://torfu@qq.com/" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-让非root用户使用wireshark" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/06/让非root用户使用wireshark/" class="article-date">
+  	<time datetime="2015-11-06T03:29:06.000Z" itemprop="datePublished">2015-11-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      让非root用户使用wireshark
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wireshark/">Wireshark</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>默认情况下，访问网络端口需要root权限，而wireshark的只是/usr/share/dumpcap的一个UI，/usr/share/dumpcap需要root权限，所以没法non-root用户无法读取网卡列表。<br>解决办法很简单，sudo wireshark</p>
+<p>但是wireshark官方不推荐这么做：</p>
+<blockquote>
+<p>Running as user “root” and group “root”.<br>This could be dangerous.</p>
+</blockquote>
+<h4 id="所以用另一种方法，改变/usr/share/dumpcap的group，添加一个group：wireshark，chgrp到wireshark组，再改成750权限，这样方便权限控制。">所以用另一种方法，改变/usr/share/dumpcap的group，添加一个group：wireshark，chgrp到wireshark组，再改成750权限，这样方便权限控制。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="operator">-s</span></span><br><span class="line">groupadd wireshark</span><br><span class="line">usermod <span class="operator">-a</span> -G wireshark &lt;username&gt;  </span><br><span class="line">chgrp wireshark /usr/bin/dumpcap</span><br><span class="line">chmod <span class="number">750</span> /usr/bin/dumpcap</span><br></pre></td></tr></table></figure>
+<p>接着执行下面命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setcap</span> <span class="built_in">cap</span>_net_raw,<span class="built_in">cap</span>_net_admin=eip /usr/bin/dumpcap</span><br></pre></td></tr></table></figure></p>
+<p>用getcap /usr/bin/dumpcap，输出应当是/usr/bin/dumpcap = cap_net_admin,cap_net_raw+eip，说明生效</p>
+<p><a href="http://packetlife.net/blog/2010/mar/19/sniffing-wireshark-non-root-user/" target="_blank" rel="external">官方解决方案</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/11/05/修复sublime-text不支持fcitx中文输入法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">修复sublime text不支持fcitx中文输入法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="让非root用户使用wireshark" data-title="让非root用户使用wireshark" data-url="http://yoursite.com/2015/11/06/让非root用户使用wireshark/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"noask"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 別問
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

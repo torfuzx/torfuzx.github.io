@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git config设置 | 別問的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. Git已经在你的系统中了，你会做一些事情来客户化你的Git环境。你只需要做这些设置一次；即使你升级了，他们也会绑定到你的环境中。你也可以在任何时刻通过运行命令来重新更改这些设置。Git有一个工具被称为git config，它允许你获得和设置配置变量；这些变量可以控制Git的外观和操作的各个方面。这些变量可以被存储在三个不同的位置： 
+
+/etc/gitconfig 文件：包含了适用于系统所有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git config设置">
+<meta property="og:url" content="http://yoursite.com/2015/11/05/git-config设置/index.html">
+<meta property="og:site_name" content="別問的博客">
+<meta property="og:description" content="1. Git已经在你的系统中了，你会做一些事情来客户化你的Git环境。你只需要做这些设置一次；即使你升级了，他们也会绑定到你的环境中。你也可以在任何时刻通过运行命令来重新更改这些设置。Git有一个工具被称为git config，它允许你获得和设置配置变量；这些变量可以控制Git的外观和操作的各个方面。这些变量可以被存储在三个不同的位置： 
+
+/etc/gitconfig 文件：包含了适用于系统所有">
+<meta property="og:updated_time" content="2015-11-06T04:24:08.905Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git config设置">
+<meta name="twitter:description" content="1. Git已经在你的系统中了，你会做一些事情来客户化你的Git环境。你只需要做这些设置一次；即使你升级了，他们也会绑定到你的环境中。你也可以在任何时刻通过运行命令来重新更改这些设置。Git有一个工具被称为git config，它允许你获得和设置配置变量；这些变量可以控制Git的外观和操作的各个方面。这些变量可以被存储在三个不同的位置： 
+
+/etc/gitconfig 文件：包含了适用于系统所有">
+  
+    <link rel="alternative" href="/atom.xml" title="別問的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/assets/blogImg/leslie.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">別問</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">golang开发者，关注Docker技术</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="http://github.com/torfuzx/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/notask/" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="mailto://torfu@qq.com/" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Atom/" style="font-size: 13.33px;">Atom</a> <a href="/tags/Chromium/" style="font-size: 10px;">Chromium</a> <a href="/tags/DNS/" style="font-size: 10px;">DNS</a> <a href="/tags/Fedora/" style="font-size: 13.33px;">Fedora</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Go/" style="font-size: 20px;">Go</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/NodeJS/" style="font-size: 13.33px;">NodeJS</a> <a href="/tags/Sublime/" style="font-size: 16.67px;">Sublime</a> <a href="/tags/Ubuntu/" style="font-size: 13.33px;">Ubuntu</a> <a href="/tags/Virtualbox/" style="font-size: 10px;">Virtualbox</a> <a href="/tags/Wireshark/" style="font-size: 10px;">Wireshark</a> <a href="/tags/胡扯/" style="font-size: 10px;">胡扯</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://laoxu.blog.51cto.com/">老徐的私房菜</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">一个不入流的Go程序员，码畜</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">別問</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/assets/blogImg/leslie.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">別問</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">golang开发者，关注Docker技术</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="http://github.com/torfuzx/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/notask/" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="mailto://torfu@qq.com/" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-git-config设置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/05/git-config设置/" class="article-date">
+  	<time datetime="2015-11-05T08:15:57.000Z" itemprop="datePublished">2015-11-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git config设置
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-_Git已经在你的系统中了，你会做一些事情来客户化你的Git环境。你只需要做这些设置一次；即使你升级了，他们也会绑定到你的环境中。你也可以在任何时刻通过运行命令来重新更改这些设置。">1. Git已经在你的系统中了，你会做一些事情来客户化你的Git环境。你只需要做这些设置一次；即使你升级了，他们也会绑定到你的环境中。你也可以在任何时刻通过运行命令来重新更改这些设置。</h3><p>Git有一个工具被称为git config，它允许你获得和设置配置变量；这些变量可以控制Git的外观和操作的各个方面。这些变量可以被存储在三个不同的位置： </p>
+<ol>
+<li>/etc/gitconfig 文件：包含了适用于系统所有用户和所有库的值。如果你传递参数选项’–system’ 给 git config，它将明确的读和写这个文件。 </li>
+<li>~/.gitconfig 文件 ：具体到你的用户。你可以通过传递–global 选项使Git 读或写这个特定的文件。</li>
+<li>位于git目录的config文件 (也就是 .git/config) ：无论你当前在用的库是什么，特定指向该单一的库。每个级别重写前一个级别的值。因此，在.git/config中的值覆盖了在/etc/gitconfig中的同一个值。</li>
+</ol>
+<h3 id="2-_你的标识(Your_Identity)">2. 你的标识(Your Identity)</h3><h4 id="2-1_当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中：">2.1　当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"John Doe"</span></span><br><span class="line">git config --global user.email johndoe@example.com</span><br></pre></td></tr></table></figure>
+<p> 　　重申一遍，你只需要做一次这个设置。如果你传递了 –global 选项，因为Git将总是会使用该信息来处理你在系统中所做的一切操作。如果你希望在一个特定的项目中使用不同的名称或e-mail地址，你可以在该项目中运行该命令而不要–global选项。</p>
+<h4 id="2-2_你的编辑器(Your_Editor)">2.2 你的编辑器(Your Editor)</h4><p>　　现在，你的标识已经设置，你可以配置你的缺省文本编辑器，Git在需要你输入一些消息时会使用该文本编辑器。缺省情况下，Git使用你的系统的缺省编辑器，这通常可能是vi 或者 vim。如果你想使用一个不同的文本编辑器，例如Emacs，你可以做如下操作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.editor emacs</span><br></pre></td></tr></table></figure>
+<h4 id="2-3_你的比较工具(Your_Diff_Tool)">2.3 你的比较工具(Your Diff Tool)</h4><p>　　另外一个你可能需要配置的有用的选项是缺省的比较工具它用来解决合并时的冲突。例如，你想使用vimdiff:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global merge.tool vimdiff</span><br></pre></td></tr></table></figure>
+<p>Git可以接受kdiff3, tkdiff, meld, xxdiff, emerge, vimdiff, gvimdiff, ecmerge, 和opendiff作为有效的合并工具。你也可以设置一个客户化的工具；查看第7章获得更多关于此的信息。</p>
+<h4 id="2-4_检查你的设置(Checking_Your_Settings)">2.4 检查你的设置(Checking Your Settings)</h4><p>如果你想检查你的设置，你可以使用 git config –list 命令来列出Git可以在该处找到的所有的设置:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>user.name=Scott Chacon<br>user.email=schacon@gmail.com<br>color.status=auto<br>color.branch=auto<br>color.interactive=auto<br>color.diff=auto<br>…</p>
+</blockquote>
+<p>你可能会看到一个关键字出现多次，这是因为Git从不同的文件中(例如：/etc/gitconfig以及~/.gitconfig)读取相同的关键字。<br>在这种情况下，对每个唯一的关键字，Git使用最后的那个值。<br>你也可以查看Git认为的一个特定的关键字目前的值，使用如下命令 git config {key}:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config user.name</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Scott Chacon</p>
+</blockquote>
+<h4 id="2-5_获取帮助(Getting_help)">2.5 获取帮助(Getting help)</h4><p>如果当你在使用Git时需要帮助，有三种方法可以获得任何git命令的手册页(manpage)帮助信息:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">help</span> &lt;verb&gt;</span><br><span class="line">git &lt;verb&gt; --help</span><br><span class="line">man git-&lt;verb&gt;</span><br></pre></td></tr></table></figure></p>
+<p>例如，你可以运行如下命令获取对config命令的手册页帮助:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">help</span> config</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-6_总结(Summary)">2.6 总结(Summary)</h4><p>你应该对Git是什么以及Git与你可能使用的其它CVCS之间的不同有了一个基本的了解。你也应当在你的系统中有了一个具有你个人标识的可以工作的Git版本。是时候来学习一些Git的基本知识了。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/05/Ubuntu常用软件/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Ubuntu常用软件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/03/DNS解析过程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DNS解析过程</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="git-config设置" data-title="git config设置" data-url="http://yoursite.com/2015/11/05/git-config设置/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"noask"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 別問
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
