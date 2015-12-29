@@ -423,7 +423,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="生成SSH密钥过程：">生成SSH密钥过程：</h1><h3 id="1-_查看是否已经有了ssh密钥：cd_~/-ssh">1. 查看是否已经有了ssh密钥：cd ~/.ssh</h3><p>如果没有密钥则不会有此文件夹，有则备份删除</p>
-<h3 id="2-_生存密钥：">2. 生存密钥：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C “&lt;user email&gt;”</span><br></pre></td></tr></table></figure>
+<h3 id="2-_生存密钥：">2. 生存密钥：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"&lt;user email&gt;"</span></span><br></pre></td></tr></table></figure>
 <p>按3个回车，密码为空。</p>
 <blockquote>
 <p>Your identification has been saved in /home/tekkub/.ssh/id_rsa.<br>Your public key has been saved in /home/tekkub/.ssh/id_rsa.pub.<br>The key fingerprint is:<br>………………</p>
@@ -483,16 +483,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Plugin">Plugin</h1><h4 id="nautilus-open-terminal">nautilus-open-terminal</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install nautilus-open-terminal</span><br></pre></td></tr></table></figure>
-<h4 id="Vim">Vim</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vim</span><br></pre></td></tr></table></figure>
+        <h1 id="Plugin">Plugin</h1><h4 id="nautilus-open-terminal">nautilus-open-terminal</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y nautilus-open-terminal</span><br></pre></td></tr></table></figure>
+<h4 id="Vim">Vim</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y vim</span><br></pre></td></tr></table></figure>
 <h4 id="Download_Utils">Download Utils</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y curl</span><br><span class="line">sudo apt-get install -y wget</span><br></pre></td></tr></table></figure>
 <h4 id="Version_Control">Version Control</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y git</span><br><span class="line">sudo apt-get install -y mercurial</span><br><span class="line">sudo apt-get install -y colordiff</span><br></pre></td></tr></table></figure>
 <h4 id="Monitor">Monitor</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y htop</span><br></pre></td></tr></table></figure>
-<h4 id="Ubuntu_Restricted_Extras">Ubuntu Restricted Extras</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ubuntu-restricted-extras</span><br></pre></td></tr></table></figure>
-<h4 id="Terminator">Terminator</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install terminator</span><br></pre></td></tr></table></figure>
-<h4 id="Tree">Tree</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install tree</span><br></pre></td></tr></table></figure>
-<h4 id="Diff">Diff</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install meld</span><br></pre></td></tr></table></figure>
-<h4 id="Flash">Flash</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install pepperflashplugin-nonfree</span><br></pre></td></tr></table></figure>
+<h4 id="Ubuntu_Restricted_Extras">Ubuntu Restricted Extras</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y ubuntu-restricted-extras</span><br></pre></td></tr></table></figure>
+<h4 id="Terminator">Terminator</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get instal -y terminator</span><br></pre></td></tr></table></figure>
+<h4 id="Tree">Tree</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y tree</span><br></pre></td></tr></table></figure>
+<h4 id="Diff">Diff</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y meld</span><br></pre></td></tr></table></figure>
+<h4 id="Flash">Flash</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y pepperflashplugin-nonfree</span><br></pre></td></tr></table></figure>
 <p>==<br>Software</p>
 <blockquote>
 <p>chromium<br>wireshark<br>shutter</p>
